@@ -7,6 +7,6 @@
 
 .hello {
     color: red;
-    background: url('./icon.png');
+    /* background: url('./icon.png'); */
     font-family: 'MyFont';
 }
