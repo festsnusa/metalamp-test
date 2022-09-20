@@ -32,6 +32,22 @@ html {
         grid-column-gap: 2.5rem;
         align-items: center;
         justify-content: start;
+        &__title,
+        &__subtitle {
+            display: flex;
+            font-size: 1.2rem;
+            line-height: 1.8125rem;
+        }
+        &__title {
+            grid-area: title;
+            text-transform: none;
+            align-self: flex-end;
+            width: max-content;
+        }
+        &__subtitle {
+            grid-area: subtitle;
+            align-self: flex-start;
+        }
     }
     .font-100 .color__square,
     .font-75 .color__square,
@@ -65,22 +81,6 @@ html {
     }
     .green .color__square {
         background: #75CF9A;
-    }
-    .color__title,
-    .color__subtitle {
-        display: flex;
-        font-size: 1.2rem;
-        line-height: 1.8125rem;
-    }
-    .color__title {
-        grid-area: title;
-        text-transform: none;
-        align-self: flex-end;
-        width: max-content;
-    }
-    .color__subtitle {
-        grid-area: subtitle;
-        align-self: flex-start;
     }
     .types {
         display: grid;
