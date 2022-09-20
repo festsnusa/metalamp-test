@@ -35,7 +35,7 @@ body {
     &__room_search {
         background: red;
         border: 1px solid rgba(0, 0, 0, .12);
-        box-shadow: 0 0 1.5rem rgb(0 0 0 / 20%);
+        box-shadow: 0 0 1.5625rem rgb(0, 0, 0 / 20%);
         padding: 2.4rem 1.85rem 1.85rem 1.8rem;
         border-radius: 0.25rem;
         width: 10rem;
@@ -43,10 +43,12 @@ body {
 
         &__title{
             color: #1f2041;
-            font-family: Montserrat, Arial, sans-serif;
+            // font-family: Montserrat, Arial, sans-serif;
             font-weight: 700;
             font-size: 1.5rem;
             line-height: 1.8125rem;
+            display: block;
+
         }
     }
 
