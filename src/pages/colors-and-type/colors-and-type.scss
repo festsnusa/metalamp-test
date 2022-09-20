@@ -86,18 +86,37 @@ html {
         display: grid;
         align-content: start;
         grid-row-gap: 3rem;
-        // .heading {
-        //     display: grid;
-        //     grid-template-columns: 2.5rem 1fr;
-        //     column-gap: 2rem;
-        // }
-        // .heading_one {
-        //     margin-bottom: 0.5rem;
-        //     .heading__title {
-        //         font-size: 2.4rem;
-        //         font-weight: 400;
-        //         line-height: 2.926rem;
-        //     }
-        // }
+        .heading {
+            display: grid;
+            grid-template-columns: 2.5rem 1fr;
+            column-gap: 2rem;
+        }
+        .heading_one {
+            // margin-bottom: 0.5rem;
+            .heading__title {
+                font-size: 1.5rem;
+                font-weight: 400;
+                line-height: 2.926rem;
+                color: rgba(31, 32, 65, 0.25);
+            }
+            .heading__subtitle {
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 2rem;
+            }
+        }
+        .heading_two {
+            .heading__title {
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 2.926rem;
+                color: rgba(31, 32, 65, 0.25);
+            }
+            .heading__subtitle {
+                font-size: 1.2rem;
+                font-weight: 700;
+                line-height: 2rem;
+            }
+        }
     }
 }

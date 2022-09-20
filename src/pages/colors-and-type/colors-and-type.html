@@ -134,6 +134,41 @@ html {
       align-content: start;
   grid-row-gap: 3rem;
 }
+
+.main__types .heading {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2.5rem 1fr;
+      grid-template-columns: 2.5rem 1fr;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+}
+
+.main__types .heading_one .heading__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.926rem;
+  color: rgba(31, 32, 65, 0.25);
+}
+
+.main__types .heading_one .heading__subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.main__types .heading_two .heading__title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2.926rem;
+  color: rgba(31, 32, 65, 0.25);
+}
+
+.main__types .heading_two .heading__subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
 /*# sourceMappingURL=colors-and-type.css.map */
     </style>
   </head>
@@ -188,6 +223,10 @@ html {
         </div>
         <div class="heading heading_three"> 
           <p class="heading__title">H3 </p>
+          <p class="heading__subtitle">This is a label or CTA text</p>
+        </div>
+        <div class="heading paragraph">
+          <p class="heading__title">Body</p>
           <p class="heading__subtitle">This is the body text which is used for most of the design, like paragraphs, lists, etc.</p>
         </div>
       </div>
