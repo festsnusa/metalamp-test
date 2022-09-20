@@ -55,52 +55,7 @@ html {
           justify-content: start;
 }
 
-.main .font-100 .color__square,
-.main .font-75 .color__square,
-.main .font-50 .color__square,
-.main .font-25 .color__square,
-.main .font-5 .color__square,
-.main .purple .color__square,
-.main .green .color__square {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  grid-area: square;
-  width: 3.9rem;
-  height: 3.9rem;
-  border-radius: 0.3rem;
-}
-
-.main .font-100 .color__square {
-  background: #1F2041;
-}
-
-.main .font-75 .color__square {
-  background: #575870;
-}
-
-.main .font-50 .color__square {
-  background: #8F909F;
-}
-
-.main .font-25 .color__square {
-  background: #C7C7CF;
-}
-
-.main .font-5 .color__square {
-  background: #F3F4F5;
-}
-
-.main .purple .color__square {
-  background: #BB9DFB;
-}
-
-.main .green .color__square {
-  background: #75CF9A;
-}
-
-.main .color__title,
-.main .color__subtitle {
+.main .color__title, .main .color__subtitle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,7 +83,51 @@ html {
       align-self: flex-start;
 }
 
-.main .types {
+.main .font-100 .color__square,
+.main .font-75 .color__square,
+.main .font-50 .color__square,
+.main .font-25 .color__square,
+.main .font-5 .color__square,
+.main .purple .color__square,
+.main .green .color__square {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: square;
+  width: 3.9rem;
+  height: 3.9rem;
+  border-radius: 0.3rem;
+}
+
+.main .font-100 .color__square {
+  background: #1F2041;
+}
+
+.main .font-75 .color__square {
+  background: rgba(31, 32, 65, 0.75);
+}
+
+.main .font-50 .color__square {
+  background: rgba(31, 32, 65, 0.5);
+}
+
+.main .font-25 .color__square {
+  background: rgba(31, 32, 65, 0.25);
+}
+
+.main .font-5 .color__square {
+  background: rgba(31, 32, 65, 0.05);
+}
+
+.main .purple .color__square {
+  background: #BC9CFF;
+}
+
+.main .green .color__square {
+  background: #6FCF97;
+}
+
+.main__types {
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: start;

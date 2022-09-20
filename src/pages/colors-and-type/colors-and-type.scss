@@ -65,26 +65,39 @@ html {
         background: #1F2041;
     }
     .font-75 .color__square {
-        background: #575870;
+        background: rgba(31, 32, 65, 0.75);
     }
     .font-50 .color__square {
-        background: #8F909F;
+        background: rgba(31, 32, 65, 0.5);
     }
     .font-25 .color__square {
-        background: #C7C7CF;
+        background: rgba(31, 32, 65, 0.25);
     }
     .font-5 .color__square {
-        background: #F3F4F5;
+        background: rgba(31, 32, 65, 0.05);
     }
     .purple .color__square {
-        background: #BB9DFB;
+        background: #BC9CFF;
     }
     .green .color__square {
-        background: #75CF9A;
+        background: #6FCF97;
     }
-    .types {
+    &__types {
         display: grid;
         align-content: start;
         grid-row-gap: 3rem;
+        // .heading {
+        //     display: grid;
+        //     grid-template-columns: 2.5rem 1fr;
+        //     column-gap: 2rem;
+        // }
+        // .heading_one {
+        //     margin-bottom: 0.5rem;
+        //     .heading__title {
+        //         font-size: 2.4rem;
+        //         font-weight: 400;
+        //         line-height: 2.926rem;
+        //     }
+        // }
     }
 }
