@@ -22,7 +22,7 @@ html {
   display: grid;
   -ms-grid-columns: 16.875rem 28rem;
       grid-template-columns: 16.875rem 28rem;
-  grid-column-gap: 39.5%;
+  grid-column-gap: 25.5%;
 }
 
 .main__colors {
@@ -131,8 +131,8 @@ html {
   display: grid;
   -ms-grid-columns: 2.5rem 1fr;
       grid-template-columns: 2.5rem 1fr;
-  -webkit-column-gap: 2rem;
-          column-gap: 2rem;
+  -webkit-column-gap: 1.9rem;
+          column-gap: 1.9rem;
 }
 
 .main__types .heading_one .heading__title {
@@ -140,6 +140,7 @@ html {
   font-weight: 400;
   line-height: 2.926rem;
   color: rgba(31, 32, 65, 0.25);
+  text-align: right;
 }
 
 .main__types .heading_one .heading__subtitle {
@@ -151,13 +152,43 @@ html {
 .main__types .heading_two .heading__title {
   font-size: 1.2rem;
   font-weight: 400;
-  line-height: 2.926rem;
+  line-height: 1.5rem;
   color: rgba(31, 32, 65, 0.25);
+  text-align: right;
 }
 
 .main__types .heading_two .heading__subtitle {
   font-size: 1.2rem;
   font-weight: 700;
-  line-height: 2rem;
+  line-height: 1.5rem;
+}
+
+.main__types .heading_three .heading__title {
+  font-size: .75rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: rgba(31, 32, 65, 0.25);
+  text-align: right;
+}
+
+.main__types .heading_three .heading__subtitle {
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
+.main__types .heading_paragraph .heading__title {
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: rgba(31, 32, 65, 0.74902);
+  text-align: right;
+}
+
+.main__types .heading_paragraph .heading__subtitle {
+  font-size: .875rem;
+  line-height: 1.5rem;
+  color: rgba(31, 32, 65, 0.74902);
 }
 /*# sourceMappingURL=colors-and-type.css.map */
