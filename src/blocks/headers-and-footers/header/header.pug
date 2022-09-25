@@ -1,0 +1,22 @@
+header
+  link(rel="stylesheet", href="header.css")
+  .header__container
+    a.logo(href="#")
+      img(src='../../../assets/images/logo.svg' alt="Logo")
+    nav.menu
+      ul.menu__list
+        li.menu__list__item
+          a.menu__list__link.menu__list__link--actual(href="#") О нас
+        li.menu__list__item
+          a.menu__list__link.menu__list__link--drop-down(href="#") Услуги
+            span.header__drop-down.header__drop-down-servises.material-icons-outlined expand_more
+        li.menu__list__item
+          a.menu__list-link(href="#") Вакансии
+        li.menu__list__item
+          a.menu__list-link(href="#") Новости
+        li.menu__list__item
+          a.menu__list__link.menu__list__link--drop-down(href="#") Соглашения
+            span.header__drop-down.header__drop-down-agreements.material-icons-outlined expand_more
+    .header__btn
+      button.header__btn.header__btn-to-come-in Войти
+      button.header__btn.header__btn-register Зарегистрироваться

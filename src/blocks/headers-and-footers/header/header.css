@@ -1,0 +1,74 @@
+body {
+  background-color: #fff;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 0 14.8rem 0 12.1rem;
+}
+
+.logo {
+  margin-right: 24rem;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu__list__item {
+  padding-left: 2.2rem;
+}
+
+.menu__list__link {
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.menu__list__link--drop-down {
+  position: relative;
+  padding-right: 20px;
+}
+
+.menu__list__link--actual {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.header__drop-down {
+  position: absolute;
+  background-color: transparent;
+}
+
+.header__drop-down__drop-down-servises {
+  left: 50px;
+  top: -3px;
+  margin-right: 20px;
+}
+
+.header__drop-down__drop-down-agreements {
+  left: 90px;
+  top: -2px;
+  margin-right: 20px;
+}
+
+.header__btn {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+}
+
+.header__btn-register {
+  margin-right: -18px;
+  margin-left: 20px;
+  width: 196px;
+  height: auto;
+}
+/*# sourceMappingURL=header.css.map */
