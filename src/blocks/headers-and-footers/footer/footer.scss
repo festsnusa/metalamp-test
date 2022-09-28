@@ -109,12 +109,12 @@ body {
         }
 
         /// footer__subcription-form-input-section ///
-        // &-input-section {
-        //     display: flex;
-        //     position: relative;
-        //     max-width: 20rem;
-        //     width: 100%;
-        //     margin: 0.45rem auto 0.5rem;
+        &-input-section {
+            display: flex;
+            position: relative;
+            max-width: 20rem;
+            width: 100%;
+            margin: 0.45rem auto 0.5rem;
 
         //     &__input {
         //         font-size: .875rem;
@@ -126,7 +126,7 @@ body {
         //     &__submit {
 
         //     }
-        // }
+        }
     }
 
     &__copyright {
@@ -152,4 +152,9 @@ body {
             }
         }
     }
+}
+
+input::-webkit-input-placeholder {
+    color: $darkShade25;
+    padding-left: 0.938rem;
 }

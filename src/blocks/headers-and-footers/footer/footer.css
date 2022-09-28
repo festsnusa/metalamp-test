@@ -116,6 +116,16 @@ body {
   padding-bottom: 0.9rem;
 }
 
+.footer__subscription-form-input-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  max-width: 20rem;
+  width: 100%;
+  margin: 0.45rem auto 0.5rem;
+}
+
 .footer__copyright {
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -146,5 +156,10 @@ body {
   list-style: none;
   padding-left: 1.29rem;
   padding-right: 0.1rem;
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(31, 32, 65, 0.25);
+  padding-left: 0.938rem;
 }
 /*# sourceMappingURL=footer.css.map */
