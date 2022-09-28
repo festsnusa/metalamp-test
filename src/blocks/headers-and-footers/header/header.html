@@ -1,19 +1,26 @@
 
-<header>
-  <link rel="stylesheet" href="header.css"/>
-  <div class="header__container"><a class="logo" href="#"><img src="../../../assets/images/logo.svg" alt="Logo"/></a>
-    <nav class="menu">
-      <ul class="menu__list">
-        <li class="menu__list__item"><a class="menu__list__link menu__list__link--actual" href="#">О нас</a></li>
-        <li class="menu__list__item"><a class="menu__list__link menu__list__link--drop-down" href="#">Услуги<span class="header__drop-down header__drop-down-servises material-icons-outlined">expand_more</span></a></li>
-        <li class="menu__list__item"><a class="menu__list-link" href="#">Вакансии</a></li>
-        <li class="menu__list__item"><a class="menu__list-link" href="#">Новости</a></li>
-        <li class="menu__list__item"><a class="menu__list__link menu__list__link--drop-down" href="#">Соглашения<span class="header__drop-down header__drop-down-agreements material-icons-outlined">expand_more</span></a></li>
-      </ul>
-    </nav>
-    <div class="header__btn">
-      <button class="header__btn header__btn-to-come-in">Войти</button>
-      <button class="header__btn header__btn-register">Зарегистрироваться</button>
+<link rel="stylesheet" href="header.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+<div class="header">
+  <div class="header__container">
+    <div class="header__nav">
+      <div class="header__logo"><a class="logo" href="#"><img class="logo__image" src="../../../assets/images/logo.svg" alt="logo-image"/></a></div>
+      <div class="header__menu-group">
+        <ul class="header__menu">
+          <li class="header__link-li"><a class="header__link header__link-bold" href="#">О нас</a></li>
+          <li class="header__link-li">
+            <div class="header__sub-menu header__sub-menu-expanded"><a class="header__link" href="#">Услуги<span class="header__dropdown header__dropdown-services material-symbols-outlined">expand_more</span></a>
+              <div class="header__dropdown"></div>
+            </div>
+          </li>
+          <li class="header__link-li"><a class="header__link" href="#">Вакансии</a></li>
+          <li class="header__link-li"><a class="header__link" href="#">Новости</a></li>
+          <li class="header__link-li"><a class="header__link" href="#">Соглашения<span class="header__dropdown header__dropdown-agreements material-symbols-outlined">expand_more</span></a></li>
+        </ul>
+        <div class="header__user-menu header__user-menu_not-auth"><a class="button__link" href="#">
+            <div class="button button__white button__login-button"><span class="button__text button__text-purple">Войти</span></div></a><a class="button__link" href="#">
+            <div class="button button__purple button__registration-button"><span class="button__text button__text-white">Зарегистрироваться</span></div></a></div>
+      </div>
     </div>
   </div>
-</header>
+</div>

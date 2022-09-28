@@ -1,74 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+}
+
 body {
-  background-color: #fff;
+  background: #e5e5e5;
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  position: absolute;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+
+.header {
+  background: #fff;
+  margin-bottom: 2.55rem;
+  padding: 0.8375rem 0;
 }
 
 .header__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  max-width: 83.8%;
+  margin: 0 auto;
+  padding: 0 9.1rem;
+}
+
+.header__nav {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  padding: 0 14.8rem 0 12.1rem;
+      grid-template-areas: "logo menuGroup";
 }
 
-.logo {
-  margin-right: 24rem;
+.header__logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
 }
 
-.menu__list {
+.header__menu-group {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: menuGroup;
+}
+
+.header__menu {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-column-gap: 1.3rem;
+          column-gap: 1.3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 1.2rem;
+}
+
+.header__link-li {
+  list-style: none;
+}
+
+.header__link {
+  font-size: .875rem;
+  color: rgba(31, 32, 65, 0.5);
+  text-decoration: none;
+}
+
+.header__link-bold {
+  font-weight: 700;
+}
+
+.header__sub-menu {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content min-content;
+      grid-template-columns: -webkit-max-content -webkit-min-content;
+      grid-template-columns: max-content min-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__dropdown {
+  position: absolute;
+}
+
+.header__sub-menu-icon {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .25s ease;
+  transition: -webkit-transform .25s ease;
+  transition: transform .25s ease;
+  transition: transform .25s ease, -webkit-transform .25s ease;
+  font-size: 1.5rem;
+  height: 22px;
+}
+
+.header__sub-menu-icon:hover {
+  color: #BC9CFF;
+}
+
+.header__user-menu {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__user-menu .button {
+  cursor: pointer;
+  position: relative;
+  border-radius: 1.375rem;
+}
+
+.header__user-menu .button__link {
+  text-decoration: none;
+}
+
+.header__user-menu .button__login-button {
+  height: 34px;
+  width: 87px;
+}
+
+.header__user-menu .button__registration-button {
+  height: 34px;
+  width: 180px;
+}
+
+.header__user-menu .button__white {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #fff;
+  border: 0.125rem solid #BC9CFF;
 }
 
-.menu__list__item {
-  padding-left: 2.2rem;
+.header__user-menu .button__purple {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8ba4f9));
+  background: linear-gradient(180deg, #BC9CFF, #8ba4f9);
 }
 
-.menu__list__link {
-  color: rgba(31, 32, 65, 0.5);
-}
-
-.menu__list__link--drop-down {
-  position: relative;
-  padding-right: 20px;
-}
-
-.menu__list__link--actual {
-  font-family: Montserrat, sans-serif;
+.header__user-menu .button__text {
+  font-size: .75rem;
   font-weight: 700;
-  color: rgba(31, 32, 65, 0.75);
+  text-transform: uppercase;
 }
 
-.header__drop-down {
-  position: absolute;
-  background-color: transparent;
+.header__user-menu .button__text-purple {
+  color: #BC9CFF;
 }
 
-.header__drop-down__drop-down-servises {
-  left: 50px;
-  top: -3px;
-  margin-right: 20px;
-}
-
-.header__drop-down__drop-down-agreements {
-  left: 90px;
-  top: -2px;
-  margin-right: 20px;
-}
-
-.header__btn {
-  font-family: Montserrat, sans-serif;
-  font-weight: 700;
-}
-
-.header__btn-register {
-  margin-right: -18px;
-  margin-left: 20px;
-  width: 196px;
-  height: auto;
+.header__user-menu .button__text-white {
+  color: #fff;
 }
 /*# sourceMappingURL=header.css.map */

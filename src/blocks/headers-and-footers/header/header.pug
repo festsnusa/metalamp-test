@@ -1,22 +1,36 @@
-header
-  link(rel="stylesheet", href="header.css")
+link(rel="stylesheet", href="header.css")
+link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+.header
   .header__container
-    a.logo(href="#")
-      img(src='../../../assets/images/logo.svg' alt="Logo")
-    nav.menu
-      ul.menu__list
-        li.menu__list__item
-          a.menu__list__link.menu__list__link--actual(href="#") О нас
-        li.menu__list__item
-          a.menu__list__link.menu__list__link--drop-down(href="#") Услуги
-            span.header__drop-down.header__drop-down-servises.material-icons-outlined expand_more
-        li.menu__list__item
-          a.menu__list-link(href="#") Вакансии
-        li.menu__list__item
-          a.menu__list-link(href="#") Новости
-        li.menu__list__item
-          a.menu__list__link.menu__list__link--drop-down(href="#") Соглашения
-            span.header__drop-down.header__drop-down-agreements.material-icons-outlined expand_more
-    .header__btn
-      button.header__btn.header__btn-to-come-in Войти
-      button.header__btn.header__btn-register Зарегистрироваться
+    .header__nav
+      .header__logo
+        a.logo(href="#")
+          img.logo__image(src="../../../assets/images/logo.svg", alt="logo-image")
+      .header__menu-group
+        ul.header__menu
+          li.header__link-li
+            a.header__link.header__link-bold(href="#") О нас
+          li.header__link-li
+            .header__sub-menu.header__sub-menu-expanded
+              a.header__link(href="#") Услуги
+                span.header__dropdown.header__dropdown-services.material-symbols-outlined expand_more
+              .header__dropdown
+                //- a.header__link.header__sub-link Трансфер
+                //- a.header__link.header__sub-link Завтрак
+                //- a.header__link.header__sub-link Обед
+                //- a.header__link.header__sub-link Ужин
+              
+          li.header__link-li
+            a.header__link(href="#") Вакансии
+          li.header__link-li
+            a.header__link(href="#") Новости
+          li.header__link-li
+            a.header__link(href="#") Соглашения
+              span.header__dropdown.header__dropdown-agreements.material-symbols-outlined expand_more
+        .header__user-menu.header__user-menu_not-auth
+          a.button__link(href="#")
+            .button.button__white.button__login-button
+              span.button__text.button__text-purple Войти
+          a.button__link(href="#")
+            .button.button__purple.button__registration-button
+              span.button__text.button__text-white Зарегистрироваться
