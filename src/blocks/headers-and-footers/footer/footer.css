@@ -116,16 +116,6 @@ body {
   padding-bottom: 0.9rem;
 }
 
-.footer__subscription-form-input-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  max-width: 20rem;
-  width: 100%;
-  margin: 0.45rem auto 0.5rem;
-}
-
 .footer__copyright {
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -158,8 +148,36 @@ body {
   padding-right: 0.1rem;
 }
 
+.input {
+  font-size: .875rem;
+  line-height: 2.625rem;
+  padding: 0 2.375rem 0 0.875rem;
+  border-radius: .25rem;
+}
+
+.input__submit-button {
+  position: absolute;
+  top: 50%;
+  right: 0.8125rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url("https://inconsumable1812.github.io/Toxin/img/arrow-forward.svg") no-repeat 50%;
+}
+
 input::-webkit-input-placeholder {
   color: rgba(31, 32, 65, 0.25);
   padding-left: 0.938rem;
+}
+
+.fa-brands {
+  background: -webkit-gradient(linear, left top, right top, from(#bc9cff), to(#8ba4f9));
+  background: linear-gradient(90deg, #bc9cff 0%, #8ba4f9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 /*# sourceMappingURL=footer.css.map */

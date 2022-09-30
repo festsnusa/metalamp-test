@@ -108,25 +108,6 @@ body {
             padding-bottom: 0.9rem;
         }
 
-        /// footer__subcription-form-input-section ///
-        &-input-section {
-            display: flex;
-            position: relative;
-            max-width: 20rem;
-            width: 100%;
-            margin: 0.45rem auto 0.5rem;
-
-        //     &__input {
-        //         font-size: .875rem;
-        //         line-height: 2.625rem;
-        //         padding: 0 2.375rem 0 0.875rem;
-        //         color: red;
-        //     }
-
-        //     &__submit {
-
-        //     }
-        }
     }
 
     &__copyright {
@@ -154,7 +135,57 @@ body {
     }
 }
 
+.input {
+    font-size: .875rem;
+    line-height: 2.625rem;
+    padding: 0 2.375rem 0 0.875rem;
+    border-radius: .25rem;
+    
+    &__submit-button {
+      position: absolute;
+      top: 50%;
+      right: 0.8125rem;
+      transform: translateY(-50%);
+      border: none;
+      cursor: pointer;
+      width: 1.125rem;
+      height: 1.125rem;
+      background: url('https://inconsumable1812.github.io/Toxin/img/arrow-forward.svg') no-repeat 50%;
+    }
+  }
+
 input::-webkit-input-placeholder {
     color: $darkShade25;
     padding-left: 0.938rem;
 }
+
+.fa-brands {
+    background: linear-gradient(90deg, rgba(188,156,255,1) 0%, rgba(139,164,249,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.material-icons-outlined {
+    // font-family: 'Material Icons';
+    // font-weight: normal;
+    // font-style: normal;
+    // font-size: 24px;
+    // position: absolute;
+    // /* Preferred icon size */
+    // display: inline-block;
+    // line-height: 1;
+    // text-transform: none;
+    // letter-spacing: normal;
+    // word-wrap: normal;
+    // white-space: nowrap;
+    // direction: ltr;
+    // /* Support for all WebKit browsers. */
+    // -webkit-font-smoothing: antialiased;
+    // /* Support for Safari and Chrome. */
+    // text-rendering: optimizeLegibility;
+    // /* Support for Firefox. */
+    // -moz-osx-font-smoothing: grayscale;
+    // /* Support for IE. */
+    // font-feature-settings: 'liga';
+  }
