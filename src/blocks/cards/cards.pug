@@ -1,0 +1,50 @@
+link(rel="stylesheet", href="cards.css")
+link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+nav
+  a.logo(href="#") 
+    img(src="../../assets/images/logo-colorless.svg", alt="#")
+.main   
+  .main__firstColumn 
+    .main__card 
+      .room-search 
+        .room-search__header
+          p.room-search__title Найдем номера под ваши желания
+        .room-search__calendar 
+          .date-dropdown
+            .date-dropdown__item
+              p.date-dropdown__title Прибытие
+              .date-dropdown__dropdown-box
+                input.dropdown__input(placeholder="ДД.ММ.ГГГГ")
+                button.dropdown__button(type="button")
+                  span.material-symbols-outlined expand_more
+            .date-dropdown__item
+              p.date-dropdown__title Выезд
+              .date-dropdown__dropdown-box
+                input.dropdown__input(placeholder="ДД.ММ.ГГГГ")
+                button.dropdown__button(type="button")
+                  span.material-symbols-outlined expand_more
+
+        .room-search__dropdown 
+          p.dropdown__title Гости
+          .dropdown__box
+            input.dropdown__input(placeholder="Сколько гостей" readonly="readonly")
+            button.dropdown__button(type="button")
+              span.material-symbols-outlined expand_more
+        
+        .room-search__submit-button 
+          a.button__link(href="#") 
+            .button.button_purple.button_large
+              .button__group
+                span.button__text Подобрать номер
+                span.button__icon
+        
+    .main__card 
+  .main__secondColumn 
+    .main__card 
+    .main__card 
+  .main__thirdColumn 
+    .main__card 
+      
+    .main__card 
+    .main__card
+
