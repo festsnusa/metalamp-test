@@ -5,27 +5,27 @@ nav
     img(src="../../assets/images/logo-colorless.svg", alt="logo")
 .main
   .main__section
-    .input
-      .input__header
-        p.input__title Text Field
-        p.input__subtitle Default
-      input.input__box(type="email" name="email" placeholder="Email")
-    .input
-      .input__header
-        p.input__title Text Field
-        p.input__subtitle Hover / Focus
-      input.input__box(name="This is pretty awesome" placeholder="This is pretty awesome")
-    .dropdown
-      p.dropdown__title Dropdown
-      p.dropdown__subtitle Default
-      .dropdown__box
-        input.dropdown__input
-        span.dropdown__input-icon.material-symbols-outlined expand_more
-    .input
-      .input__header
-        p.input__title MASKED TEXT FIELD
-      input.input__box(name="Masked field" placeholder="ДД.ММ.ГГГГ")
-    .dropdown-double
+    .first-column
+      .input
+        .input__header
+          p.input__title Text Field
+          p.input__subtitle Default
+        input.input__box(type="email" name="email" placeholder="Email")
+      .input
+        .input__header
+          p.input__title Text Field
+          p.input__subtitle Hover / Focus
+        input.input__box(name="This is pretty awesome" placeholder="This is pretty awesome")
+      .dropdown
+        p.dropdown__title Dropdown
+        p.dropdown__subtitle Default
+        .dropdown__box
+          input.dropdown__input
+          span.dropdown__input-icon.material-symbols-outlined expand_more
+      .input
+        .input__header
+          p.input__title MASKED TEXT FIELD
+        input.input__box(name="Masked field" placeholder="ДД.ММ.ГГГГ")
       .date-dropdown
         .date-dropdown__box
           .date-dropdown__title Date Dropdown
@@ -37,6 +37,21 @@ nav
           .date-dropdown__input-box
             input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
             span.date-dropdown__input-icon.material-symbols-outlined expand_more
+      .filter-date-dropdown
+        p.filter-date-dropdown__title Filter date dropdown
+        .filter-date-dropdown__input-box
+          input.filter-date-dropdown__input(name="filter-date" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
+          span.filter-date-dropdown__input-icon.material-symbols-outlined expand_more
+      .subscription-field
+        p.subscription-field__title Subscription text field
+        .subscription-field__input-box
+          input.subscription-field__input(type="email" name="subscription-text" placeholder="Email")
+          button.subscription-field__input-button.material-symbols-outlined(type="submit") arrow_forward
+    .gap
+    
+    .second-column
+    .gap
+    .third-column
   .main__section
   .main__section
   .main__section
