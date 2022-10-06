@@ -1,0 +1,43 @@
+link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+link(rel="stylesheet", href="form-elements.css")
+nav
+  a.logo(href="#") 
+    img(src="../../assets/images/logo-colorless.svg", alt="logo")
+.main
+  .main__section
+    .input
+      .input__header
+        p.input__title Text Field
+        p.input__subtitle Default
+      input.input__box(type="email" name="email" placeholder="Email")
+    .input
+      .input__header
+        p.input__title Text Field
+        p.input__subtitle Hover / Focus
+      input.input__box(name="This is pretty awesome" placeholder="This is pretty awesome")
+    .dropdown
+      p.dropdown__title Dropdown
+      p.dropdown__subtitle Default
+      .dropdown__box
+        input.dropdown__input
+        span.dropdown__input-icon.material-symbols-outlined expand_more
+    .input
+      .input__header
+        p.input__title MASKED TEXT FIELD
+      input.input__box(name="Masked field" placeholder="ДД.ММ.ГГГГ")
+    .dropdown-double
+      .date-dropdown
+        .date-dropdown__box
+          .date-dropdown__title Date Dropdown
+          .date-dropdown__input-box
+            input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
+            span.date-dropdown__input-icon.material-symbols-outlined expand_more
+        .date-dropdown__box
+          .date-dropdown__title Date Dropdown
+          .date-dropdown__input-box
+            input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
+            span.date-dropdown__input-icon.material-symbols-outlined expand_more
+  .main__section
+  .main__section
+  .main__section
+  
