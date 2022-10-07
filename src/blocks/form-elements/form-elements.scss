@@ -7,6 +7,7 @@ $darkShade25: rgba(31, 32, 65, 0.25);
 $darkShade5: rgba(31, 32, 65, 0.05);
 $purple: #bc9cff;
 $green: #6fcf97;
+$linearGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 
 * {
   box-sizing: border-box;
@@ -25,9 +26,255 @@ html {
   padding: 0 1.6rem;
 
   &__section {
+    display: grid;
+
     &:nth-child(1) {
       grid-template-columns: 27.59%, 10.86%, 22.45% 11.38% 27.75%;
       margin-bottom: 5.5rem;
+
+      .first-column {
+        .input {
+          max-width: 20rem;
+          width: 100%;
+
+          &__header {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          &__title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: 0.7375rem;
+          }
+
+          &__subtitle {
+            text-transform: uppercase;
+            color: $darkShade50;
+            font-size: 0.75rem;
+            line-height: 0.7375rem;
+          }
+
+          &__box {
+            margin: 0.45rem auto 0.5rem;
+            font-size: 0.875rem;
+            width: 100%;
+            line-height: 2.625rem;
+            padding: 0 2.375rem 0 0.875rem;
+          }
+        }
+
+        .dropdown {
+          max-width: 20rem;
+          width: 100%;
+
+          &__title,
+          &__subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+          }
+
+          &__title {
+            display: inline;
+            font-weight: 700;
+          }
+
+          &__subtitle {
+            float: right;
+          }
+
+          &__box {
+            position: relative;
+            margin-top: 0.3125rem;
+            font-size: 0.875rem;
+          }
+
+          &__input {
+            cursor: pointer;
+            width: 100%;
+            line-height: 2.625rem;
+            padding: 0 2.375rem 0 0.875rem;
+            border-radius: 0.25rem;
+          }
+
+          &__input-icon {
+            position: absolute;
+            top: 0.625rem;
+            right: 0.625rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border: none;
+            background: transparent;
+          }
+        }
+
+        .date-dropdown {
+          max-width: 20rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 1.25rem;
+          width: 100%;
+
+          &__title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+
+          &__input {
+            padding: 0 2.375rem 0 0.875rem;
+            width: 100%;
+            line-height: 2.625rem;
+            border: 0.0625rem solid rgba(31, 32, 65, 0.25098);
+            border-radius: 0.25rem;
+            cursor: pointer;
+          }
+
+          &__input-icon {
+            position: relative;
+            bottom: 1.3rem;
+            left: 9rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border: none;
+            background: transparent;
+          }
+        }
+
+        .filter-date-dropdown {
+          margin-bottom: 2.7rem;
+          max-width: 16.625rem;
+
+          &__title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+
+          &__input {
+            padding: 0 2.375rem 0 0.875rem;
+            width: 100%;
+            line-height: 2.625rem;
+            border: 0.0625rem solid rgba(31, 32, 65, 0.25098);
+            border-radius: 0.25rem;
+            cursor: pointer;
+          }
+
+          &__input-icon {
+            position: relative;
+            bottom: 2rem;
+            left: 15rem;
+            cursor: pointer;
+          }
+        }
+
+        .subscription-field {
+          max-width: 20rem;
+          width: 100%;
+
+          &__title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: 0.7375rem;
+            text-transform: uppercase;
+          }
+
+          &__input-box {
+            display: flex;
+            position: relative;
+            line-height: 2.75rem;
+            margin: 0.45rem auto 0.5rem;
+          }
+
+          &__input {
+            font-size: 0.875rem;
+            width: 100%;
+            line-height: 2.625rem;
+            padding: 0 2.375rem 0 0.875rem;
+            border: 1px solid $darkShade25;
+            border-radius: 0.25rem;
+          }
+
+          &__input-button {
+            position: absolute;
+            top: 25%;
+            right: 0.75rem;
+            border: none;
+            cursor: pointer;
+            background:-moz-$linearGradient;
+            background: -webkit-$linearGradient;
+            background: $linearGradient;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+
+      .second-column {
+        margin-top: 0.5125rem;
+        margin-bottom: 1.83rem;
+        
+        .checkbox {
+          width: 100%;
+          max-width: 13.875rem;
+          
+          &__title {
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-bottom: .85rem;
+          }
+          
+          &__list {
+            list-style: none;
+          }
+          
+          &__list,
+          &__item {
+            font-size: .875rem;
+            padding-bottom: .75rem;
+            line-height: 1.125rem;
+            color: $darkShade50;
+          }
+          
+          &__label {
+            cursor: pointer;
+          }
+          
+          &__list,
+          &__item, &__input {
+            position: absolute;
+            appearance: none;
+          }
+          
+          &__list,
+          &__item, &__checkbox {
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: .0625rem solid $darkShade75;
+            border-radius: .25rem;
+          }
+          
+          .checkbox__list .checkbox__item .checkbox__input:checked+.checkbox__checkbox {
+            border: 0.0625rem solid $purple;
+            background: url("https://inconsumable1812.github.io/Toxin/img/vector.svg") no-repeat 50% 38%;
+          }
+          
+          &__list, &__item, &__subtitle {
+            display: inline-block;
+            padding-left: 1.85rem;
+          }
+        }
+        
+        .radio-buttons {
+          max-width: 13.8rem;
+          width: 100%;
+          margin-bottom: 2.7rem;
+        }
+      }
     }
 
     &:nth-child(2) {
@@ -39,195 +286,10 @@ html {
       grid-template-columns: 23.02%, 15.52%, 22.83% 11% 25.17%;
       margin-bottom: 0.4rem;
     }
-
-    display: grid;
-
-    .input {
-      max-width: 20rem;
-      width: 100%;
-
-      &__header {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      &__title {
-        font-size: 0.75rem;
-        font-weight: 700;
-        line-height: 0.7375rem;
-      }
-
-      &__subtitle {
-        text-transform: uppercase;
-        color: $darkShade50;
-        font-size: 0.75rem;
-        line-height: 0.7375rem;
-      }
-
-      &__box {
-        margin: 0.45rem auto 0.5rem;
-        font-size: 0.875rem;
-        width: 100%;
-        line-height: 2.625rem;
-        padding: 0 2.375rem 0 0.875rem;
-      }
-    }
-
-    .dropdown {
-      max-width: 20rem;
-      width: 100%;
-
-      &__title,
-      &__subtitle {
-        font-size: 0.75rem;
-        text-transform: uppercase;
-      }
-
-      &__title {
-        display: inline;
-        font-weight: 700;
-      }
-
-      &__subtitle {
-        float: right;
-      }
-
-      &__box {
-        position: relative;
-        margin-top: 0.3125rem;
-        font-size: 0.875rem;
-      }
-
-      &__input {
-        cursor: pointer;
-        width: 100%;
-        line-height: 2.625rem;
-        padding: 0 2.375rem 0 0.875rem;
-        border-radius: 0.25rem;
-      }
-
-      &__input-icon {
-        position: absolute;
-        top: 0.625rem;
-        right: 0.625rem;
-        cursor: pointer;
-        font-size: 1.5rem;
-        border: none;
-        background: transparent;
-      }
-    }
-
-    .date-dropdown {
-      max-width: 20rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 1.25rem;
-      width: 100%;
-
-      &__title {
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      &__input {
-        padding: 0 2.375rem 0 0.875rem;
-        width: 100%;
-        line-height: 2.625rem;
-        border: 0.0625rem solid rgba(31, 32, 65, 0.25098);
-        border-radius: 0.25rem;
-        cursor: pointer;
-      }
-
-      &__input-icon {
-        position: relative;
-        bottom: 1.3rem;
-        left: 9rem;
-        cursor: pointer;
-        font-size: 1.5rem;
-        border: none;
-        background: transparent;
-      }
-    }
     
-    .filter-date-dropdown {
-      margin-bottom: 2.7rem;
-      max-width: 16.625rem;
-      
-      &__title {
-        font-size: .75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-      
-      &__input {
-        padding: 0 2.375rem 0 0.875rem;
-        width: 100%;
-        line-height: 2.625rem;
-        border: 0.0625rem solid rgba(31, 32, 65, 0.25098);
-        border-radius: 0.25rem;
-        cursor: pointer;
-      }
-      
-      &__input-icon {
-        position: relative;
-        bottom: 2rem;
-        left: 15rem;
-        cursor: pointer;
-      }
+    &:nth-child(4) {
+      grid-template-columns: 25.09%, 13.45%, 61.29%;
+      padding-bottom: 8.25rem;
     }
-    
-    .subscription-field {
-      max-width: 20rem;
-      width: 100%;
-      
-      &__title {
-        font-size: .75rem;
-        font-weight: 700;
-        line-height: .7375rem;
-        text-transform: uppercase;
-      }
-      
-      &__input-box {
-        display: flex;
-        position: relative;
-        line-height: 2.75rem;
-        margin: 0.45rem auto 0.5rem;
-      }
-      
-      &__input {
-        font-size: .875rem;
-        width: 100%;
-        line-height: 2.625rem;
-        padding: 0 2.375rem 0 0.875rem;
-        border: 1px solid $darkShade25;
-        border-radius: .25rem;
-      }
-      
-      &__input-button {
-        position: absolute;
-        top: 25%;
-        right: 0.75rem;
-        border: none;
-        cursor: pointer;
-        background: transparent;
-      }
-    }
-
-    //     &-column_start {
-
-    //     }
-
-    //     &-column_gap {
-
-    //     }
-
-    //     &-column_central {
-
-    //     }
-
-    //     &-column_end {
-
-    //     }
   }
 }
