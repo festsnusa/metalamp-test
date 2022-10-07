@@ -75,15 +75,26 @@ nav
         p.radio-buttons__title Radio Buttons
           .radio-buttons__box
             .radio-buttons__item
-              input(type="radio" name="sex" checked="checked")
-              span.radio-buttons__radio
-              span.radio-buttons__subtitle Мужчина
+              label.radio-buttons__label
+                input.radio-buttons__input(type="radio" name="sex" checked="checked")
+                span.radio-buttons__radio
+                span.radio-buttons__subtitle Мужчина
             .radio-buttons__item
-      
-            
-            
-        
+              label.radio-buttons__label
+                input.radio-buttons__input(type="radio" name="sex")
+                span.radio-buttons__radio 
+                span.radio-buttons__subtitle Женщина  
       .toggle
+        p.toggle__title Toggle
+        ul.toggle__list
+          li.toggle__item
+            input.toggle__input(type="checkbox" name="receive special offers" checked="checked")
+            span.toggle__checkbox
+            span.toggle__subtitle Получать спецпредложения
+          li.toggle__item
+            input.toggle__input(type="checkbox" name="receive special offers" checked="checked")
+            span.toggle__checkbox
+            span.toggle__subtitle Получать спецпредложения
       .like-buttons
       .rate-buttons
     .gap
