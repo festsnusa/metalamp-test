@@ -96,9 +96,41 @@ nav
             span.toggle__checkbox
             span.toggle__subtitle Получать спецпредложения
       .like-buttons
+        p.like-buttons__title like button 
+        .like-buttons__box 
+          button.like-button(type="button")
+            span.like-button__icon.material-symbols-outlined favorite
+            span.like-button__likes 2
+          button.like-button(type="button")
+            span.like-button__icon.material-symbols-outlined favorite
+            span.like-button__likes 12
       .rate-buttons
+        p.rate-buttons__title Rate button
+        .rate-buttons__group
+          .rate-button__box 
+            span.rate-button__item.material-symbols-outlined star
+            span.rate-button__item.material-symbols-outlined star
+            span.rate-button__item.material-symbols-outlined star
+            span.rate-button__item.material-symbols-outlined star
+            span.rate-button__item.material-symbols-outlined star
+          .rate-button__box 
+            span.rate-button__item.material-symbols-outlined star
+            span.rate-button__item.material-symbols-outlined star
+            span.rate-button__item.material-symbols-outlined star
+            span.rate-button__item.material-symbols-outlined star
+            span.rate-button__item.material-symbols-outlined star
     .gap
     .third-column
+      .range-slider 
+        .range-slider__header 
+          p.range-slider__title Range slider 
+          .range-slider__count 
+            input.range-slider__input(value="0")
+            span.range-slider__separator -
+            input.range-slider__input(value="16000")
+        .range-slider__box
+      .buttons 
+      .pagination
   .main__section
   .main__section
   .main__section

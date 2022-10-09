@@ -37,7 +37,7 @@ html {
 
     &:first-child {
       // grid-template-columns: 27.59%, 10.86%, 22.45% 11.38% 27.75%;
-      grid-template-columns: repeat(auto-fit, 350px);
+      grid-template-columns: repeat(auto-fit, 300px);
       margin-bottom: 5.5rem;
 
       .first-column {
@@ -429,6 +429,102 @@ html {
           &__subtitle {
             padding-left: 3.05rem;
           }
+        }
+
+        .like-buttons {
+          margin-bottom: 2.3rem;
+
+          &__title {
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+          }
+
+          &__box {
+            display: flex;
+            column-gap: 0.5625rem;
+          }
+
+          .like-button {
+            width: 2.5rem;
+            height: 1.25rem;
+            border: 0.0625rem solid $darkShade25;
+            border-radius: 0.625rem;
+            align-items: center;
+            cursor: pointer;
+            background: #fff;
+
+            &__icon {
+              position: absolute;
+              font-size: .625rem;
+              color: $darkShade25;
+            }
+
+            &__likes {
+              font-size: .625rem;
+            }
+
+            .material-symbols-outlined {
+              font-size: inherit;
+              background-image: inherit;
+              color: $darkShade25;
+              background-clip: inherit;
+            }
+          }
+        }
+
+        .rate-buttons {
+          &__title {
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.1rem;
+          }
+
+          &__group {
+            display: flex;
+            column-gap: 1.11rem;
+          }
+
+          &__item {
+            font-size: 1.5rem;
+            color: transparent;
+            background-image: linear-gradient(180deg,#bc9cff,#8ba4f9);
+            -webkit-background-clip: text;
+            background-clip: text;
+          }
+
+          .material-symbols-outlined {
+            // font-family: Material Icons;
+            font-weight: 400;
+            font-style: normal;
+            // font-size: 1.5rem;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: "liga";
+          }
+        }
+      }
+
+      .third-column {
+
+        .range-slider {
+          width: 100%;
+          max-width: 16.625rem;
+          margin-bottom: 2.6rem;
+        }
+
+        .buttons {
+          margin-bottom: 1.5rem;
+        }
+
+        .pagination {
+          max-width: 16.625rem;
         }
       }
     }
