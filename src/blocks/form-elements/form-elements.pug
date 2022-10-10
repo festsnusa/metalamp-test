@@ -174,6 +174,107 @@ nav
           p.pagination__caption 1 — 12 из 100+ вариантов аренды
           
   .main__section
+    .first-column 
+      .dropdown.dropdown-default 
+        .dropdown__title Dropdown
+        .dropdown__subtitle Default
+        .dropdown__box 
+          input.dropdown__input(name="room-picker" placeholder="2 спальни, 2 кровати" readonly="readonly")
+          button.dropdown__button(type="button")
+            span.dropdown__icon.material-symbols-outlined expand_more
+      .dropdown.dropdown-expanded
+        .dropdown__title Dropdown
+        .dropdown__subtitle Expanded
+        .dropdown__box 
+          input.dropdown__input(name="room-picker" placeholder="2 спальни, 2 кровати" readonly="readonly")
+          button.dropdown__button(type="button")
+            span.dropdown__icon.material-symbols-outlined expand_more
+          ul.dropdown__list.dropdown__list-expanded
+            li.dropdown__list-item.dropdown__list-item-bedroom 
+              p.dropdown__list-item__caption Спальни
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 2
+                button.dropdown__list-item__counter-button-plus +
+            li.dropdown__list-item.dropdown__list-item-bed 
+              p.dropdown__list-item__caption Кровати
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 2
+                button.dropdown__list-item__counter-button-plus +
+            li.dropdown__list-item.dropdown__list-item-bathroom
+              p.dropdown__list-item__caption Ванные комнаты
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 0
+                button.dropdown__list-item__counter-button-plus +
+          
+    .gap 
+    .second-column 
+      .dropdown 
+        .dropdown__title Dropdown 
+        .dropdown__box 
+          input.dropdown__input(name="guest-number" placeholder="Сколько гостей" readonly="readonly")
+          button.dropdown__button(type="button")
+            span.dropdown__icon.material-symbols-outlined expand_more
+          ul.dropdown__list.dropdown__list-expanded
+            li.dropdown__list-item.dropdown__list-item-adults 
+              p.dropdown__list-item__caption Взрослые
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 0
+                button.dropdown__list-item__counter-button-plus +
+            li.dropdown__list-item.dropdown__list-item-children 
+              p.dropdown__list-item__caption Дети
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 0
+                button.dropdown__list-item__counter-button-plus +
+            li.dropdown__list-item.dropdown__list-item-babies
+              p.dropdown__list-item__caption Младенцы
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 0
+                button.dropdown__list-item__counter-button-plus +
+            li.dropdown__footer-section 
+              button.dropdown__clear-button.dropdown__clear-button-invisible(type="button")
+                span.dropdown__clear-button__caption Очистить
+              button.dropdown__submit-button(type="button")
+                span.dropdown__submit-button__caption Применить
+
+    .gap 
+    .third-column
+      .dropdown 
+        .dropdown__title Dropdown 
+        .dropdown__box 
+          input.dropdown__input(name="guest-number" placeholder="Сколько гостей" readonly="readonly")
+          button.dropdown__button(type="button")
+            span.dropdown__icon.material-symbols-outlined expand_more
+          ul.dropdown__list.dropdown__list-expanded
+            li.dropdown__list-item.dropdown__list-item-adults 
+              p.dropdown__list-item__caption Взрослые
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 2
+                button.dropdown__list-item__counter-button-plus +
+            li.dropdown__list-item.dropdown__list-item-children 
+              p.dropdown__list-item__caption Дети
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 1
+                button.dropdown__list-item__counter-button-plus +
+            li.dropdown__list-item.dropdown__list-item-babies
+              p.dropdown__list-item__caption Младенцы
+              .dropdown__list-item__counter-box 
+                button.dropdown__list-item__counter-button-minus -
+                p.dropdown__list-item__counter 0
+                button.dropdown__list-item__counter-button-plus +
+            li.dropdown__footer-section 
+              button.dropdown__clear-button(type="button")
+                span.dropdown__clear-button__caption Очистить
+              button.dropdown__submit-button(type="button")
+                span.dropdown__submit-button__caption Применить
+      
   .main__section
   .main__section
   
