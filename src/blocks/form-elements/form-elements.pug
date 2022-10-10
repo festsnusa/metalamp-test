@@ -1,5 +1,6 @@
 link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
 link(rel="stylesheet", href="form-elements.css")
+link(rel="stylesheet", href="noUIslider.css")
 nav
   a.logo(href="#") 
     img(src="../../assets/images/logo-colorless.svg", alt="logo")
@@ -125,12 +126,53 @@ nav
         .range-slider__header 
           p.range-slider__title Range slider 
           .range-slider__count 
-            input.range-slider__input(value="0")
+            input.range-slider__input-min(value="0")
             span.range-slider__separator -
-            input.range-slider__input(value="16000")
+            input.range-slider__input-max(value="16000")
         .range-slider__box
       .buttons 
+        p.buttons__title Buttons 
+        .buttons__box 
+          .buttons__first-box 
+            button.button.button-purple
+              p.button__text.button__text-white click me
+            button.button.button-purple.button-blocked
+              p.button__text.button__text-white click me
+          .buttons__second-box 
+            button.button.button-white 
+              p.button__text.button__text-purple click me
+            button.button.button-white.button-blocked
+              p.button__text.button__text-purple click me
+          .buttons__third-box 
+            button.button.button-transparent 
+              p.button__text.button__text-purple click me
+            button.button.button-transparent
+              p.button__text click me
+          .buttons__fourth-box
+            button.button.button-purple.button-forward 
+              p.button__text.button__text-white Перейти к оплате
+              span.material-symbols-outlined arrow_forward
       .pagination
+        p.pagination__title Pagination
+        .pagination__box 
+          .pagination__pages 
+            ul.pagination__pages-list 
+              li.pagination__page.active(data-num="1")
+                a 1
+              li.pagination__page(data-num="2")
+                a 2
+              li.pagination__page(data-num="3")
+                a 3
+              li.pagination__page 
+                a ... 
+              li.pagination__page(data-num="15")
+                a 15
+              li.pagination__page.next(data-num="2" title="Next page")
+                a(href="#") 
+                  span.material-symbols-outlined arrow_forward
+
+          p.pagination__caption 1 — 12 из 100+ вариантов аренды
+          
   .main__section
   .main__section
   .main__section

@@ -517,14 +517,212 @@ html {
           width: 100%;
           max-width: 16.625rem;
           margin-bottom: 2.6rem;
+
+          &__header {
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+          }
+
+          &__title {
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+
+          &__count {
+            display: inline-flex;
+            align-items: flex-start;
+          }
+
+          &__input-min,
+          &__input-max {
+            font-size: .75rem;
+            color: $darkShade50;
+            border: none;
+            line-height: .9375rem;
+          }
+
+          &__input-min {
+            width: 3.3rem;
+            text-align: end;
+            // outline: 0;
+          }
+
+          &__input-max {
+            width: 3rem;
+            // outline: none;
+          }
+
+          &__separator {
+            font-size: .75rem;
+            vertical-align: text-top;
+            margin: 0 0.25rem 0 0.16rem;
+            line-height: .9375rem;
+          }
         }
 
         .buttons {
           margin-bottom: 1.5rem;
+
+          &__title {
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.1rem;
+          }
+
+          &__first-box,
+          &__second-box,
+          &__third-box {
+            display: grid;
+            margin-bottom: 1.9rem;
+          }
+
+          &__first-box,
+          &__second-box {
+            grid-template-columns: repeat(auto-fill, 6.1875rem);
+            column-gap: 1.25rem;
+          }
+
+          &__third-box {
+            grid-template-columns: repeat(auto-fill, 3.8125rem);
+            column-gap: 1.3rem;
+          }
+
+          &__fourth-box {
+            margin-bottom: 2.5rem;
+          }
+
+          .button {
+            border: none;
+            cursor: pointer;
+            height: 2.75rem;
+            width: 6.1875rem;
+            border-radius: 1.375rem;
+
+            &-purple {
+              background: $linearGradient;
+            }
+
+            &-white {
+              background: #fff;
+              border: 0.125rem solid $purple;
+            }
+
+            &-transparent {
+              padding: 0;
+              height: auto;
+              width: auto;
+              background: transparent;
+            }
+
+            &-blocked {
+              opacity: 0.5;
+            }
+
+            &-forward {
+              // display: grid;
+              // grid-template-columns: 1 fr auto;
+              align-items: center;
+              max-width: 20rem;
+              width: 100%;
+              // padding: 0;
+
+              .button__text {
+                // grid-column-start: auto;
+                // letter-spacing: normal;
+                margin-top: 1rem;
+              }
+
+              .material-symbols-outlined {
+                position: relative;
+                font-size: 1.5rem;
+                left: 120px;
+                color: #fff;
+                bottom: 1.2rem;
+              }
+
+
+            }
+
+            &__text {
+              font-size: .75rem;
+              font-family: Montserrat,Arial,sans-serif;
+              font-weight: 700;
+              text-transform: uppercase;
+              color: $darkShade50;
+
+              &-white {
+                color: #fff;
+              }
+
+              &-purple {
+                color: $purple;
+              }
+            }
+          }
         }
 
         .pagination {
           max-width: 16.625rem;
+
+          &__title {
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.05rem;
+          }
+
+          &__box {
+            display: grid;
+          }
+
+          .active {
+            background: $linearGradient;
+            cursor: pointer;
+          }
+
+          .next {
+            background: linear-gradient(180deg, #6FCF97, #66D2EA);
+          }
+          
+          &__pages {
+            align-items: center;
+            margin-bottom: 0.1875rem;
+
+            &-list {
+              float: left;
+              margin: 0;
+              padding: 0;
+              list-style: none;
+            }
+
+            li:first-child,
+            li:last-child {
+              border-radius: 50%;
+            }
+
+          }
+
+          &__page {
+            display: inline-flex;
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: .75rem;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &__caption {
+            justify-self: start;
+            margin-top: 0.1rem;
+            margin-left: 0.35rem;
+            font-size: .875rem;
+            color: $darkShade75;
+          }
+
         }
       }
     }
