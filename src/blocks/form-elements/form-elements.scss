@@ -874,6 +874,34 @@ html {
     &:nth-child(3) {
       grid-template-columns: 23.02%, 15.52%, 22.83% 11% 25.17%;
       margin-bottom: 0.4rem;
+
+      .expandable-checkbox {
+        position: relative;
+        width: 100%;
+        max-width: 16.625rem;
+        margin-bottom: 3.08rem;
+
+        &__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        &__title {
+          font-size: .75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+
+        &__button {
+          color: $darkShade50;
+          border: none;
+          background: transparent;
+          cursor: pointer;
+        }
+      }
+
     }
     
     &:nth-child(4) {
