@@ -37,7 +37,7 @@ html {
 
     &:first-child {
       // grid-template-columns: 27.59%, 10.86%, 22.45% 11.38% 27.75%;
-      grid-template-columns: repeat(auto-fit, 300px);
+      grid-template-columns: repeat(auto-fit, 280px);
       margin-bottom: 5.5rem;
 
       .first-column {
@@ -314,6 +314,9 @@ html {
         }
         
         .radio-buttons {
+
+          $root: '.radio-buttons';
+
           max-width: 13.8rem;
           width: 100%;
           margin-bottom: 2.7rem;
@@ -359,7 +362,7 @@ html {
             border: 0.0625rem solid $darkShade25;
           }
 
-          &__input:checked+.radio-buttons__radio {
+          &__input:checked+#{$root}__radio {
             border: 0.0625rem solid $purple;
           }
 
@@ -729,7 +732,7 @@ html {
 
     &:nth-child(2) {
       // grid-template-columns: 22.93%, 15.6%, 27.59% 6.35% 27.59%;
-      grid-template-columns: repeat(auto-fit, 300px);
+      grid-template-columns: repeat(auto-fit, 280px);
       margin-bottom: 10.75rem;
 
       .dropdown {
@@ -872,14 +875,20 @@ html {
     }
 
     &:nth-child(3) {
-      grid-template-columns: 23.02%, 15.52%, 22.83% 11% 25.17%;
+      grid-template-columns: repeat(auto-fit, 280px);
       margin-bottom: 0.4rem;
 
-      .expandable-checkbox {
+      .expandable-checkbox,
+      .expandable-checkbox-expanded {
         position: relative;
         width: 100%;
         max-width: 16.625rem;
         margin-bottom: 3.08rem;
+      }
+
+      .expandable-checkbox {
+
+        $root: '.expandable-checkbox';
 
         &__header {
           display: flex;
@@ -900,13 +909,188 @@ html {
           background: transparent;
           cursor: pointer;
         }
+
+        &__list {
+          display: none;
+          position: relative;
+          list-style: none;
+        }
+
+        &__item {
+          cursor: pointer;
+          padding-bottom: 0.76rem;
+          color: $darkShade50;
+        }
+
+        &__input {
+          position: absolute;
+          appearance: none;
+        }
+
+        &__checkbox {
+          position: absolute;
+          width: 1.25rem;
+          height: 1.25rem;
+          border: 0.0625rem solid $darkShade25;
+          border-radius: 0.25rem;
+
+        }
+
+        &__caption {
+          margin-left: 1.8rem;
+        }
+
+        &__input:checked+#{$root}__checkbox {
+          border: 0.0625rem solid $purple;
+          background: url('../../assets//images/vector.svg') no-repeat 50% 38%;
+        }
+      }
+
+      .expandable-checkbox-expanded .expandable-checkbox__list {
+          display: block;
+      }
+
+      .rich-checkbox {
+        width: 100%;
+        max-width: 16.625rem;
+
+        &__header {
+          font-size: 0.75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 1.15rem;
+        }
+
+        &__list {
+          list-style: none;
+        }
+
+        &__item {
+          display: grid;
+          column-gap: 0.625rem;
+          row-gap: 0.3125rem;
+          grid-template-areas: "input title" ". subtitle";
+          padding-bottom: 0.525rem;
+          cursor: pointer;
+        }
+
+        &__checkbox,
+        &__input {
+          grid-area: input;
+          align-self: center;
+          justify-self: center;
+        }
+
+        &__input {
+          appearance: none;
+        }
+
+        &__checkbox {
+          height: 1.25rem;
+          width: 1.25rem;
+          border: 0.0625rem solid $darkShade25;
+          border-radius: 0.25rem;
+        }
+
+        &__title {
+          grid-area: title;
+          font-size: .875rem;
+          font-weight: 700;
+          line-height: 1.125rem;
+          color: $darkShade75;
+        }
+
+        &__subtitle {
+          grid-area: subtitle;
+          font-size: .75rem;
+          line-height: .875rem;
+          color: $darkShade50;
+        }
+      }
+
+      .bullet-list {
+        width: 100%;
+        max-width: 16.45rem;
+
+        &__header {
+          font-size: .75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          line-height: .9375rem;
+          margin-bottom: 0.85rem;
+        }
+
+        &__list {
+          list-style: none;
+        }
+
+        &__item {
+          display: grid;
+          padding-bottom: .675rem;
+          grid-template-areas: "ellipse caption";
+          grid-template-columns: 0.625rem auto;
+          column-gap: 0.65rem;
+        }
+
+        &__ellipse {
+          grid-area: ellipse;
+          width: 0.625rem;
+          height: 0.625rem;
+          background: $darkShade25;
+          border-radius: 50%;
+          margin-top: 0.4rem;
+        }
+
+        &__caption {
+          grid-area: caption;
+          font-size: .875rem;
+          line-height: 1.5rem;
+        }
       }
 
     }
     
     &:nth-child(4) {
-      grid-template-columns: 25.09%, 13.45%, 61.29%;
+      // grid-template-columns: 25.09%, 13.45%, 61.29%;
+      grid-template-columns: repeat(auto-fit, 300px);
       padding-bottom: 8.25rem;
+
+      .description {
+        display: grid;
+        width: 100%;
+        max-width: 18.1875rem;
+        grid-template: 1.5rem 1.55rem/3rem auto;
+        grid-template-areas: "image title" "image subtitle";
+        column-gap: 0.55rem;
+        padding-top: 1.3rem;
+        padding-bottom: 1.15rem;
+        border-bottom: 1px solid $darkShade5;
+
+        &__image {
+          grid-area: image;
+          color: transparent;
+          background: $linearGradient;
+          -webkit-background-clip: text;
+          background-clip: text;
+          font-size: 3rem;
+          // font-weight: 700;
+        }
+
+        &__title, &__subtitle {
+          font-size: .875rem;
+          color: $darkShade75;
+          line-height: 1.5rem;
+        }
+
+        &__title {
+          grid-area: title;
+          font-weight: 700;
+        }
+
+        &__subtitle {
+          grid-area: subtitle;
+        }
+      }
     }
   }
 }
