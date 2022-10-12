@@ -1,6 +1,6 @@
 link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+link(rel="stylesheet", href="../../assets/libs/noUISlider.css")
 link(rel="stylesheet", href="form-elements.css")
-link(rel="stylesheet", href="noUIslider.css")
 nav
   a.logo(href="#") 
     img(src="../../assets/images/logo-colorless.svg", alt="logo")
@@ -122,14 +122,13 @@ nav
             span.rate-button__item.material-symbols-outlined star
     .gap
     .third-column
-      .range-slider 
+      .range-slider
         .range-slider__header 
           p.range-slider__title Range slider 
           .range-slider__count 
             input.range-slider__input-min(value="0")
             span.range-slider__separator -
             input.range-slider__input-max(value="16000")
-        .range-slider__box
       .buttons 
         p.buttons__title Buttons 
         .buttons__box 
@@ -404,6 +403,8 @@ nav
           span.comment__likes--count 12
 
         p.comment__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+script(src="../../assets/libs/noUISlider.js")
+script(src="range-slider.js")
         
         
   
