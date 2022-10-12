@@ -36,8 +36,8 @@ html {
     display: grid;
 
     &:first-child {
-      // grid-template-columns: 27.59%, 10.86%, 22.45% 11.38% 27.75%;
-      grid-template-columns: repeat(auto-fit, 280px);
+      grid-template-columns: 27.59% 10.86% 22.45% 11.38% 27.75%;
+      // grid-template-columns: repeat(auto-fit, 280px);
       margin-bottom: 5.5rem;
 
       .first-column {
@@ -731,8 +731,8 @@ html {
     }
 
     &:nth-child(2) {
-      // grid-template-columns: 22.93%, 15.6%, 27.59% 6.35% 27.59%;
-      grid-template-columns: repeat(auto-fit, 280px);
+      grid-template-columns: 22.93% 15.6% 27.59% 6.35% 27.59%;
+      // grid-template-columns: repeat(auto-fit, 280px);
       margin-bottom: 10.75rem;
 
       .dropdown {
@@ -875,7 +875,7 @@ html {
     }
 
     &:nth-child(3) {
-      grid-template-columns: repeat(auto-fit, 280px);
+      grid-template-columns: 23.02% 15.52% 22.83% 11% 25.17%;
       margin-bottom: 0.4rem;
 
       .expandable-checkbox,
@@ -1051,8 +1051,7 @@ html {
     }
     
     &:nth-child(4) {
-      // grid-template-columns: 25.09%, 13.45%, 61.29%;
-      grid-template-columns: repeat(auto-fit, 300px);
+      grid-template-columns: 25.09% 13.45% 61.29%;
       padding-bottom: 8.25rem;
 
       .description {
@@ -1089,6 +1088,75 @@ html {
 
         &__subtitle {
           grid-area: subtitle;
+        }
+      }
+
+      .comment {
+        display: grid;
+        grid-template-areas: "image author" "likes text";
+        grid-template-columns: 3.125rem auto;
+        column-gap: 0.5rem;
+        row-gap: 0.65rem;
+
+        width: 100%;
+        max-width: 44.4375rem;
+
+        &__image {
+          grid-area: image;
+          justify-self: center;
+          align-self: center;
+        }
+
+        &__author {
+          grid-area: author;
+          align-self: center;
+
+          &--name, &--date {
+            font-size: .875rem;
+            line-height: 1.5rem;
+            color: $darkShade75;
+          }
+
+          &--name {
+            font-weight: 700;
+          }
+        }
+
+        &__likes {
+          grid-area: likes;
+          justify-self: center;
+          margin-top: 0.125rem;
+
+          display: flex;
+          border: 0.0625rem solid $purple;
+          border-radius: 3.0625rem;
+          width: 2.5rem;
+          height: 1.25rem;
+          background: transparent;
+
+          &--icon, &--count {
+            position: relative;
+            
+            color: $purple;
+            font-size: .625rem;
+          }
+
+          &--icon {
+            top: 4px;
+            left: 4px;
+          }
+
+          &--count {
+            top: 3px;
+            left: 10px;
+          }
+        }
+
+        &__text {
+          grid-area: text;
+          font-size: .875rem;
+          line-height: 1.5rem;
+          color: $darkShade75;
         }
       }
     }

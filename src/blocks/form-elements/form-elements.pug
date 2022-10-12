@@ -395,5 +395,15 @@ nav
     .gap 
     .second-column
       .comment
-        img(src="../../assets/images/profile.jpg", alt="")
+        img.comment__image(src="../../assets/images/profile.jpg", alt="")
+        .comment__author 
+          p.comment__author--name Мурад Сарафанов 
+          p.comment__author--date 5 дней назад
+        button.comment__likes(type="button")
+          span.comment__likes--icon.material-symbols-outlined favorite
+          span.comment__likes--count 12
+
+        p.comment__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+        
+        
   
