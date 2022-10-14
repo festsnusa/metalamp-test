@@ -20,10 +20,159 @@ html {
   font-family: "Montserrat", Arial, sans-serif;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: $darkShade25;
-  opacity: 1; /* Firefox */
+  opacity: 1;
+  /* Firefox */
   font-family: "Montserrat", Arial, sans-serif;
+}
+
+////* DROPDOWN *////
+.dropdown {
+
+  max-width: 20rem;
+  width: 100%;
+
+  &-expanded {
+    margin-top: 1rem;
+  }
+
+  &__title,
+  &__subtitle {
+    font-size: .75rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-weight: 700;
+    display: inline;
+  }
+
+  &__subtitle {
+    float: right;
+    color: $darkShade50;
+  }
+
+  &__box,
+  &__input {
+    font-size: .875rem;
+    color: $darkShade75;
+  }
+
+  &__box {
+    position: relative;
+    margin-top: 0.3125rem;
+  }
+
+  &__input {
+    width: 100%;
+    line-height: 2.625rem;
+    padding: 0 2.375rem 0 0.875rem;
+    border: 0.0625rem solid $darkShade25;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: $darkShade50;
+  }
+
+  &__list {
+
+    z-index: 10;
+    background: #fff;
+
+    &-shrinked {
+      visibility: hidden;
+    }
+
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0.2rem 0.375rem 0.1rem 0.875rem;
+    border: 0.0625rem solid $darkShade50;
+    border-radius: 0 0 0.25rem 0.25rem;
+    box-shadow: 0 0.625rem 1.25rem $darkShade5;
+
+    &-item {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.42rem;
+      list-style: none;
+
+      &__caption {
+        font-size: .75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $darkShade100;
+      }
+
+      &__counter-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 5.75rem;
+      }
+
+      &__counter-button-minus,
+      &__counter-button-plus {
+        // display :inline-block;
+        // border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 1rem;
+        width: 1.875rem;
+        height: 1.875rem;
+        border-radius: 50%;
+        border: 0.0625rem solid $darkShade25;
+
+      }
+
+      &__counter {
+        font-size: .75rem;
+        font-weight: 700;
+        color: $darkShade100;
+      }
+    }
+  }
+
+  &__footer-section {
+    display: flex;
+    list-style: none;
+    line-height: 2.5rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__clear-button-invisible {
+    visibility: hidden;
+  }
+
+  &__clear-button,
+  &__submit-button {
+    border: none;
+    cursor: pointer;
+    font-size: .75rem;
+    font-weight: 700;
+    font-family: Montserrat, Arial, sans-serif;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    background: transparent;
+
+    &__caption {
+      color: $purple;
+    }
+  }
+
 }
 
 .main {
@@ -90,6 +239,7 @@ html {
             padding: 0 2.375rem 0 0.875rem;
             border: 1px solid $darkShade25;
             border-radius: 0.25rem;
+            color: $darkShade75;
           }
         }
 
@@ -119,7 +269,7 @@ html {
             position: relative;
             margin-top: 0.3125rem;
             font-size: 0.875rem;
-            
+
           }
 
           &__input {
@@ -127,7 +277,7 @@ html {
             width: 100%;
             line-height: 2.625rem;
             padding: 0 2.375rem 0 0.875rem;
-            border: 0.0625rem solid rgba(31,32,65,.25098);
+            border: 0.0625rem solid rgba(31, 32, 65, .25098);
             border-radius: 0.25rem;
             color: $darkShade75;
           }
@@ -245,7 +395,7 @@ html {
             right: 0.75rem;
             border: none;
             cursor: pointer;
-            background:-moz-$linearGradient;
+            background: -moz-$linearGradient;
             background: -webkit-$linearGradient;
             background: $linearGradient;
             -webkit-background-clip: text;
@@ -259,22 +409,22 @@ html {
       .second-column {
         margin-top: 0.5125rem;
         margin-bottom: 1.83rem;
-        
+
         .checkbox {
           width: 100%;
           max-width: 13.875rem;
-          
+
           &__title {
             font-size: .75rem;
             font-weight: 700;
             text-transform: uppercase;
             padding-bottom: .85rem;
           }
-          
+
           &__list {
             list-style: none;
           }
-          
+
           &__list,
           &__item {
             font-size: .875rem;
@@ -282,17 +432,17 @@ html {
             line-height: 1.125rem;
             color: $darkShade50;
           }
-          
+
           &__label {
             cursor: pointer;
           }
-          
+
           // &__list,
           // &__item, &__input {
           //   position: absolute;
           //   appearance: none;
           // }
-          
+
           // &__list,
           // &__item, &__checkbox {
           //   position: absolute;
@@ -301,18 +451,18 @@ html {
           //   border: .0625rem solid $darkShade75;
           //   border-radius: .25rem;
           // }
-          
+
           // .checkbox__list .checkbox__item .checkbox__input:checked+.checkbox__checkbox {
           //   border: 0.0625rem solid $purple;
           //   background: url("https://inconsumable1812.github.io/Toxin/img/vector.svg") no-repeat 50% 38%;
           // }
-          
+
           &__subtitle {
             display: inline-block;
             padding-left: 1.85rem;
           }
         }
-        
+
         .radio-buttons {
 
           $root: '.radio-buttons';
@@ -337,7 +487,7 @@ html {
             grid-template-columns: repeat(auto-fill, 6.125rem);
             column-gap: 1.25rem;
             row-gap: 0.6rem;
-            
+
           }
 
           &__item {
@@ -425,7 +575,7 @@ html {
               width: 0.75rem;
               height: 0.75rem;
               border-radius: 0.375rem;
-              background: rgba(31,32,65,.25098);
+              background: rgba(31, 32, 65, .25098);
             }
           }
 
@@ -493,7 +643,7 @@ html {
           &__item {
             font-size: 1.5rem;
             color: transparent;
-            background-image: linear-gradient(180deg,#bc9cff,#8ba4f9);
+            background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
             -webkit-background-clip: text;
             background-clip: text;
           }
@@ -652,7 +802,7 @@ html {
 
             &__text {
               font-size: .75rem;
-              font-family: Montserrat,Arial,sans-serif;
+              font-family: Montserrat, Arial, sans-serif;
               font-weight: 700;
               text-transform: uppercase;
               color: $darkShade50;
@@ -690,7 +840,7 @@ html {
           .next {
             background: linear-gradient(180deg, #6FCF97, #66D2EA);
           }
-          
+
           &__pages {
             align-items: center;
             margin-bottom: 0.1875rem;
@@ -735,141 +885,141 @@ html {
       // grid-template-columns: repeat(auto-fit, 280px);
       margin-bottom: 10.75rem;
 
-      .dropdown {
+      // .dropdown {
 
-        max-width: 20rem;
-        width: 100%;
+      //   max-width: 20rem;
+      //   width: 100%;
 
-        &-expanded {
-          margin-top: 1rem;
-        }
+      //   &-expanded {
+      //     margin-top: 1rem;
+      //   }
 
-        &__title, &__subtitle {
-          font-size: .75rem;
-          text-transform: uppercase;
-        }
+      //   &__title, &__subtitle {
+      //     font-size: .75rem;
+      //     text-transform: uppercase;
+      //   }
 
-        &__title {
-          font-weight: 700;
-          display: inline;
-        }
+      //   &__title {
+      //     font-weight: 700;
+      //     display: inline;
+      //   }
 
-        &__subtitle {
-          float: right;
-          color: $darkShade50;
-        }
+      //   &__subtitle {
+      //     float: right;
+      //     color: $darkShade50;
+      //   }
 
-        &__box, &__input {
-          font-size: .875rem;
-          color: $darkShade75;
-        }
+      //   &__box, &__input {
+      //     font-size: .875rem;
+      //     color: $darkShade75;
+      //   }
 
-        &__box {
-          position: relative;
-          margin-top: 0.3125rem;
-        }
+      //   &__box {
+      //     position: relative;
+      //     margin-top: 0.3125rem;
+      //   }
 
-        &__input {
-          width: 100%;
-          line-height: 2.625rem;
-          padding: 0 2.375rem 0 0.875rem;
-          border: 0.0625rem solid $darkShade25;
-          border-radius: 0.25rem;
-          cursor: pointer;
-        }
+      //   &__input {
+      //     width: 100%;
+      //     line-height: 2.625rem;
+      //     padding: 0 2.375rem 0 0.875rem;
+      //     border: 0.0625rem solid $darkShade25;
+      //     border-radius: 0.25rem;
+      //     cursor: pointer;
+      //   }
 
-        &__button {
-          position: absolute;
-          top: 0.625rem;
-          right: 0.625rem;
-          border: none;
-          background: transparent;
-          cursor: pointer;
-          color: $darkShade50;
-        }
+      //   &__button {
+      //     position: absolute;
+      //     top: 0.625rem;
+      //     right: 0.625rem;
+      //     border: none;
+      //     background: transparent;
+      //     cursor: pointer;
+      //     color: $darkShade50;
+      //   }
 
-        &__list {
-          position: absolute;
-          left: 0;
-          width: 100%;
-          padding: 0.2rem 0.375rem 0.1rem 0.875rem;
-          border: 0.0625rem solid $darkShade50;
-          border-radius: 0 0 0.25rem 0.25rem;
-          box-shadow: 0 0.625rem 1.25rem $darkShade5;
+      //   &__list {
+      //     position: absolute;
+      //     left: 0;
+      //     width: 100%;
+      //     padding: 0.2rem 0.375rem 0.1rem 0.875rem;
+      //     border: 0.0625rem solid $darkShade50;
+      //     border-radius: 0 0 0.25rem 0.25rem;
+      //     box-shadow: 0 0.625rem 1.25rem $darkShade5;
 
-          &-item {
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.42rem;
-            list-style: none;
+      //     &-item {
+      //       display: flex;
+      //       flex-flow: row nowrap;
+      //       align-items: center;
+      //       justify-content: space-between;
+      //       margin-bottom: 0.42rem;
+      //       list-style: none;
 
-            &__caption {
-              font-size: .75rem;
-              font-weight: 700;
-              text-transform: uppercase;
-              color: $darkShade100;
-            }
+      //       &__caption {
+      //         font-size: .75rem;
+      //         font-weight: 700;
+      //         text-transform: uppercase;
+      //         color: $darkShade100;
+      //       }
 
-            &__counter-box {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              min-width: 5.75rem;
-            }
+      //       &__counter-box {
+      //         display: flex;
+      //         justify-content: space-between;
+      //         align-items: center;
+      //         min-width: 5.75rem;
+      //       }
 
-            &__counter-button-minus,
-            &__counter-button-plus {
-              // display :inline-block;
-              // border: none;
-              background: transparent;
-              cursor: pointer;
-              font-size: 1rem;
-              width: 1.875rem;
-              height: 1.875rem;
-              border-radius: 50%;
-              border: 0.0625rem solid $darkShade25;
+      //       &__counter-button-minus,
+      //       &__counter-button-plus {
+      //         // display :inline-block;
+      //         // border: none;
+      //         background: transparent;
+      //         cursor: pointer;
+      //         font-size: 1rem;
+      //         width: 1.875rem;
+      //         height: 1.875rem;
+      //         border-radius: 50%;
+      //         border: 0.0625rem solid $darkShade25;
 
-            }
+      //       }
 
-            &__counter {
-              font-size: .75rem;
-              font-weight: 700;
-              color: $darkShade100;
-            }
-          }
-        }
+      //       &__counter {
+      //         font-size: .75rem;
+      //         font-weight: 700;
+      //         color: $darkShade100;
+      //       }
+      //     }
+      //   }
 
-        &__footer-section {
-          display: flex;
-          list-style: none;
-          line-height: 2.5rem;
-          justify-content: space-between;
-          margin-bottom: 1rem;
-        }
+      //   &__footer-section {
+      //     display: flex;
+      //     list-style: none;
+      //     line-height: 2.5rem;
+      //     justify-content: space-between;
+      //     margin-bottom: 1rem;
+      //   }
 
-        &__clear-button-invisible {
-          visibility: hidden;
-        }
+      //   &__clear-button-invisible {
+      //     visibility: hidden;
+      //   }
 
-        &__clear-button,
-        &__submit-button {
-          border: none;
-          cursor: pointer;
-          font-size: .75rem;
-          font-weight: 700;
-          font-family: Montserrat, Arial, sans-serif;
-          text-transform: uppercase;
-          margin-top: 0.6rem;
-          background: transparent;
+      //   &__clear-button,
+      //   &__submit-button {
+      //     border: none;
+      //     cursor: pointer;
+      //     font-size: .75rem;
+      //     font-weight: 700;
+      //     font-family: Montserrat, Arial, sans-serif;
+      //     text-transform: uppercase;
+      //     margin-top: 0.6rem;
+      //     background: transparent;
 
-          &__caption {
-           color: $purple;
-          }
-        }
+      //     &__caption {
+      //      color: $purple;
+      //     }
+      //   }
 
-      }
+      // }
 
 
     }
@@ -947,7 +1097,7 @@ html {
       }
 
       .expandable-checkbox-expanded .expandable-checkbox__list {
-          display: block;
+        display: block;
       }
 
       .rich-checkbox {
@@ -1049,7 +1199,7 @@ html {
       }
 
     }
-    
+
     &:nth-child(4) {
       grid-template-columns: 25.09% 13.45% 61.29%;
       padding-bottom: 8.25rem;
@@ -1075,7 +1225,8 @@ html {
           // font-weight: 700;
         }
 
-        &__title, &__subtitle {
+        &__title,
+        &__subtitle {
           font-size: .875rem;
           color: $darkShade75;
           line-height: 1.5rem;
@@ -1111,7 +1262,8 @@ html {
           grid-area: author;
           align-self: center;
 
-          &--name, &--date {
+          &--name,
+          &--date {
             font-size: .875rem;
             line-height: 1.5rem;
             color: $darkShade75;
@@ -1134,9 +1286,10 @@ html {
           height: 1.25rem;
           background: transparent;
 
-          &--icon, &--count {
+          &--icon,
+          &--count {
             position: relative;
-            
+
             color: $purple;
             font-size: .625rem;
           }
@@ -1174,27 +1327,25 @@ html {
   &-connects {
     border: 0.063rem solid $darkShade25;
     border-radius: 6.25rem;
-    
+
     height: 0.375rem;
-    
+
   }
-  
+
   &-horizontal &-handle {
     width: 0.75rem;
     height: 0.75rem;
     top: -0.125rem;
     right: -0.625rem;
   }
-  
+
   &-handle {
     border-radius: 50%;
     background: linear-gradient(#6FCF97 0%, #66D2EA 100%);
   }
-  
+
   &-touch-area {
     cursor: pointer;
   }
 
 }
-
-
