@@ -1,0 +1,65 @@
+.radio-buttons {
+
+    $root: &;
+
+    max-width: 13.8rem;
+    width: 100%;
+    margin-bottom: 2.7rem;
+
+    &__title {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-bottom: 1rem;
+    }
+
+    &__subtitle {
+      padding-left: 1.85rem;
+    }
+
+    &__box {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 6.125rem);
+      column-gap: 1.25rem;
+      row-gap: 0.6rem;
+
+    }
+
+    &__item {
+      font-size: .875rem;
+      color: $darkShade50;
+    }
+
+    &__label {
+      cursor: pointer;
+    }
+
+    &__input {
+      position: absolute;
+      appearance: none;
+    }
+
+    &__radio {
+      position: absolute;
+      height: 1.25rem;
+      width: 1.25rem;
+      border-radius: 50%;
+      border: 0.0625rem solid $darkShade25;
+    }
+
+    &__input:checked+#{$root}__radio {
+      border: 0.0625rem solid $purple;
+    }
+
+    &__radio:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: $linearGradient;
+    }
+  }

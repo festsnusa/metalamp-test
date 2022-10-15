@@ -1,0 +1,21 @@
+&:first-child {
+    grid-template-columns: 27.59% 10.86% 22.45% 11.38% 27.75%;
+    // grid-template-columns: repeat(auto-fit, 280px);
+    margin-bottom: 5.5rem;
+}
+
+&:nth-child(2) {
+    grid-template-columns: 22.93% 15.6% 27.59% 6.35% 27.59%;
+    // grid-template-columns: repeat(auto-fit, 280px);
+    margin-bottom: 10.75rem;
+}
+
+&:nth-child(3) {
+    grid-template-columns: 23.02% 15.52% 22.83% 11% 25.17%;
+    margin-bottom: 0.4rem;
+}
+
+&:nth-child(4) {
+    grid-template-columns: 25.09% 13.45% 61.29%;
+    padding-bottom: 8.25rem;
+}

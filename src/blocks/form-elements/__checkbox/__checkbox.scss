@@ -1,0 +1,32 @@
+.checkbox {
+    width: 100%;
+    max-width: 13.875rem;
+
+    &__title {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-bottom: .85rem;
+    }
+
+    &__list {
+      list-style: none;
+    }
+
+    &__list,
+    &__item {
+      font-size: .875rem;
+      padding-bottom: .75rem;
+      line-height: 1.125rem;
+      color: $darkShade50;
+    }
+
+    &__label {
+      cursor: pointer;
+    }
+
+    &__subtitle {
+      display: inline-block;
+      padding-left: 1.85rem;
+    }
+  }

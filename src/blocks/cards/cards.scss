@@ -7,8 +7,8 @@ $purple: #bc9cff;
 $green: #6fcf97;
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf');
+  font-family: 'Monsterrat';
+  src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf');
 }
 
 * {
@@ -19,7 +19,7 @@ $green: #6fcf97;
 
 html {
   font-size: 1rem;
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 body {
@@ -58,10 +58,9 @@ nav {
       }
 
       &__title {
-        color: $darkShade100;
         font-weight: 700;
         font-size: 1.5rem;
-        // line-height: 1.8125rem;
+        line-height: 1.829rem;
       }
 
       &__calendar {

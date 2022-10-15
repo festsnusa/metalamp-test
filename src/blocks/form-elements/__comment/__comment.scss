@@ -1,0 +1,70 @@
+.comment {
+    display: grid;
+    grid-template-areas: "image author" "likes text";
+    grid-template-columns: 3.125rem auto;
+    column-gap: 0.5rem;
+    row-gap: 0.65rem;
+
+    width: 100%;
+    max-width: 44.4375rem;
+
+    &__image {
+      grid-area: image;
+      justify-self: center;
+      align-self: center;
+    }
+
+    &__author {
+      grid-area: author;
+      align-self: center;
+
+      &--name,
+      &--date {
+        font-size: .875rem;
+        line-height: 1.5rem;
+        color: $darkShade75;
+      }
+
+      &--name {
+        font-weight: 700;
+      }
+    }
+
+    &__likes {
+      grid-area: likes;
+      justify-self: center;
+      margin-top: 0.125rem;
+
+      display: flex;
+      border: 0.0625rem solid $purple;
+      border-radius: 3.0625rem;
+      width: 2.5rem;
+      height: 1.25rem;
+      background: transparent;
+
+      &--icon,
+      &--count {
+        position: relative;
+
+        color: $purple;
+        font-size: .625rem;
+      }
+
+      &--icon {
+        top: 4px;
+        left: 4px;
+      }
+
+      &--count {
+        top: 3px;
+        left: 10px;
+      }
+    }
+
+    &__text {
+      grid-area: text;
+      font-size: .875rem;
+      line-height: 1.5rem;
+      color: $darkShade75;
+    }
+  }

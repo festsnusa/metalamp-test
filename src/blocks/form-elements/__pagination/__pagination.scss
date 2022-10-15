@@ -1,0 +1,59 @@
+.pagination {
+    max-width: 16.625rem;
+
+    &__title {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.05rem;
+    }
+
+    &__box {
+      display: grid;
+    }
+
+    .active {
+      background: $linearGradient;
+      cursor: pointer;
+    }
+
+    .next {
+      background: linear-gradient(180deg, #6FCF97, #66D2EA);
+    }
+
+    &__pages {
+      align-items: center;
+      margin-bottom: 0.1875rem;
+
+      &-list {
+        float: left;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li:first-child,
+      li:last-child {
+        border-radius: 50%;
+      }
+
+    }
+
+    &__page {
+      display: inline-flex;
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: .75rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__caption {
+      justify-self: start;
+      margin-top: 0.1rem;
+      margin-left: 0.35rem;
+      font-size: .875rem;
+      color: $darkShade75;
+    }
+
+  }
