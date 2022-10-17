@@ -1,8 +1,8 @@
-link(rel="stylesheet", href="cards.css")
-link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+link(rel="stylesheet" href="cards.css")
+link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
 nav
   a.logo(href="#") 
-    img(src="../../assets/images/logo-colorless.svg", alt="#")
+    img(src="../../assets/images/logo-colorless.svg" alt="#")
 .main   
   .main__firstColumn 
     .main__card 
@@ -30,21 +30,129 @@ nav
             input.dropdown__input(placeholder="Сколько гостей" readonly="readonly")
             button.dropdown__button(type="button")
               span.material-symbols-outlined expand_more
-        
+
         .room-search__submit-button 
-          a.button__link(href="#") 
-            .button.button_purple.button_large
-              .button__group
-                span.button__text Подобрать номер
-                span.button__icon
-        
+          button.button.button-purple.button-forward 
+            p.button__text.button__text-white Подобрать номер
+            span.material-symbols-outlined arrow_forward
+
     .main__card 
+      .registration-form 
+        p.registration-form__title Регистрация аккаунта
+        .registration-form__name 
+          input.input.input__box.input__input(name="name" placeholder="Имя")
+        .registration-form__surname 
+          input.input.input__box.input__input(name="surname" placeholder="Фамилия")
+        .registration-form__gender 
+          .radio-buttons
+            .radio-buttons__box
+            .radio-buttons__item
+              label.radio-buttons__label
+                input.radio-buttons__input(type="radio" name="sex" checked="checked")
+                span.radio-buttons__radio
+                span.radio-buttons__subtitle Мужчина
+            .radio-buttons__item
+              label.radio-buttons__label
+                input.radio-buttons__input(type="radio" name="sex")
+                span.radio-buttons__radio 
+                span.radio-buttons__subtitle Женщина
+        .registration-form__birth-date 
+          .input.input__header 
+            p.input__title дата рождения
+          input.input.input__box(name="birth-date" placeholder="ДД.ММ.ГГГГ")
+        .registration-form__email 
+          p.input__title Данные для входа в сервис
+          input.input__box(type="email" name="email" placeholder="Email")
+        .registration-form__password 
+          input.input__box(name="password" placeholder="Пароль")
+        .registration-form__toggle 
+          ul.toggle__list
+            li.toggle__item
+              input.toggle__input(type="checkbox" name="receive special offers" checked="checked")
+              span.toggle__checkbox
+              span.toggle__subtitle Получать спецпредложения
+        .registration-form__button
+
+          button.button.button-purple.button-forward 
+            p.button__text.button__text-white Зарегистрироваться
+            span.material-symbols-outlined arrow_forward
+        .registration-form__box 
+          p.registration-form__caption Уже есть аккаунт на Toxin 
+          a.button__link(href="#")
+            button.button.button-white 
+              p.button__text.button__text-purple Войти
   .main__secondColumn 
     .main__card 
+      .booking-form__header 
+        .booking-form__room 
+          span.booking-form__room--span №
+          p.booking-form__room--number 888
+          p.booking-form__room--luxe люкс
+        .booking-form__price 
+          p.booking-form__price--price 9 990₽
+          p.booking-form__price--per-day в сутки
+      .booking-form__arrival 
+        .input-date-dropdown
+          .date-dropdown
+            .date-dropdown__box
+              .date-dropdown__title Прибытие
+              .date-dropdown__input-box
+                input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
+                span.date-dropdown__input-icon.material-symbols-outlined expand_more
+            .date-dropdown__box
+              .date-dropdown__title Выезд
+              .date-dropdown__input-box
+                input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
+                span.date-dropdown__input-icon.material-symbols-outlined expand_more 
+      .booking-form__dropdown
+        .dropdown__title Гости 
+        .dropdown__box 
+          input.dropdown__input(name="guest-number" placeholder="Сколько гостей" readonly="readonly")
+          button.dropdown__button(type="button")
+            span.dropdown__icon.material-symbols-outlined expand_more
+      .booking-form__calculations 
+        .booking-form__total-per-days
+          p.booking-form__total-per-days--multiplied 9 990₽ х 4 суток
+          p.booking-form__total-per-days--result 39 960₽
+        .booking-form__discounts 
+          p.booking-form__service--name Сбор за услуги: скидка 2 179₽
+          span.booking-form__service--ellipse
+            span.booking-form__service--ellipse--info i
+          p.booking-form__service--amount 0₽
+        .booking-form__additional-services 
+          p.booking-form__service--name Сбор за дополнительные услуги
+          span.booking-form__service--ellipse
+            span.booking-form__service--ellipse--info i
+          p.booking-form__service--amount 300₽
+        .booking-form__total
+          p.booking-form__total--title Итого
+          p.booking-form__total--dots
+          p.booking-form__total--result 38 081₽
+      .booking-form__submit-button
+        button.button.button-purple.button-forward 
+          p.button__text.button__text-white Забронировать
+          span.material-symbols-outlined arrow_forward
+
     .main__card 
+      .login-form 
+        p.login-form__header Войти
+        .login-form__email 
+          input.input__box(type="email" name="email" placeholder="Email")
+        .login-form__password 
+          input.input__box(name="password" placeholder="Пароль")
+        .login-form__button
+          button.button.button-purple.button-forward 
+            p.button__text.button__text-white Войти
+            span.material-symbols-outlined arrow_forward
+        .login-form__box
+          p.login-form__caption Нет аккаунта на Toxin?
+          a.button__link(href="#")
+            button.button.button-white 
+              p.button__text.button__text-purple Создать
+
   .main__thirdColumn 
     .main__card 
-      
+
     .main__card 
     .main__card
 

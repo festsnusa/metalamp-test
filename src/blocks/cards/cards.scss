@@ -1,25 +1,14 @@
-$darkShade100: rgba(31, 32, 65, 1);
-$darkShade75: rgba(31, 32, 65, 0.75);
-$darkShade50: rgba(31, 32, 65, 0.5);
-$darkShade25: rgba(31, 32, 65, 0.25);
-$darkShade5: rgba(31, 32, 65, 0.05);
-$purple: #bc9cff;
-$green: #6fcf97;
+@import '../../assets/libs/_vars';
+@import '../form-elements/__dropdown/_dropdown';
+@import '../form-elements/__buttons/_buttons';
+@import '../form-elements/__inputs/_inputs';
+@import '../form-elements/__radio-buttons/_radio-buttons';
+@import '../form-elements/__toggle/_toggle';
 
 @font-face {
   font-family: 'Monsterrat';
-  src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf');
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  font-size: 1rem;
-  font-family: 'Montserrat', Arial, sans-serif;
+  src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf'), 
+  url('../../assets/fonts/Montserrat-Bold.ttf');
 }
 
 body {
@@ -33,6 +22,7 @@ nav {
 }
 
 .main {
+
   display: grid;
   max-width: 84%;
   margin: 0 auto;
@@ -41,72 +31,210 @@ nav {
 
   &__card {
     margin-bottom: 2.45rem;
+    background: #fff;
+    border: 1px solid $darkShade25;
+    box-shadow: 0 0 1.5rem $darkShade25;
+    border-radius: 0.25rem;
+    padding: 2.4rem 1.85rem 1.85rem 1.8rem;
   }
 
   &__firstColumn {
     max-width: 23.75rem;
+  }
 
-    .room-search {
-      background: #fff;
+}
+
+.room-search {
+
+  // padding: 2.4rem 1.85rem 1.85rem 1.8rem;
+  
+
+  &__header {
+    padding-bottom: 1.35rem;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.829rem;
+  }
+
+  &__calendar {
+    padding-bottom: 1.05rem;
+  }
+
+  &__dropdown {
+    padding-bottom: 2rem;
+
+    &__box {
+      position: relative;
+      margin-top: 0.3125rem;
+    }
+  }
+
+}
+
+.registration-form {
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.booking-form {
+  max-width: 23.75rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__room {
+    display: flex;
+
+    &--span {
+      font-weight: 700;
+    }
+
+    &--number {
+      font-size: 1.5rem;
+      margin-left: 0.25rem;
+      margin-right: 0.45rem;
+    }
+
+    &--luxe {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $purple;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+
+    &--price, &--per-day {
+      color: $darkShade50;
+    }
+
+    &--price {
+      font-size: .875rem;
+      margin-right: 0.25rem;
+      font-weight: 700;
+    }
+
+    &--per-day {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__total-per-days,
+  &__discounts,
+  &__additional-services {
+    display: grid;
+    grid-template-columns: 67.5% 10% 22.5%;
+    column-gap: 0.2rem;
+  }
+
+  &__total-per-days {
+    margin-bottom: 0.75rem;
+
+    &--multiplied,
+    &--result {
+      font-size: .875rem;
+      color: $darkShade75;
+    }
+
+    &--result {
+      grid-column: span 2;
+      justify-self: end;
+      margin-right: 0.313rem;
+    }
+  }
+
+  &__service {
+
+    &--ellipse {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      width: 1.25rem;
+      height: 1.25rem;
       border: 1px solid $darkShade25;
-      box-shadow: 0 0 1.5rem $darkShade25;
-      padding: 2.4rem 1.85rem 1.85rem 1.8rem;
-      border-radius: 0.25rem;
-
-      &__header {
-        padding-bottom: 1.35rem;
-      }
-
-      &__title {
+      color: $darkShade25;
+      
+  
+      &--info {
+        width: 0.25rem;
+        height: 0.875rem;
         font-weight: 700;
-        font-size: 1.5rem;
-        line-height: 1.829rem;
-      }
-
-      &__calendar {
-        padding-bottom: 1.05rem;
-
-        .date-dropdown {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          column-gap: 1.25rem;
-          row-gap: 0.6rem;
-        }
-      }
-      
-      &__dropdown {
-        padding-bottom: 2rem;
-        
-        &__box {
-          position: relative;
-          margin-top: 0.3125rem;
-        }
-      }
-      
-    //   &__submit-button {
-        
-    //   }
-    }
-
-    .dropdown {
-      &__input {
-        width: 100%;
-        line-height: 2.625rem;
-        padding: 0 2.375rem 0 0.875rem;
-        border: 0.0625 solid $darkShade50;
-        border-radius: 0.25rem;
-        transition: border 0.25s ease-in-out;
-        cursor: pointer;
-      }
-
-      &__button {
-        position: relative;
-        bottom: 2.2rem;
-        left: 8.8rem;
-        border: none;
-        background: transparent;
-        cursor: pointer;
+        font-size: 0.75rem;
+        line-height: 0.875rem;
       }
     }
+
+    &--name, 
+    &--amount {
+      font-size: .875rem;
+      color: $darkShade75;
+      
+    }
+
+    &--amount {
+      justify-self: end;
+      margin-right: 0.313rem;
+    }
+  }
+
+  &__discounts {
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  &__additional-services {
+    margin-bottom: 2rem;
+
+
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.3rem;
+
+    &--title,
+    &--result {
+      font-size: 1.188rem;
+      font-weight: 700;
+    }
+
+    &--title {
+      min-width: 3.75rem;
+    }
+
+    &--dots {
+      width: 100%;
+      border-bottom: 0.063rem dashed $darkShade25;
+      margin-bottom: 0.3rem;
+      margin-right: 0.5rem;
+    }
+
+    &--result {
+      min-width: 4.813rem;
+    }
+  }
+  
+}
+
+.login-form {
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
