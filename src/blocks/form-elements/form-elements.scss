@@ -18,14 +18,23 @@
 @import '__comment/_comment';
 @import '__noUIslider/_noUIslider';
 
+.nav {
+  margin-top: 1.9rem;
+  margin-left: 1.9rem;
+}
+
 .main {
   max-width: 84%;
-  margin: 0 auto;
-  padding: 0 1.6rem;
+  margin: 3.85rem 8.9rem;
+  // padding: 0 1.6rem;
 
   &__section {
     display: -ms-grid;
     display: grid;
+
+    .first-column {
+      max-width: 20rem;
+    }
 
     .second-column {
       margin-top: 0.5125rem;
