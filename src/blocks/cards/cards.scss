@@ -1,15 +1,11 @@
 @import '../../assets/libs/_vars';
+@import '../../assets/libs/_fonts';
 @import '../form-elements/__dropdown/_dropdown';
 @import '../form-elements/__buttons/_buttons';
 @import '../form-elements/__inputs/_inputs';
 @import '../form-elements/__radio-buttons/_radio-buttons';
 @import '../form-elements/__toggle/_toggle';
-
-@font-face {
-  font-family: 'Monsterrat';
-  src: url('../../assets/fonts/Montserrat-VariableFont_wght.ttf'), 
-  url('../../assets/fonts/Montserrat-Bold.ttf');
-}
+@import '../form-elements/__rate-buttons/_rate-buttons';
 
 body {
   background: #e5e5e5;
@@ -24,10 +20,12 @@ nav {
 .main {
 
   display: grid;
-  max-width: 84%;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  column-gap: 2.5rem;
+  grid-template-columns: 1.02fr 1.08fr 1fr;
+  max-width: 80%;
+  // margin: 0 auto;
+  // margin-right: 30rem;
+  padding: 0.2rem 8.7rem;
+  // column-gap: 3.5rem;
 
   &__card {
     margin-bottom: 2.45rem;
@@ -42,15 +40,24 @@ nav {
     max-width: 23.75rem;
   }
 
+  &__secondColumn {
+    max-width: 23.75rem;
+  }
+
+  &__thirdColumn {
+    max-width: 23.75rem;
+  }
+
 }
 
 .room-search {
 
   // padding: 2.4rem 1.85rem 1.85rem 1.8rem;
-  
+
 
   &__header {
     padding-bottom: 1.35rem;
+    margin-top: 0.05rem;
   }
 
   &__title {
@@ -65,6 +72,7 @@ nav {
 
   &__dropdown {
     padding-bottom: 2rem;
+    margin-top: 0.2rem;
 
     &__box {
       position: relative;
@@ -75,6 +83,16 @@ nav {
 }
 
 .registration-form {
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.9rem;
+  }
+
+  &__name {
+    // margin-bottom: 0.01rem;
+  }
 
   &__box {
     display: flex;
@@ -117,7 +135,8 @@ nav {
     display: flex;
     align-items: baseline;
 
-    &--price, &--per-day {
+    &--price,
+    &--per-day {
       color: $darkShade50;
     }
 
@@ -167,8 +186,8 @@ nav {
       height: 1.25rem;
       border: 1px solid $darkShade25;
       color: $darkShade25;
-      
-  
+
+
       &--info {
         width: 0.25rem;
         height: 0.875rem;
@@ -178,11 +197,11 @@ nav {
       }
     }
 
-    &--name, 
+    &--name,
     &--amount {
       font-size: .875rem;
       color: $darkShade75;
-      
+
     }
 
     &--amount {
@@ -228,7 +247,7 @@ nav {
       min-width: 4.813rem;
     }
   }
-  
+
 }
 
 .login-form {
@@ -236,5 +255,123 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+.room-preview {
+
+  &__slider {
+    max-height: 9.4375rem;
+    border-radius: 0.25rem;
+  }
+
+  &__description {
+    padding: 1.1rem 1.0625rem 0.89rem 1.25rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.7rem;
+    border-bottom: 0.063rem solid rgba(31, 32, 65, 0.1);
+    margin-top: 0.063rem;
+    column-gap: 0.625rem;
+  }
+
+  &__room-number {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__room-symbol,
+  &__room-value,
+  &__room-luxe {
+    font-weight: 700;
+  }
+
+  &__room-symbol {
+    font-size: .875rem;
+  }
+
+  &__room-value {
+    font-size: 1.1875rem;
+    margin-left: 0.25rem;
+    margin-right: 0.6rem;
+  }
+
+  &__room-luxe {
+    font-size: .75rem;
+    color: $purple;
+    text-transform: uppercase;
+  }
+
+  &__room-cost {
+    margin-top: 0.3rem;
+  }
+
+  &__amount, 
+  &__per-day {
+    color: $darkShade50;
+  }
+
+  &__amount {
+    font-size: .875rem;
+    margin-right: 0.25rem;
+    font-weight: 700;
+  }
+
+  &__per-day {
+    font-size: .75rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.475rem;
+    column-gap: 0.625rem;
+  }
+
+  &__feedbacks {
+    display: flex;
+    padding-top: 0.125rem;
+
+    &-number, &-text {
+      font-size: .875rem;
+      color: $darkShade50;
+    }
+
+    &-number {
+      font-weight: 700;
+      margin-right: 0.35rem;
+    }
+
+    &-text {
+      margin-right: 0.1rem;
+    }
+  }
+
+
+}
+
+.image-slider {
+
+  opacity: 0;
+
+  &--active {
+    opacity: 1;
+  }
+
+  &__dots-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__dot {
+    width: 0.469rem;
+    height: 0.468rem;
+    border-radius: 50%;
+    border: 0.0625rem solid #fff;
+    color: #fff;
   }
 }

@@ -1,3 +1,4 @@
+link(rel="stylesheet" href="../../assets/libs/air-datepicker.css")
 link(rel="stylesheet" href="cards.css")
 link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
 nav
@@ -8,7 +9,7 @@ nav
     .main__card 
       .room-search 
         .room-search__header
-          p.room-search__title Найдём номера под ваши желания
+          p.room-search__title Найдём номера под ваши пожелания
         .room-search__calendar 
           .date-dropdown
             .date-dropdown__item
@@ -46,16 +47,16 @@ nav
         .registration-form__gender 
           .radio-buttons
             .radio-buttons__box
-            .radio-buttons__item
-              label.radio-buttons__label
-                input.radio-buttons__input(type="radio" name="sex" checked="checked")
-                span.radio-buttons__radio
-                span.radio-buttons__subtitle Мужчина
-            .radio-buttons__item
-              label.radio-buttons__label
-                input.radio-buttons__input(type="radio" name="sex")
-                span.radio-buttons__radio 
-                span.radio-buttons__subtitle Женщина
+              .radio-buttons__item
+                label.radio-buttons__label
+                  input.radio-buttons__input(type="radio" name="sex" checked="checked")
+                  span.radio-buttons__radio
+                  span.radio-buttons__subtitle Мужчина
+              .radio-buttons__item
+                label.radio-buttons__label
+                  input.radio-buttons__input(type="radio" name="sex")
+                  span.radio-buttons__radio 
+                  span.radio-buttons__subtitle Женщина
         .registration-form__birth-date 
           .input.input__header 
             p.input__title дата рождения
@@ -83,55 +84,56 @@ nav
               p.button__text.button__text-purple Войти
   .main__secondColumn 
     .main__card 
-      .booking-form__header 
-        .booking-form__room 
-          span.booking-form__room--span №
-          p.booking-form__room--number 888
-          p.booking-form__room--luxe люкс
-        .booking-form__price 
-          p.booking-form__price--price 9 990₽
-          p.booking-form__price--per-day в сутки
-      .booking-form__arrival 
-        .input-date-dropdown
-          .date-dropdown
-            .date-dropdown__box
-              .date-dropdown__title Прибытие
-              .date-dropdown__input-box
-                input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
-                span.date-dropdown__input-icon.material-symbols-outlined expand_more
-            .date-dropdown__box
-              .date-dropdown__title Выезд
-              .date-dropdown__input-box
-                input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
-                span.date-dropdown__input-icon.material-symbols-outlined expand_more 
-      .booking-form__dropdown
-        .dropdown__title Гости 
-        .dropdown__box 
-          input.dropdown__input(name="guest-number" placeholder="Сколько гостей" readonly="readonly")
-          button.dropdown__button(type="button")
-            span.dropdown__icon.material-symbols-outlined expand_more
-      .booking-form__calculations 
-        .booking-form__total-per-days
-          p.booking-form__total-per-days--multiplied 9 990₽ х 4 суток
-          p.booking-form__total-per-days--result 39 960₽
-        .booking-form__discounts 
-          p.booking-form__service--name Сбор за услуги: скидка 2 179₽
-          span.booking-form__service--ellipse
-            span.booking-form__service--ellipse--info i
-          p.booking-form__service--amount 0₽
-        .booking-form__additional-services 
-          p.booking-form__service--name Сбор за дополнительные услуги
-          span.booking-form__service--ellipse
-            span.booking-form__service--ellipse--info i
-          p.booking-form__service--amount 300₽
-        .booking-form__total
-          p.booking-form__total--title Итого
-          p.booking-form__total--dots
-          p.booking-form__total--result 38 081₽
-      .booking-form__submit-button
-        button.button.button-purple.button-forward 
-          p.button__text.button__text-white Забронировать
-          span.material-symbols-outlined arrow_forward
+      .booking-form
+        .booking-form__header 
+          .booking-form__room 
+            span.booking-form__room--span №
+            p.booking-form__room--number 888
+            p.booking-form__room--luxe люкс
+          .booking-form__price 
+            p.booking-form__price--price 9 990₽
+            p.booking-form__price--per-day в сутки
+        .booking-form__arrival 
+          .input-date-dropdown
+            .date-dropdown
+              .date-dropdown__box
+                .date-dropdown__title Прибытие
+                .date-dropdown__input-box
+                  input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
+                  span.date-dropdown__input-icon.material-symbols-outlined expand_more
+              .date-dropdown__box
+                .date-dropdown__title Выезд
+                .date-dropdown__input-box
+                  input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
+                  span.date-dropdown__input-icon.material-symbols-outlined expand_more 
+        .booking-form__dropdown
+          .dropdown__title Гости 
+          .dropdown__box 
+            input.dropdown__input(name="guest-number" placeholder="Сколько гостей" readonly="readonly")
+            button.dropdown__button(type="button")
+              span.dropdown__icon.material-symbols-outlined expand_more
+        .booking-form__calculations 
+          .booking-form__total-per-days
+            p.booking-form__total-per-days--multiplied 9 990₽ х 4 суток
+            p.booking-form__total-per-days--result 39 960₽
+          .booking-form__discounts 
+            p.booking-form__service--name Сбор за услуги: скидка 2 179₽
+            span.booking-form__service--ellipse
+              span.booking-form__service--ellipse--info i
+            p.booking-form__service--amount 0₽
+          .booking-form__additional-services 
+            p.booking-form__service--name Сбор за дополнительные услуги
+            span.booking-form__service--ellipse
+              span.booking-form__service--ellipse--info i
+            p.booking-form__service--amount 300₽
+          .booking-form__total
+            p.booking-form__total--title Итого
+            p.booking-form__total--dots
+            p.booking-form__total--result 38 081₽
+        .booking-form__submit-button
+          button.button.button-purple.button-forward 
+            p.button__text.button__text-white Забронировать
+            span.material-symbols-outlined arrow_forward
 
     .main__card 
       .login-form 
@@ -152,7 +154,100 @@ nav
 
   .main__thirdColumn 
     .main__card 
+      .date-dropdown 
+        .date-dropdown__calendar 
+          .datepicker
+            .datepicker__header 
+              .datepicker__header__action-disabled(data-action="previous")
+                span.material-symbols-outlined arrow_back
+              .datepicker__header__title Август 2019 года
+              .datepicker__header__action(data-action="forward")
+          //- input#el1(type="text")
+          //- input#el2(type="text")
 
     .main__card 
+      .room-preview
+        .room-preview__slider 
+          .image-slider__previous-button
+            span.material-symbols-outlined expand_more
+          .image-slider--active
+            img(src="../../assets/images/room-1-slider.jpg" alt="Фото 1")
+          .image-slider 
+            img(src="../../assets/images/room-1-slider.jpg" alt="Фото 2")
+          .image-slider 
+            img(src="../../assets/images/room-1-slider.jpg" alt="Фото 3")
+          .image-slider 
+            img(src="../../assets/images/room-1-slider.jpg" alt="Фото 4")
+          .image-slider__forward-button
+            span.material-symbols-outlined expand_more
+          .image-slider__dots-box 
+            span.image-slider__dot
+            span.image-slider__dot
+            span.image-slider__dot
+            span.image-slider__dot
+        .room-preview__description
+          .room-preview__header
+            .room-preview__room-number 
+              p.room-preview__room-symbol №
+              p.room-preview__room-value 888
+              p.room-preview__room-luxe люкс
+            .room-preview__room-cost
+              span.room-preview__amount 9 990₽
+              span.room-preview__per-day в сутки
+          .room-preview__footer
+            .room-preview__rating 
+              .rate-buttons__group
+                .rate-button__box 
+                  span.rate-button__item.material-symbols-outlined star
+                  span.rate-button__item.material-symbols-outlined star
+                  span.rate-button__item.material-symbols-outlined star
+                  span.rate-button__item.material-symbols-outlined star
+                  span.rate-button__item.material-symbols-outlined star
+            .room-preview__feedbacks 
+              .room-preview__feedbacks-number 145
+              .room-preview__feedbacks-text Отзывов
     .main__card
+      .room-preview
+        .room-preview__slider 
+          .image-slider__previous-button
+            //- span.material-symbols-outlined expand_more
+          .image-slider--active
+            img(src="../../assets/images/room-1-slider.jpg" alt="Фото 1")
+          .image-slider 
+            img(src="../../assets/images/room-1-slider.jpg" alt="Фото 2")
+          .image-slider 
+            img(src="../../assets/images/room-1-slider.jpg" alt="Фото 3")
+          .image-slider 
+            img(src="../../assets/images/room-1-slider.jpg" alt="Фото 4")
+          .image-slider__forward-button
+            //- span.material-symbols-outlined expand_more
+          .image-slider__dots-box 
+            span.image-slider__dot
+            span.image-slider__dot
+            span.image-slider__dot
+            span.image-slider__dot
+        .room-preview__description
+          .room-preview__header
+            .room-preview__room-number 
+              p.room-preview__room-symbol №
+              p.room-preview__room-value 888
+              p.room-preview__room-luxe люкс
+            .room-preview__room-cost
+              span.room-preview__amount 9 990₽
+              span.room-preview__per-day в сутки
+          .room-preview__footer
+            .room-preview__rating 
+              .rate-buttons__group
+                .rate-button__box 
+                  span.rate-button__item.material-symbols-outlined star
+                  span.rate-button__item.material-symbols-outlined star
+                  span.rate-button__item.material-symbols-outlined star
+                  span.rate-button__item.material-symbols-outlined star
+                  span.rate-button__item.material-symbols-outlined star
+            .room-preview__feedbacks 
+              .room-preview__feedbacks-number 65
+              .room-preview__feedbacks-text Отзывов
 
+script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
+script(src="../../assets/libs/air-datepicker.js")
+script(src="cards.js")
