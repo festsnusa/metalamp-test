@@ -1,0 +1,46 @@
+link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+link(rel="stylesheet" href="headers-and-footers.css")
+nav.logo-colorless
+    a.logo(href="#")
+        img.logo__image(src="../../assets/images/logo-colorless.svg" alt="logo-image")
+.header
+  .header__container
+    .header__navigation
+      .header__logo 
+      a.logo(href="#") 
+        img(src="../../assets/images/logo.svg", alt="toxin")
+    button.header__burger 
+    .header__options-box
+      ul.options
+        li.options__item 
+          a.options__link.options__link--bold(href="#") О нас 
+        li.options__item
+          .options__dropdown
+            a.options__link(href="#") Услуги
+            .options__dropdown-elements
+              a.options__link(href="#") Завтрак
+              a.options__link(href="#") Обед
+              a.options__link(href="#") Ужин
+            button.dropdown__button(type="button")
+              span.dropdown__icon.material-symbols-outlined expand_more
+        li.options__item
+          a.options__link.options__link(href="#") Вакансии
+        li.options__item
+          a.options__link.options__link(href="#") Новости
+        li.options__item
+          .options__sub-option 
+            a.options__link(href="#") Соглашения
+            .header__dropdown 
+              a.options__link(href="#") Документ 1
+              a.options__link(href="#") Документ 2
+            button.dropdown__button(type="button")
+              span.dropdown__icon.material-symbols-outlined expand_more
+        
+      .header__login-box
+        a.button__link(href="#") 
+          button.button.button-white 
+            span.button__text.button__text-purple click me
+        a.button__link(href="") 
+          button.button.button-purple.button-forward 
+            span.button__text.button__text-white Зарегистрироваться
+    
