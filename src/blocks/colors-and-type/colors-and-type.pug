@@ -1,47 +1,26 @@
+- let colors = {1: ['Dark Shade 100%', '#1F2041'], 2: ['Dark Shade 75%', '#1F2041'], 3: ['Dark Shade 50%', '#1F2041'], 4: ['Dark Shade 25%', '#1F2041'], 5: ['Dark Shade 5%', '#1F2041'], Purple: ['Purple', '#BC9CFF'], Green: ['Green', '#6FCF97']}
+- let tags = {h1: "This one is the sub-section or widget title", h2: 'Next one is the item title inside widgets', h3: 'This is a label or CTA text', Body: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'}
+
+mixin fonts
+  each key, value in colors
+    .color(class=`color_${value}`)
+      .color__box 
+      p.color__title #{key[0]}
+      p.color__subtitle #{key[1]}
+
+mixin tagsSection 
+  each key, value in tags 
+    .tag-example(class=`tag-example_${value}`)
+      p.tag-example__title #{value}
+      p.tag-example__subtitle #{key}
+
+
 link(rel="stylesheet", href="colors-and-type.css")
 .nav 
   a.logo(href="#") 
     img(src="../../assets/images/logo-colorless.svg", alt="logo")
 .main 
   .main__colors 
-    .color.color_font100
-      .color__box 
-      p.color__title Dark Shade 100%
-      p.color__subtitle #1F2041
-    .color.color_font75
-      .color__box 
-      p.color__title Dark Shade 75%
-      p.color__subtitle #1F2041
-    .color.color_font50
-      .color__box 
-      p.color__title Dark Shade 50%
-      p.color__subtitle #1F2041
-    .color.color_font25
-      .color__box 
-      p.color__title Dark Shade 25%
-      p.color__subtitle #1F2041
-    .color.color_font5
-      .color__box 
-      p.color__title Dark Shade 5%
-      p.color__subtitle #1F2041
-    .color.color_purple 
-      .color__box 
-      p.color__title Purple
-      p.color__subtitle #BC9CFF
-    .color.color_green
-      .color__box 
-      p.color__title Green
-      p.color__subtitle #6FCF97
+    +fonts
   .main__types
-    .tag-example.tag-example_h1
-      p.tag-example__title H1
-      p.tag-example__subtitle This one is the sub-section or widget title
-    .tag-example.tag-example_h2
-      p.tag-example__title H2
-      p.tag-example__subtitle Next one is the item title inside widgets
-    .tag-example.tag-example_h3
-      p.tag-example__title H3
-      p.tag-example__subtitle This is a label or CTA text
-    .tag-example.tag-example_p
-      p.tag-example__title Body 
-      p.tag-example__subtitle_p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+    +tagsSection
