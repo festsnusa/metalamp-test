@@ -3,6 +3,14 @@ const dropdownIcon = document.querySelector('.dropdown__input-icon')
 const dropdownList = document.querySelector('.dropdown__list')
 const dropdownInput = document.querySelector('.dropdown__input') // input field
 
+const inputMaskedText = document.querySelector(".js-input__box--masked-field")
+
+new Cleave(inputMaskedText, {
+    date: true,
+    datePattern: ['d', 'm', 'Y'],
+    delimiters: ['.', '.', '.']
+})
+
 dropdownIcon.addEventListener('click', () => {
     dropdownList.classList.toggle('dropdown__list-shrinked') // toggle list
     if (dropdownList.classList.contains('.dropdown__list-shrinked')) hideRevealClearButton(true)
@@ -26,6 +34,8 @@ categories.forEach(e => {
 
 function createCategory(str) {
 
+    let isAdult = (str == 'babies') ? false : true
+
     const buttonMinus = document.querySelector(`.js-dropdown__list-item__counter-button-minus-${str}`)
     const counter = document.querySelector(`.js-dropdown__list-item__counter-${str}`)
     const buttonPlus = document.querySelector(`.js-dropdown__list-item__counter-button-plus-${str}`)
@@ -35,7 +45,7 @@ function createCategory(str) {
 
     function applyButtonEvent (operator) {
         counter.textContent = changeCounter(counter.textContent, operator)
-        changeNumberOfGuests(counter.textContent, operator)
+        changeNumberOfGuests(counter.textContent, operator, isAdult)
     }
 }
 
@@ -44,9 +54,9 @@ function changeCounter(value, operator) {
     return result < 0 ? 0 : result
 }
 
-function changeNumberOfGuests(amount, operator, adult = true) {
+function changeNumberOfGuests(amount, operator, isAdult = true) {
 
-    if (adult) {
+    if (isAdult) {
         guests['count'] = eval(`${guests['count']} ${operator} 1`)
         if (guests['count'] < 0) guests['count'] = 0
     }
@@ -84,9 +94,11 @@ function hideRevealClearButton(hide = false) {
 
 function applyClearButton() {
     dropdownInput.value = ''
-    counterAdult.textContent = '0'
-    counterChildren.textContent = '0'
-    counterBabies.textContent = '0'
+
+    categories.forEach(e => {
+        document.querySelector(`.js-dropdown__list-item__counter-${e}`).textContent = '0'
+    })
+
     hideRevealClearButton(true)
 }
 

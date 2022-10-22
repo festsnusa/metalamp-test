@@ -1,13 +1,13 @@
 &:first-child {
     grid-template-columns: 27.59% 0.1% 22.45% 2.2% 27.75%;
     // grid-template-columns: repeat(auto-fit, 280px);
-    margin-bottom: 5.5rem;
+    margin-bottom: 5.7rem;
 }
 
 &:nth-child(2) {
     grid-template-columns: 22.93% 4.9% 27.59% 0% 27.59%;
     // grid-template-columns: repeat(auto-fit, 280px);
-    margin-bottom: 10.75rem;
+    margin-bottom: 8.5rem;
 }
 
 &:nth-child(3) {
