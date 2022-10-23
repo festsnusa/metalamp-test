@@ -39,27 +39,27 @@
   width: 6.1875rem;
   border-radius: 1.375rem;
 
-  &-purple {
+  &_purple {
     background: $linearGradient;
   }
 
-  &-white {
+  &_white {
     background: #fff;
     border: 0.125rem solid $purple;
   }
 
-  &-transparent {
+  &_transparent {
     padding: 0;
     height: auto;
     width: auto;
     background: transparent;
   }
 
-  &-blocked {
+  &_blocked {
     opacity: 0.5;
   }
 
-  &-forward {
+  &_forward {
     align-items: center;
     max-width: 20rem;
     width: 100%;
@@ -86,11 +86,11 @@
     text-transform: uppercase;
     color: $darkShade50;
 
-    &-white {
+    &_white {
       color: #fff;
     }
 
-    &-purple {
+    &_purple {
       color: $purple;
     }
   }

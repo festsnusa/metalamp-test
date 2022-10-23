@@ -1,0 +1,14 @@
+mixin toggleItem(checked)
+	li.toggle__item
+		if (checked)
+			input.toggle__input(type="checkbox" checked="checked")
+		else
+			input.toggle__input(type="checkbox")
+		span.toggle__subtitle Получать спецпредложения
+
+mixin toggle(n)
+	.toggle
+		p.toggle__title Toggle
+		ul.toggle__list
+			each value in n
+				+toggleItem(value)

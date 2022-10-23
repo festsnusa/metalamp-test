@@ -11,14 +11,16 @@ link(rel="stylesheet", href="form-elements.css")
       include __inputs/__input__hover.pug
       include __dropdown/__dropdown__guests--default.pug
       include __inputs/__input__masked-field.pug
-      include __dropdown/__dropdown__date--double.pug
+      include __dropdown/__dropdown__date.pug
+      +dateDropdownDouble
       include __dropdown/__dropdown__filter-date.pug
       include __inputs/__input__subscription-field.pug
     .gap
     .second-column
       include __checkbox/__checkbox-buttons.pug
       include __radio-buttons/__radio-buttons.pug
-      include __toggle/__toggle--double.pug
+      include __toggle/__toggle.pug
+      +toggle([true, false])
       include __like-buttons/__like-buttons--double.pug
       .rate-buttons
         p.rate-buttons__title Rate button
@@ -30,116 +32,20 @@ link(rel="stylesheet", href="form-elements.css")
       include __range-slider/__range-slider.pug
       .buttons 
         p.buttons__title Buttons 
-        .buttons__box 
-          .buttons__first-box 
-            button.button.button-purple
-              p.button__text.button__text-white click me
-            button.button.button-purple.button-blocked
-              p.button__text.button__text-white click me
-          .buttons__second-box 
-            button.button.button-white 
-              p.button__text.button__text-purple click me
-            button.button.button-white.button-blocked
-              p.button__text.button__text-purple click me
-          .buttons__third-box 
-            button.button.button-transparent 
-              p.button__text.button__text-purple click me
-            button.button.button-transparent
-              p.button__text click me
-          .buttons__fourth-box
-            button.button.button-purple.button-forward 
-              p.button__text.button__text-white Перейти к оплате
-              span.material-symbols-outlined arrow_forward
-      .pagination
-        p.pagination__title Pagination
-        .pagination__box 
-          .pagination__pages 
-            ul.pagination__pages-list 
-              li.pagination__page.active(data-num="1")
-                a 1
-              li.pagination__page(data-num="2")
-                a 2
-              li.pagination__page(data-num="3")
-                a 3
-              li.pagination__page 
-                a ... 
-              li.pagination__page(data-num="15")
-                a 15
-              li.pagination__page.next(data-num="2" title="Next page")
-                a(href="#") 
-                  span.material-symbols-outlined arrow_forward
+        include __buttons/__buttons.pug
+      include __pagination/__pagination.pug
 
-          p.pagination__caption 1 — 12 из 100+ вариантов аренды
-          
   .main__section
     .first-column 
       include __dropdown/__dropdown__beds--default.pug 
       include __dropdown/__dropdown__beds--expanded.pug         
     .gap 
     .second-column 
-      .dropdown 
-        .dropdown__title Dropdown 
-        .dropdown__box.js-dropdown__box--guest-amount
-          input.dropdown__input(name="guest-amount" placeholder="Сколько гостей" readonly="readonly")
-          button.dropdown__button(type="button")
-            span.dropdown__icon.material-symbols-outlined expand_more
-          ul.dropdown__list.dropdown__list-expanded
-            li.dropdown__list-item.dropdown__list-item-adults 
-              p.dropdown__list-item__caption Взрослые
-              .dropdown__list-item__counter-box 
-                button.dropdown__list-item__counter-button-minus -
-                p.dropdown__list-item__counter 0
-                button.dropdown__list-item__counter-button-plus +
-            li.dropdown__list-item.dropdown__list-item-children 
-              p.dropdown__list-item__caption Дети
-              .dropdown__list-item__counter-box 
-                button.dropdown__list-item__counter-button-minus -
-                p.dropdown__list-item__counter 0
-                button.dropdown__list-item__counter-button-plus +
-            li.dropdown__list-item.dropdown__list-item-babies
-              p.dropdown__list-item__caption Младенцы
-              .dropdown__list-item__counter-box 
-                button.dropdown__list-item__counter-button-minus -
-                p.dropdown__list-item__counter 0
-                button.dropdown__list-item__counter-button-plus +
-            li.dropdown__footer-section 
-              button.dropdown__clear-button.dropdown__clear-button-invisible(type="button")
-                span.dropdown__clear-button__caption Очистить
-              button.dropdown__submit-button(type="button")
-                span.dropdown__submit-button__caption Применить
+      include __dropdown/__dropdown__guests--expanded.pug
 
     .gap 
     .third-column
-      .dropdown 
-        .dropdown__title Dropdown 
-        .dropdown__box 
-          input.dropdown__input(name="guest-number" placeholder="Сколько гостей" readonly="readonly")
-          button.dropdown__button(type="button")
-            span.dropdown__icon.material-symbols-outlined expand_more
-          ul.dropdown__list.dropdown__list-expanded
-            li.dropdown__list-item.dropdown__list-item-adults 
-              p.dropdown__list-item__caption Взрослые
-              .dropdown__list-item__counter-box 
-                button.dropdown__list-item__counter-button-minus -
-                p.dropdown__list-item__counter 2
-                button.dropdown__list-item__counter-button-plus +
-            li.dropdown__list-item.dropdown__list-item-children 
-              p.dropdown__list-item__caption Дети
-              .dropdown__list-item__counter-box 
-                button.dropdown__list-item__counter-button-minus -
-                p.dropdown__list-item__counter 1
-                button.dropdown__list-item__counter-button-plus +
-            li.dropdown__list-item.dropdown__list-item-babies
-              p.dropdown__list-item__caption Младенцы
-              .dropdown__list-item__counter-box 
-                button.dropdown__list-item__counter-button-minus -
-                p.dropdown__list-item__counter 0
-                button.dropdown__list-item__counter-button-plus +
-            li.dropdown__footer-section 
-              button.dropdown__clear-button(type="button")
-                span.dropdown__clear-button__caption Очистить
-              button.dropdown__submit-button(type="button")
-                span.dropdown__submit-button__caption Применить
+      include __dropdown/__dropdown__guests--expanded.pug
       
   .main__section
     .first-column 
