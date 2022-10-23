@@ -1,0 +1,30 @@
+.dropdown
+	p.dropdown__title Dropdown
+	p.dropdown__subtitle Default
+	.dropdown__box
+		input.dropdown__input(placeholder="Сколько гостей" name="number-of-guests" readonly="readonly")
+		span.dropdown__input-icon.material-symbols-outlined expand_more
+		ul.dropdown__list.dropdown__list-shrinked
+			li.dropdown__list-item.dropdown__list-item-adults 
+				p.dropdown__list-item__caption Взрослые
+				.dropdown__list-item__counter-box 
+					button.dropdown__list-item__counter-button-minus.js-dropdown__list-item__counter-button-minus-adult -
+					p.dropdown__list-item__counter.js-dropdown__list-item__counter-adult 0
+					button.dropdown__list-item__counter-button-plus.js-dropdown__list-item__counter-button-plus-adult +
+			li.dropdown__list-item.dropdown__list-item-children 
+				p.dropdown__list-item__caption Дети
+				.dropdown__list-item__counter-box 
+					button.dropdown__list-item__counter-button-minus.js-dropdown__list-item__counter-button-minus-children -
+					p.dropdown__list-item__counter.js-dropdown__list-item__counter-children 0
+					button.dropdown__list-item__counter-button-plus.js-dropdown__list-item__counter-button-plus-children +
+			li.dropdown__list-item.dropdown__list-item-babies
+				p.dropdown__list-item__caption Младенцы
+				.dropdown__list-item__counter-box 
+					button.dropdown__list-item__counter-button-minus.js-dropdown__list-item__counter-button-minus-babies -
+					p.dropdown__list-item__counter.js-dropdown__list-item__counter-babies 0
+					button.dropdown__list-item__counter-button-plus.js-dropdown__list-item__counter-button-plus-babies +
+			li.dropdown__footer-section 
+				button.dropdown__clear-button.dropdown__clear-button-invisible(type="button")
+					span.dropdown__clear-button__caption Очистить
+				button.dropdown__submit-button(type="button")
+					span.dropdown__submit-button__caption Применить

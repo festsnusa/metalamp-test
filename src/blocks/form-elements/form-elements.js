@@ -1,5 +1,6 @@
 ///* DROPDOWN LIST *///
-const dropdownIcon = document.querySelector('.dropdown__input-icon')
+const GuestsDropdownIcon = document.querySelector('.dropdown__input-icon')
+const bedroomsDropdownIcon = document.querySelector('.js-dropdown__icon--bedrooms')
 const dropdownList = document.querySelector('.dropdown__list')
 const dropdownInput = document.querySelector('.dropdown__input') // input field
 
@@ -11,7 +12,11 @@ new Cleave(inputMaskedText, {
     delimiters: ['.', '.', '.']
 })
 
-dropdownIcon.addEventListener('click', () => {
+bedroomsDropdownIcon.addEventListener('click', () => {
+    
+})
+
+GuestsDropdownIcon.addEventListener('click', () => {
     dropdownList.classList.toggle('dropdown__list-shrinked') // toggle list
     if (dropdownList.classList.contains('.dropdown__list-shrinked')) hideRevealClearButton(true)
     else if (dropdownInput.textContent == '') hideRevealClearButton(true)
