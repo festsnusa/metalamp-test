@@ -1,0 +1,43 @@
+.like-buttons {
+  margin-bottom: 2.3rem;
+
+  &__title {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__box {
+    display: flex;
+    column-gap: 0.5625rem;
+  }
+
+}
+
+.like-button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  width: 2.5rem;
+  height: 1.25rem;
+  border: 0.0625rem solid $darkShade25;
+  border-radius: 0.625rem;
+  align-items: center;
+  cursor: pointer;
+  background: #fff;
+
+  &__icon {
+    position: absolute;
+    font-size: .625rem;
+    color: transparent;
+    background-image: $linearGradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &__likes {
+    margin-left: 1.5rem;
+    font-size: .625rem;
+  }
+}

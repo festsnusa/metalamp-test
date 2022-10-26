@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$darkShade100: rgba(31, 32, 65, 1);
+$darkShade75: rgba(31, 32, 65, 0.75);
+$darkShade50: rgba(31, 32, 65, 0.5);
+$darkShade25: rgba(31, 32, 65, 0.25);
+$darkShade5: rgba(31, 32, 65, 0.05);
+$purple: #BC9CFF;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: #E5E5E5;
+}
+
+.material-icons-outlined {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    position: absolute;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+.header {
+   // margin-bottom: 2.55rem;
+   background: #fff;
+   padding: 0.8375rem 0;
+   box-shadow: 0 0.625rem 1.25rem $darkShade5;
+  
+  &__container {
+   max-width: 83.8%;
+   margin: 0 auto;
+   padding: 0 1.5rem;
+  }
+
+  &__navigation {
+   display: grid;
+   grid-template-areas: "logo options";
+   align-items: center;
+   justify-content: space-between;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__options-box {
+    grid-area: options;
+    display: grid;
+  }
+ 
+
+  &__burger {
+    display: none;
+  }
+
+}
+
+.options {
+  display: grid;
+  column-gap: 1.3rem;
+  grid-auto-flow: column;
+  align-items: center;
+  padding-right: 1.2rem;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    font-size: .875rem;
+    color: $darkShade50;
+    line-height: 1.0625rem;
+    text-decoration: none;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content min-content;
+    align-items: center;
+  }
+
+  &__dropdown-elements {
+    position: absolute;
+    flex-direction: column;
+    top: 1.5625rem;
+    background: #fff;
+    border: 0.0625rem solid $darkShade5;
+    box-shadow: 0 0.625rem 1.25rem $darkShade5;
+  }
+}

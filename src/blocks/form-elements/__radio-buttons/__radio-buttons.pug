@@ -1,13 +1,12 @@
+mixin createRadioButton(caption, checked)
+	.radio-buttons__item
+		label.radio-buttons__label
+			input.radio-buttons__input(type="radio" name="gender" checked= checked)
+			span.radio-buttons__radio
+		span.radio-buttons__caption Мужчина
+
 .radio-buttons
 	p.radio-buttons__title Radio Buttons
 		.radio-buttons__box
-			.radio-buttons__item
-				label.radio-buttons__label
-					input.radio-buttons__input(type="radio" name="sex" checked="checked")
-					span.radio-buttons__radio
-					span.radio-buttons__subtitle Мужчина
-			.radio-buttons__item
-				label.radio-buttons__label
-					input.radio-buttons__input(type="radio" name="sex")
-					span.radio-buttons__radio 
-					span.radio-buttons__subtitle Женщина 
+			+createRadioButton(Мужчина, true)
+			+createRadioButton(Женщина, false)

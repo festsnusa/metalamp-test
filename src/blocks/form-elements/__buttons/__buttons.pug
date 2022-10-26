@@ -1,20 +1,25 @@
+mixin createButton(colorButton, colorText, blocked)
+	- let blockedClass = (blocked) ? `button_blocked` : ``
+	- let classes = [`button_${colorButton}`, blockedClass]
+	//- if (blocked)
+	//- 	classes.push(button_blocked)
+	button.button(class= classes)
+		p.button__text(class= `button__text_${colorText}`) click me
+
+mixin createProceedButton(text)
+	button.button.button_purple.button_forward 
+		p.button__text.button__text_white= text
+		span.material-symbols-outlined arrow_forward
+
 .buttons__box 
-	.buttons__first-box 
-		button.button.button_purple
-			p.button__text.button__text_white click me
-		button.button.button_purple.button_blocked
-			p.button__text.button__text_white click me
+	.buttons__first-box
+		+createButton('purple', 'white', false)
+		+createButton('purple', 'white', true)
 	.buttons__second-box 
-		button.button.button_white 
-			p.button__text.button__text-purple click me
-		button.button.button_white.button_blocked
-			p.button__text.button__text_purple click me
+		+createButton('white', 'purple', false)
+		+createButton('white', 'purple', true)
 	.buttons__third-box 
-		button.button.button_transparent 
-			p.button__text.button__text_purple click me
-		button.button.button_transparent
-			p.button__text click me
+		+createButton('transparent ', 'purple', false)
+		+createButton('transparent ', '', false)
 	.buttons__fourth-box
-		button.button.button_purple.button_forward 
-			p.button__text.button__text_white Перейти к оплате
-			span.material-symbols-outlined arrow_forward
+		+createProceedButton('Перейти к оплате')

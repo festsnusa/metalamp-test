@@ -1,0 +1,14 @@
+mixin checkboxExpandable(expanded)
+  -let options = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']
+  -let className = (expanded) ? 'expandable-checkbox-expanded' : ''
+  .expandable-checkbox(class= className)
+    .expandable-checkbox__header 
+      p.expandable-checkbox__title expandable checkbox list
+      button.expandable-checkbox__button(type="button")
+        span.material-symbols-outlined expand_more
+    ul.expandable-checkbox__list
+      each option in options
+        li.expandable-checkbox__item
+          input.expandable-checkbox__input(type="checkbox" name="breakfast" checked="checked")
+          span.expandable-checkbox__checkbox 
+          span.expandable-checkbox__caption= option

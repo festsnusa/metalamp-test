@@ -1,4 +1,5 @@
 link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 link(rel="stylesheet", href="../../assets/libs/noUISlider.css")
 link(rel="stylesheet", href="form-elements.css")
 .nav
@@ -7,26 +8,34 @@ link(rel="stylesheet", href="form-elements.css")
 .main
   .main__section
     .first-column
-      include __inputs/__input__default.pug
-      include __inputs/__input__hover.pug
-      include __dropdown/__dropdown__guests--default.pug
-      include __inputs/__input__masked-field.pug
+      include __inputs/__inputs.pug
+      +inputDefault
+      +inputHover
+      include __dropdown/__dropdown__guests.pug
+      +dropdownGuests(false)
+      +inputMaskedField
       include __dropdown/__dropdown__date.pug
       +dateDropdownDouble
       include __dropdown/__dropdown__filter-date.pug
-      include __inputs/__input__subscription-field.pug
+      +inputSubscriptionField
     .gap
     .second-column
       include __checkbox/__checkbox-buttons.pug
       include __radio-buttons/__radio-buttons.pug
       include __toggle/__toggle.pug
       +toggle([true, false])
-      include __like-buttons/__like-buttons--double.pug
-      .rate-buttons
-        p.rate-buttons__title Rate button
-        .rate-buttons__group
-          include __rate-buttons/__rate-buttons.pug
-          include __rate-buttons/__rate-buttons.pug
+      include __like-button/__like-button.pug
+      .like-buttons
+        p.like-buttons__title like button
+        .like-buttons__box
+          +likeButtonContent(2, 'favorite_border')
+          +likeButtonContent(12, 'favorite')
+      include __rate-button/__rate-button.pug
+      .rate-button
+        p.rate-button__title Rate button
+        .rate-button__group
+          +rateButton(4, 1)
+          +rateButton(5)
     .gap
     .third-column
       include __range-slider/__range-slider.pug
@@ -37,145 +46,43 @@ link(rel="stylesheet", href="form-elements.css")
 
   .main__section
     .first-column 
-      include __dropdown/__dropdown__beds--default.pug 
-      include __dropdown/__dropdown__beds--expanded.pug         
+      include __dropdown/__dropdown__beds.pug
+      +dropdownBedsDefault
+      +dropdownBedsExpanded         
     .gap 
     .second-column 
-      include __dropdown/__dropdown__guests--expanded.pug
+      +dropdownGuests(true)
 
     .gap 
     .third-column
-      include __dropdown/__dropdown__guests--expanded.pug
-      
+      +dropdownGuests(true, [2, 1, 0])
+
   .main__section
-    .first-column 
-      .expandable-checkbox
-        .expandable-checkbox__header 
-          p.expandable-checkbox__title expandable checkbox list
-          button.expandable-checkbox__button(type="button")
-            span.material-symbols-outlined expand_more
-        ul.expandable-checkbox__list 
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Завтрак
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Письменный стол
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Стул для кормления
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Кроватка
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Телевизор
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Шампунь
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Телевизор
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Шампунь
-      .expandable-checkbox.expandable-checkbox-expanded
-        .expandable-checkbox__header 
-          p.expandable-checkbox__title expandable checkbox list
-          button.expandable-checkbox__button(type="button")
-            span.material-symbols-outlined expand_more
-        ul.expandable-checkbox__list 
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Завтрак
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast" checked="checked")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Письменный стол
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast" checked="checked")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Стул для кормления
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast" checked="checked")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Кроватка
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Телевизор
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Шампунь
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Телевизор
-          li.expandable-checkbox__item
-            input.expandable-checkbox__input(type="checkbox" name="breakfast")
-            span.expandable-checkbox__checkbox 
-            span.expandable-checkbox__caption Шампунь
+    .first-column
+      include __checkbox/__checkbox.pug
+      +checkboxExpandable(false)
+      +checkboxExpandable(true)
+  
     .gap 
     .second-column 
       .rich-checkbox
-        p.rich-checkbox__header Rich сheckbox иuttons 
-        ul.rich-checkbox__list 
-          li.rich-checkbox__item
-            input.rich-checkbox__input(type="checkbox" name="corridor size")
-            span.rich-checkbox__checkbox
-            span.rich-checkbox__title Широкий коридор
-            span.rich-checkbox__subtitle Ширина коридоров в номере не менее 91 см.
-          li.rich-checkbox__item
-            input.rich-checkbox__input(type="checkbox" name="helper")
-            span.rich-checkbox__checkbox
-            span.rich-checkbox__title Помощник для инвалидов
-            span.rich-checkbox__subtitle На 1 этаже вас встретит специалист и проводит до номера.
+        p.rich-checkbox__header Rich сheckbox buttons
+        include __rich-checkbox/__rich-checkbox.pug
     .gap 
     .third-column
       .bullet-list 
-        p.bullet-list__header Bullet list 
-        ul.bullet-list__list 
-          li.bullet-list__item
-            .bullet-list__ellipse
-            .bullet-list__caption Нельзя с питомцами
-          li.bullet-list__item
-            .bullet-list__ellipse
-            .bullet-list__caption Без вечеринок и мероприятий
-          li.bullet-list__item
-            .bullet-list__ellipse
-            .bullet-list__caption Время прибытия — после 13:00, а выезд до 12:00
+        p.bullet-list__header Bullet list
+        include __bullet-list/__bullet-list.pug
+        +createBulletList
   .main__section
-    .first-column 
-      .description
-        span.description__image.material-symbols-outlined insert_emoticon
-        p.description__title Комфорт
-        p.description__subtitle Шумопоглощающие стены
-      .description
-        span.description__image.material-symbols-outlined location_city
-        p.description__title Удобство
-        p.description__subtitle Окно в каждой из спален
+    .first-column
+      include __description/__description.pug
     .gap 
     .second-column
-      .comment
-        img.comment__image(src="../../assets/images/profile.jpg", alt="")
-        .comment__author 
-          p.comment__author--name Мурад Сарафанов 
-          p.comment__author--date 5 дней назад
-        button.comment__likes(type="button")
-          span.comment__likes--icon.material-symbols-outlined favorite
-          span.comment__likes--count 12
-
-        p.comment__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+      include __comment/__comment.pug
+      -let comment = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+      +createCommentSection("../../assets/images/profile.jpg", "Мурад Сарафанов", "5", 12, comment)
+    
 script(src="https://code.jquery.com/jquery-3.6.1.js", integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=", crossorigin="anonymous")
 script(src="../../assets/libs/noUISlider.js")
 script(src="../../assets/libs/cleave.min.js")
