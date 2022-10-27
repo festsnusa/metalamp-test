@@ -5,7 +5,8 @@ $darkShade25: rgba(31, 32, 65, 0.25);
 $darkShade5: rgba(31, 32, 65, 0.05);
 $purple: #bc9cff;
 $green: #6fcf97;
-$linearGradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$linearGradientPurple: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+$linearGradientGreen: linear-gradient(180deg, $green 0%, #66D2EA 100%);
 
 * {
   box-sizing: border-box;
