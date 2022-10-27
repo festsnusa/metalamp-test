@@ -43,6 +43,7 @@ link(rel="stylesheet", href="form-elements.css")
         p.buttons__title Buttons 
         include __buttons/__buttons.pug
       include __pagination/__pagination.pug
+      +createLinks(15, true, true)
 
   .main__section
     .first-column 
@@ -81,9 +82,10 @@ link(rel="stylesheet", href="form-elements.css")
     .second-column
       include __comment/__comment.pug
       -let comment = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
-      +createCommentSection("../../assets/images/profile.jpg", "Мурад Сарафанов", "5", 12, comment)
+      +createCommentSection("../../assets/images/profile.jpg", "Мурад Сарафанов", "5", 12, 'favorite', comment)
     
 script(src="https://code.jquery.com/jquery-3.6.1.js", integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=", crossorigin="anonymous")
 script(src="../../assets/libs/noUISlider.js")
 script(src="../../assets/libs/cleave.min.js")
+script(src="../../assets/libs/pagination.js")
 script(src="form-elements.js")
