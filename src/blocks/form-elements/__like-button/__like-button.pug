@@ -1,4 +1,4 @@
 mixin likeButtonContent(likes, iconType)
-	button.like-button(type="button")
-		span.like-button__icon.material-icons= iconType
-		span.like-button__likes= likes
+	button.like-button.js-like-button__button(type="button")
+		span.like-button__icon.material-icons.js-like-button__icon= iconType
+		span.like-button__likes.js-like-button__likes= likes
