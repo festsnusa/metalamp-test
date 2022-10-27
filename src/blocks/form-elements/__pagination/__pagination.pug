@@ -1,19 +1,24 @@
-.pagination
-	p.pagination__title Pagination
-	.pagination__box 
-		.pagination__pages 
-			ul.pagination__pages-list 
-				li.pagination__page.active(data-num="1")
-					a 1
-				li.pagination__page(data-num="2")
-					a 2
-				li.pagination__page(data-num="3")
-					a 3
-				li.pagination__page 
-					a ... 
-				li.pagination__page(data-num="15")
-					a 15
-				li.pagination__page.next(data-num="2" title="Next page")
-					a(href="#") 
-						span.material-symbols-outlined arrow_forward
-	p.pagination__caption 1 — 12 из 100+ вариантов аренды
+mixin createLinks(totalPages, titleNeeded = false, captionNeeded = false)
+
+  -let i = 1
+  -let arr = []
+
+  while (i <= totalPages)
+    -arr.push(i)
+    -i++
+
+  div(class="pagination" actpage="1")
+    if titleNeeded
+      p.pagination__title Pagination
+    .pagination__box
+      .pagination__pages
+        a(href="#!-1" class="pagination__page").pagination__arrow-previous.material-symbols-outlined arrow_back
+          each value in arr
+            a(href=`#!${value}` class='pagination__page')= value
+        a(href="#!+1" class="pagination__page").pagination__arrow-forward.material-symbols-outlined arrow_forward
+      if captionNeeded
+        p.pagination__caption
+          span.pagination__from 1
+          span  — 
+          span.pagination__to 12 
+          span  из 100+ вариантов аренды
