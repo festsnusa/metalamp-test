@@ -26,12 +26,18 @@
   align-items: center;
   cursor: pointer;
   background: #fff;
+  border-color: $darkShade25;
+
+  &:hover,
+  &__active {
+    border-color: $purple;
+  }
 
   &__icon {
     position: absolute;
     font-size: .625rem;
     color: transparent;
-    background-image: $linearGradient;
+    background-image: $linearGradientPurple;
     -webkit-background-clip: text;
     background-clip: text;
   }
