@@ -1,14 +1,22 @@
-mixin checkboxExpandable(expanded)
-  -let options = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']
+mixin createCheckboxItem(title, array)
+  p.checkbox__title= title
+  each value in array
+    .checkbox
+      label.checkbox__label
+        input.checkbox__input(type="checkbox" name= value[0] checked= value[1])
+        span.checkbox__span= value[2]
+
+mixin createCheckboxExpandable(title, array, expanded)
+  //- -let options = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']
   -let className = (expanded) ? 'expandable-checkbox-expanded' : ''
   .expandable-checkbox(class= className)
     .expandable-checkbox__header 
-      p.expandable-checkbox__title expandable checkbox list
+      p.expandable-checkbox__title= title
       button.expandable-checkbox__button(type="button")
         span.material-symbols-outlined expand_more
     ul.expandable-checkbox__list
-      each option in options
-        li.expandable-checkbox__item
-          input.expandable-checkbox__input(type="checkbox" name="breakfast" checked="checked")
-          span.expandable-checkbox__checkbox 
-          span.expandable-checkbox__caption= option
+      each value in array
+        .checkbox
+        label.checkbox__label
+          input.checkbox__input(type="checkbox" name= value[0] checked= value[1])
+          span.checkbox__span= value[2]

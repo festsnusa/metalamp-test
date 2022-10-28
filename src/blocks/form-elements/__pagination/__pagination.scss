@@ -89,7 +89,7 @@
 @for $i from 1 through 80 {
   .pagination[actpage="#{$i}"] {
     // 2 before
-    .pagination__page:nth-child(#{$i - 1}):not(:first-child):not(:nth-child(2)) {
+    .pagination__page:nth-child(#{$i - 2}):not(:first-child):not(:nth-child(2)) {
       display: inline-block;
       pointer-events: none;
       color: transparent;
@@ -129,7 +129,7 @@
       display: inline-block;
     }
 
-    .pagination__page:nth-child(#{$i + 3}):not(:last-child):not(:nth-last-child(2)) {
+    .pagination__page:nth-child(#{$i + 4}):not(:last-child):not(:nth-last-child(2)) {
       display: inline-block;
       pointer-events: none;
       color: transparent;

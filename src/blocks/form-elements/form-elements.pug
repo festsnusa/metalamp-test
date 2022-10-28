@@ -20,7 +20,10 @@ link(rel="stylesheet", href="form-elements.css")
       +inputSubscriptionField
     .gap
     .second-column
-      include __checkbox/__checkbox-buttons.pug
+      include __checkbox/__checkbox.pug
+      -let title = 'Checkbox Buttons'
+      -let checkboxOptions = {1: ["smoke-allow", true, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", false, "Можно пригласить гостей (до 10 человек)"]}
+      +createCheckboxItem(title, checkboxOptions)
       include __radio-buttons/__radio-buttons.pug
       include __toggle/__toggle.pug
       +toggle([true, false])
@@ -60,10 +63,12 @@ link(rel="stylesheet", href="form-elements.css")
 
   .main__section
     .first-column
-      include __checkbox/__checkbox.pug
-      +checkboxExpandable(false)
-      +checkboxExpandable(true)
-  
+      //- include __checkbox/__checkbox.pug
+      -let expandableTitle = 'Expandable Checkbox List'
+      -let expandableCheckboxOptions = {1: ["breakfast", true, "Завтрак"], 2: ["desk", true, "Письменный стол"], 3: ["feeding-chair", false, "Стул для кормления"], 4: ["tv", false, "Телевизор"], 5: ["shampoo", false, "Шампунь"], 6: ["tv", false, "Телевизор"], 7: ["shampoo", false, "Шампунь"]}
+      +createCheckboxExpandable(expandableTitle, expandableCheckboxOptions, false)
+      +createCheckboxExpandable(expandableTitle, expandableCheckboxOptions, true)
+
     .gap 
     .second-column 
       .rich-checkbox
@@ -83,7 +88,7 @@ link(rel="stylesheet", href="form-elements.css")
       include __comment/__comment.pug
       -let comment = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
       +createCommentSection("../../assets/images/profile.jpg", "Мурад Сарафанов", "5", 12, 'favorite', comment)
-    
+
 script(src="https://code.jquery.com/jquery-3.6.1.js", integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=", crossorigin="anonymous")
 script(src="../../assets/libs/noUISlider.js")
 script(src="../../assets/libs/cleave.min.js")
