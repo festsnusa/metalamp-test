@@ -6,6 +6,7 @@
 @import '../form-elements/__radio-buttons/_radio-buttons';
 @import '../form-elements/__toggle/_toggle';
 @import '../form-elements/__rate-button/_rate-button';
+@import '../cards/__datepicker/_datepicker';
 
 body {
   background: #e5e5e5;
@@ -90,9 +91,9 @@ nav {
     margin-bottom: 0.9rem;
   }
 
-  &__name {
-    // margin-bottom: 0.01rem;
-  }
+  // &__name {
+  //   // margin-bottom: 0.01rem;
+  // }
 
   &__box {
     display: flex;

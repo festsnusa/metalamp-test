@@ -1,22 +1,9 @@
-mixin dateDropdownSingle
+mixin createDateDropdown(data)
 	.input-date-dropdown
 		.date-dropdown
-			.date-dropdown__box
-				.date-dropdown__title Date Dropdown
-				.date-dropdown__input-box
-					input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
-					span.dropdown__input-icon.material-symbols-outlined expand_more
-
-mixin dateDropdownDouble
-	.input-date-dropdown
-		.date-dropdown
-			.date-dropdown__box
-				.date-dropdown__title Date Dropdown
-				.date-dropdown__input-box
-					input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
-					span.dropdown__input-icon.material-symbols-outlined expand_more
-			.date-dropdown__box
-				.date-dropdown__title Date Dropdown
-				.date-dropdown__input-box
-					input.date-dropdown__input(name="date-dropdown-input" placeholder="19.08.2019" readonly="readonly")
-					span.dropdown__input-icon.material-symbols-outlined expand_more
+			each value in data
+				.date-dropdown__box
+					.date-dropdown__title= value[0]
+					.date-dropdown__input-box
+						input.date-dropdown__input(name="date-dropdown-input" placeholder= value[1] readonly="readonly")
+						span.dropdown__input-icon.material-symbols-outlined expand_more

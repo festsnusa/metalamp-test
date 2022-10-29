@@ -3,13 +3,13 @@ const guestsDropdownIcon = document.querySelector('.dropdown__input-icon')
 const dropdownList = document.querySelector('.dropdown__list')
 const dropdownInput = document.querySelector('.dropdown__input') // input field
 
-const inputMaskedText = document.querySelector(".js-input__box--masked-field")
+// const inputMaskedText = document.querySelector(".js-input__box--masked-field")
 
-new Cleave(inputMaskedText, {
-    date: true,
-    datePattern: ['d', 'm', 'Y'],
-    delimiters: ['.', '.', '.']
-})
+// new Cleave(inputMaskedText, {
+//     date: true,
+//     datePattern: ['d', 'm', 'Y'],
+//     delimiters: ['.', '.', '.']
+// })
 
 guestsDropdownIcon.addEventListener('click', () => {
     dropdownList.classList.toggle('dropdown__list-shrinked') // toggle list

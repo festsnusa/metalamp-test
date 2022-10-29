@@ -15,7 +15,7 @@ link(rel="stylesheet", href="form-elements.css")
       +dropdownGuests(false)
       +inputMaskedField
       include __dropdown/__dropdown__date.pug
-      +dateDropdownDouble
+      +createDateDropdown({1: ['Date Dropdown', 'ДД.ММ.ГГГГ'], 2: ['Date Dropdown', '19.080.2019']})
       include __dropdown/__dropdown__filter-date.pug
       +inputSubscriptionField
     .gap
@@ -42,9 +42,10 @@ link(rel="stylesheet", href="form-elements.css")
     .gap
     .third-column
       include __range-slider/__range-slider.pug
-      .buttons 
-        p.buttons__title Buttons 
-        include __buttons/__buttons.pug
+      //- .buttons 
+      //-   p.buttons__title Buttons 
+      include __buttons/__buttons.pug
+      +buttons('Buttons')
       include __pagination/__pagination.pug
       +createLinks(15, true, true)
 

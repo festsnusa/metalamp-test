@@ -15,7 +15,7 @@
 
     &__box {
       display: grid;
-      grid-template-columns: repeat(auto-fill, 6.125rem);
+      // grid-template-columns: repeat(auto-fill, 6.125rem);
       column-gap: 1.25rem;
       row-gap: 0.6rem;
     }

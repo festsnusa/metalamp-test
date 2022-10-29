@@ -1,14 +1,9 @@
-mixin toggleItem(checked)
-	li.toggle__item
-		if (checked)
-			input.toggle__input(type="checkbox" checked="checked")
-		else
-			input.toggle__input(type="checkbox")
-		span.toggle__subtitle Получать спецпредложения
-
-mixin toggle(n)
+mixin toggle(array, title='')
 	.toggle
-		p.toggle__title Toggle
+		if (title != '')
+			p.toggle__title= title
 		ul.toggle__list
-			each value in n
-				+toggleItem(value)
+			each value in array
+				li.toggle__item
+					input.toggle__input(type="checkbox" checked= value[0])
+					span.toggle__caption= value[1]

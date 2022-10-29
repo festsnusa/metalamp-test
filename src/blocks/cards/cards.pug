@@ -1,6 +1,15 @@
-link(rel="stylesheet" href="../../assets/libs/air-datepicker.css")
+link(rel="stylesheet" href="__datepicker/__datepicker.css")
 link(rel="stylesheet" href="cards.css")
 link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+include ../form-elements/__buttons/__buttons.pug
+include ../form-elements/__dropdown/__dropdown__date.pug
+include ../form-elements/__dropdown/__dropdown__guests.pug
+include ../form-elements/__inputs/__inputs.pug
+include ../form-elements/__radio-buttons/__radio-buttons.pug
+include ../form-elements/__rate-button/__rate-button.pug
+include ../form-elements/__toggle/__toggle.pug
+include __datepicker/__datepicker.pug
 nav
   a.logo(href="#") 
     img(src="../../assets/images/logo-colorless.svg" alt="#")
@@ -10,78 +19,26 @@ nav
       .room-search 
         .room-search__header
           p.room-search__title Найдём номера под ваши пожелания
-        .room-search__calendar 
-          .date-dropdown
-            .date-dropdown__item
-              p.date-dropdown__title Прибытие
-              .date-dropdown__dropdown-box
-                input.dropdown__input(placeholder="ДД.ММ.ГГГГ")
-                button.dropdown__button(type="button")
-                  span.material-symbols-outlined expand_more
-            .date-dropdown__item
-              p.date-dropdown__title Выезд
-              .date-dropdown__dropdown-box
-                input.dropdown__input(placeholder="ДД.ММ.ГГГГ")
-                button.dropdown__button(type="button")
-                  span.material-symbols-outlined expand_more
-
-        .room-search__dropdown 
-          p.dropdown__title Гости
-          .dropdown__box
-            input.dropdown__input(placeholder="Сколько гостей" readonly="readonly")
-            button.dropdown__button(type="button")
-              span.material-symbols-outlined expand_more
-
+        .room-search__calendar
+          +createDateDropdown({1: ["Прибытие", "ДД.ММ.ГГГГ"], 2: ["Выезд", "19.08.2019"]})
+          +dropdownGuests("Гости", false)
         .room-search__submit-button 
-          button.button.button-purple.button-forward 
-            p.button__text.button__text-white Подобрать номер
-            span.material-symbols-outlined arrow_forward
+          +createProceedButton("Подобрать номер")
 
     .main__card 
       .registration-form 
         p.registration-form__title Регистрация аккаунта
-        .registration-form__name 
-          input.input.input__box.input__input(name="name" placeholder="Имя")
-        .registration-form__surname 
-          input.input.input__box.input__input(name="surname" placeholder="Фамилия")
-        .registration-form__gender 
-          .radio-buttons
-            .radio-buttons__box
-              .radio-buttons__item
-                label.radio-buttons__label
-                  input.radio-buttons__input(type="radio" name="sex" checked="checked")
-                  span.radio-buttons__radio
-                  span.radio-buttons__subtitle Мужчина
-              .radio-buttons__item
-                label.radio-buttons__label
-                  input.radio-buttons__input(type="radio" name="sex")
-                  span.radio-buttons__radio 
-                  span.radio-buttons__subtitle Женщина
-        .registration-form__birth-date 
-          .input.input__header 
-            p.input__title дата рождения
-          input.input.input__box(name="birth-date" placeholder="ДД.ММ.ГГГГ")
-        .registration-form__email 
-          p.input__title Данные для входа в сервис
-          input.input__box(type="email" name="email" placeholder="Email")
-        .registration-form__password 
-          input.input__box(name="password" placeholder="Пароль")
-        .registration-form__toggle 
-          ul.toggle__list
-            li.toggle__item
-              input.toggle__input(type="checkbox" name="receive special offers" checked="checked")
-              span.toggle__checkbox
-              span.toggle__subtitle Получать спецпредложения
-        .registration-form__button
-
-          button.button.button-purple.button-forward 
-            p.button__text.button__text-white Зарегистрироваться
-            span.material-symbols-outlined arrow_forward
+        +inputDefault("text", "name", "Имя")
+        +inputDefault("text", "surname", "Фамилия")
+        +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, title='')
+        +inputMaskedField('Дата рождения', 'masked-field', "ДД.ММ.ГГГГ")
+        +inputDefault("email", "email", "Email", "Данные для входа в сервис")
+        +inputDefault("password", "password", "Пароль")
+        +toggle({1: [false, "Получать спецпредложения"]})
+        +createProceedButton("Перейти к оплате")
         .registration-form__box 
           p.registration-form__caption Уже есть аккаунт на Toxin 
-          a.button__link(href="#")
-            button.button.button-white 
-              p.button__text.button__text-purple Войти
+          +createButton("Войти", "white", "purple", false)
   .main__secondColumn 
     .main__card 
       .booking-form
@@ -93,25 +50,10 @@ nav
           .booking-form__price 
             p.booking-form__price--price 9 990₽
             p.booking-form__price--per-day в сутки
-        .booking-form__arrival 
-          .input-date-dropdown
-            .date-dropdown
-              .date-dropdown__box
-                .date-dropdown__title Прибытие
-                .date-dropdown__input-box
-                  input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
-                  span.date-dropdown__input-icon.material-symbols-outlined expand_more
-              .date-dropdown__box
-                .date-dropdown__title Выезд
-                .date-dropdown__input-box
-                  input.date-dropdown__input(name="date-dropdown-input" placeholder="ДД.ММ.ГГГГ" readonly="readonly")
-                  span.date-dropdown__input-icon.material-symbols-outlined expand_more 
+        .booking-form__arrival
+          +createDateDropdown({1: ["Прибытие", "ДД.ММ.ГГГГ"], 2: ["Выезд", "19.08.2019"]})
         .booking-form__dropdown
-          .dropdown__title Гости 
-          .dropdown__box 
-            input.dropdown__input(name="guest-number" placeholder="Сколько гостей" readonly="readonly")
-            button.dropdown__button(type="button")
-              span.dropdown__icon.material-symbols-outlined expand_more
+          +dropdownGuests("Гости", false)
         .booking-form__calculations 
           .booking-form__total-per-days
             p.booking-form__total-per-days--multiplied 9 990₽ х 4 суток
@@ -131,39 +73,28 @@ nav
             p.booking-form__total--dots
             p.booking-form__total--result 38 081₽
         .booking-form__submit-button
-          button.button.button-purple.button-forward 
-            p.button__text.button__text-white Забронировать
-            span.material-symbols-outlined arrow_forward
+          +createProceedButton("Забронировать")
 
     .main__card 
       .login-form 
         p.login-form__header Войти
-        .login-form__email 
-          input.input__box(type="email" name="email" placeholder="Email")
-        .login-form__password 
-          input.input__box(name="password" placeholder="Пароль")
+        +inputDefault("email", "email", "Email")
+        +inputDefault("password", "password", "Пароль")
+        //- .login-form__email 
+        //-   input.input__box(type="email" name="email" placeholder="Email")
+        //- .login-form__password 
+        //-   input.input__box(name="password" placeholder="Пароль")
         .login-form__button
-          button.button.button-purple.button-forward 
-            p.button__text.button__text-white Войти
-            span.material-symbols-outlined arrow_forward
+          +createProceedButton("Забронировать")
         .login-form__box
           p.login-form__caption Нет аккаунта на Toxin?
-          a.button__link(href="#")
-            button.button.button-white 
-              p.button__text.button__text-purple Создать
+          +createButton("Создать", "white", "purple", false)
 
   .main__thirdColumn 
     .main__card 
       .date-dropdown 
         .date-dropdown__calendar 
-          .datepicker
-            .datepicker__header 
-              .datepicker__header__action-disabled(data-action="previous")
-                span.material-symbols-outlined arrow_back
-              .datepicker__header__title Август 2019 года
-              .datepicker__header__action(data-action="forward")
-          //- input#el1(type="text")
-          //- input#el2(type="text")
+          +createCalendar
 
     .main__card 
       .room-preview
@@ -195,14 +126,8 @@ nav
               span.room-preview__amount 9 990₽
               span.room-preview__per-day в сутки
           .room-preview__footer
-            .room-preview__rating 
-              .rate-buttons__group
-                .rate-button__box 
-                  span.rate-button__item.material-symbols-outlined star
-                  span.rate-button__item.material-symbols-outlined star
-                  span.rate-button__item.material-symbols-outlined star
-                  span.rate-button__item.material-symbols-outlined star
-                  span.rate-button__item.material-symbols-outlined star
+            .room-preview__rating
+              +rateButton(5)
             .room-preview__feedbacks 
               .room-preview__feedbacks-number 145
               .room-preview__feedbacks-text Отзывов
@@ -236,18 +161,12 @@ nav
               span.room-preview__amount 9 990₽
               span.room-preview__per-day в сутки
           .room-preview__footer
-            .room-preview__rating 
-              .rate-buttons__group
-                .rate-button__box 
-                  span.rate-button__item.material-symbols-outlined star
-                  span.rate-button__item.material-symbols-outlined star
-                  span.rate-button__item.material-symbols-outlined star
-                  span.rate-button__item.material-symbols-outlined star
-                  span.rate-button__item.material-symbols-outlined star
+            .room-preview__rating
+              +rateButton(4, 1)
             .room-preview__feedbacks 
               .room-preview__feedbacks-number 65
               .room-preview__feedbacks-text Отзывов
 
 script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
-script(src="../../assets/libs/air-datepicker.js")
+script(src="__datepicker/__datepicker.js")
 script(src="cards.js")
