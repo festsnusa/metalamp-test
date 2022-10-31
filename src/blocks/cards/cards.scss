@@ -6,16 +6,11 @@
 @import '../form-elements/__radio-buttons/_radio-buttons';
 @import '../form-elements/__toggle/_toggle';
 @import '../form-elements/__rate-button/_rate-button';
-@import '../cards/__datepicker/_datepicker';
+@import '__image-slider/_image-slider';
+@import '../../assets/libs/airpdatepicker/_airdatepicker';
 
 body {
   background: #e5e5e5;
-}
-
-nav {
-  margin: 1.875rem auto 4.3rem;
-  max-width: 99%;
-  padding: 0 1.5rem;
 }
 
 .main {
