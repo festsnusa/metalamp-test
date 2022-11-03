@@ -1,11 +1,11 @@
 mixin inputDefault(inputType, name, placeholder, title='', subtitle='')
   .input-default
-  .input
-    if (title !='' || subtitle !='')
-      .input__header
-        p.input__title= title
-        p.input__subtitle= subtitle
-    input.input__box(type= inputType name= name placeholder= placeholder)
+    .input
+      if (title !='' || subtitle !='')
+        .input__header
+          p.input__title= title
+          p.input__subtitle= subtitle
+      input.input__box(type= inputType name= name placeholder= placeholder)
 
 mixin inputHover(title='', subtitle='')
   .input-hover
@@ -32,4 +32,4 @@ mixin inputSubscriptionField(title='')
       input.subscription-field__input(type="email" name="subscription-text" placeholder="Email")
       button.subscription-field__input-button.material-symbols-outlined(type="submit") arrow_forward
 
-script(src="../../../assets/libs/masked-field.js")
+//- script(src="../../../assets/libs/masked-field.js")
