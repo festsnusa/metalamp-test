@@ -247,8 +247,11 @@ class DatePicker {
     this.firstClick = !this.firstClick;
   }
   clearClick() {
-    let startInput = this.element.querySelector(".date-picker-start");
-    let endInput = this.element.querySelector(".date-picker-end");
+    // let startInput = this.element.querySelector(".date-picker-start");
+    let startInput = this.element.parentElement.querySelector(".date-picker-start")
+    // let endInput = this.element.querySelector(".date-picker-end");
+    let endInput = this.element.parentElement.querySelector(".date-picker-end");
+
     startInput.value = "";
     endInput.value = "";
     this.startDate = null;
@@ -258,10 +261,20 @@ class DatePicker {
     this.update();
   }
   applyClick() {
-    let startInput = this.element.querySelector(".date-picker-start");
+
+    // let startInput = this.element.querySelector(".date-picker-start");
+    let startInput = this.element.parentElement.querySelector(".date-picker-start")
     startInput.value = this.dateToString(this.startDate);
-    let endInput = this.element.querySelector(".date-picker-end");
+    // let endInput = this.element.querySelector(".date-picker-end");
+    let endInput = this.element.parentElement.querySelector(".date-picker-end");
     endInput.value = this.dateToString(this.endDate);
+
+    const datePickers = document.querySelectorAll('.date-picker')
+
+    datePickers.forEach(e => {
+      e.classList.remove('date-picker__active')
+    })
+    
   }
   dateToString(date) {
     let string =

@@ -1,5 +1,8 @@
-mixin createCalendar
-  .datepicker
-    .date-picker
-      input.date-picker-start
-      input.date-picker-end
+include ../../form-elements/__dropdown/__dropdown__date.pug
+
+mixin createCalendar(inputFrom, inputTo, inputsVisible = true)
+  -let visibility = (inputsVisible) ? 'date-dropdown__box_active' : ''
+  -let datePickerClass = (!inputsVisible) ? 'date-picker__active' : ''
+  .datepicker-box
+    +createDateDropdown({1: [`date-picker-start ${visibility}`, "Прибытие", "ДД.ММ.ГГГГ"], 2: [`date-picker-end ${visibility}`, "Выезд", "ДД.ММ.ГГГГ"]})
+    .date-picker(class= datePickerClass)
