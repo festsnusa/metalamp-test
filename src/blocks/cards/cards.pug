@@ -11,6 +11,7 @@ include ../form-elements/__radio-buttons/__radio-buttons.pug
 include ../form-elements/__rate-button/__rate-button.pug
 include ../form-elements/__toggle/__toggle.pug
 include __image-slider/__image-slider.pug
+include __datepicker/__datepicker.pug
 
 -let images = {1: ["../../assets/images/room-1-slider.jpg", "Фото 1"], 2: ["../../assets/images/room-1-slider.jpg", "Фото 2"], 3: ["../../assets/images/room-1-slider.jpg", "Фото 3"], 4: ["../../assets/images/room-1-slider.jpg", "Фото 4"]}
 
@@ -24,7 +25,8 @@ include __image-slider/__image-slider.pug
         .room-search__header
           p.room-search__title Найдём номера под ваши пожелания
         .room-search__calendar
-          +createDateDropdown({1: ["field-date-from", "Прибытие", "ДД.ММ.ГГГГ"], 2: ["field-date-to", "Выезд", "19.08.2019"]})
+          //- +createDateDropdown({1: ["field-date-from", "Прибытие", "ДД.ММ.ГГГГ"], 2: ["field-date-to", "Выезд", "19.08.2019"]})
+          +createCalendar("date-picker-start", "date-picker-end")
           +dropdownGuests("Гости", false)
         .room-search__submit-button 
           +createProceedButton("Подобрать номер")
@@ -55,7 +57,8 @@ include __image-slider/__image-slider.pug
             p.booking-form__price--price 9 990₽
             p.booking-form__price--per-day в сутки
         .booking-form__arrival
-          +createDateDropdown({1: ["field-date-from", "Прибытие", "ДД.ММ.ГГГГ"], 2: ["field-date-to", "Выезд", "19.08.2019"]})
+          //- +createDateDropdown({1: ["date-picker-start", "Прибытие", "ДД.ММ.ГГГГ"], 2: ["date-picker-end", "Выезд", "19.08.2019"]})
+          +createCalendar("date-picker-start", "date-picker-end")
         .booking-form__dropdown
           +dropdownGuests("Гости", false)
         .booking-form__calculations 
@@ -98,7 +101,7 @@ include __image-slider/__image-slider.pug
     .main__card 
       .date-dropdown 
         .date-dropdown__calendar 
-          //- +createCalendar
+          +createCalendar("date-picker-start", "date-picker-end", false)
 
     .main__card 
       .room-preview
@@ -141,6 +144,7 @@ include __image-slider/__image-slider.pug
               .room-preview__feedbacks-text Отзывов
 
 script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
-script(src="../../assets/libs/airpdatepicker/airdatepicker.js")
+//- script(src="../../assets/libs/airpdatepicker/airdatepicker.js")
+script(src="./__datepicker/__datepicker.js")
 script(src="./__image-slider/__image-slider.js")
-//- script(src="cards.js")
+script(src="cards.js")

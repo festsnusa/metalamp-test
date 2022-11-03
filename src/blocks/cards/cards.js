@@ -1,17 +1,15 @@
-// console.log('!')
+const inputsFrom = document.querySelectorAll('.date-picker-start')
+const inputsTo = document.querySelectorAll('.date-picker-end')
 
-// let dpMin, dpMax;
+inputsFrom.forEach((input, index) => {
+  input.addEventListener('click', showCalendar.bind(null, index))
+})
 
-// let options = {
-//     // keyboardNav: true,
-//     range: true,
-//     dateFormat(date) {
-//       return date.toLocaleString([], {
-//         day: "2-digit",
-//         month: "long"
-//       });
-//     },
-//     multipleDatesSeparator: " - "
-//   };
-  
-// let dp = new AirDatepicker("#el1", options);
+inputsTo.forEach((input, index) => {
+  input.addEventListener('click', showCalendar.bind(null, index))
+})
+
+function showCalendar(i) {
+  const datePicker = document.querySelectorAll('.date-picker')[i]
+  datePicker.classList.toggle('date-picker__active')
+}
