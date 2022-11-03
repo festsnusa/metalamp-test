@@ -3,7 +3,7 @@ mixin createDateDropdown(data)
 		.date-dropdown
 			each value in data
 				.date-dropdown__box
-					.date-dropdown__title= value[0]
+					.date-dropdown__title= value[1]
 					.date-dropdown__input-box
-						input.date-dropdown__input(name="date-dropdown-input" placeholder= value[1] readonly="readonly")
+						input.date-dropdown__input(class= value[0] name= value[0] placeholder= value[2] readonly="readonly")
 						span.dropdown__input-icon.material-symbols-outlined expand_more
