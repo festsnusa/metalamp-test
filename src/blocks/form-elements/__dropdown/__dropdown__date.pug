@@ -1,9 +1,0 @@
-mixin createDateDropdown(data)
-	.input-date-dropdown
-		.date-dropdown
-			each value in data
-				.date-dropdown__box
-					.date-dropdown__title= value[1]
-					.date-dropdown__input-box
-						input.date-dropdown__input(class= value[0] name= value[0] placeholder= value[2] readonly="readonly")
-						span.dropdown__input-icon.material-symbols-outlined expand_more

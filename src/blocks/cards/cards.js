@@ -13,3 +13,12 @@ function showCalendar(i) {
   const datePicker = document.querySelectorAll('.date-picker')[i]
   datePicker.classList.toggle('date-picker__active')
 }
+
+function hideCalendar() {
+  const datePickers = document.querySelectorAll('.date-picker')
+
+  datePickers.forEach(datePicker => {
+    datePicker.classList.remove('date-picker__active')
+  })
+ 
+}

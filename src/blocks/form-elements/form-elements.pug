@@ -2,38 +2,48 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+S
 link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 link(rel="stylesheet", href="../../assets/libs/noUISlider.css")
 link(rel="stylesheet", href="form-elements.css")
+include __inputs/__inputs.pug
+include __dropdown/__dropdown__guests.pug
+include __datepicker/__datepicker.pug
+include __dropdown/__dropdown__filter-date.pug
+include __checkbox/__checkbox.pug
+include __radio-buttons/__radio-buttons.pug
+include __toggle/__toggle.pug
+include __like-button/__like-button.pug
+include __rate-button/__rate-button.pug
+include __range-slider/__range-slider.pug
+include __buttons/__buttons.pug
+include __dropdown/__dropdown__beds.pug
+include __pagination/__pagination.pug
+include __rich-checkbox/__rich-checkbox.pug
+include __description/__description.pug
+include __comment/__comment.pug
+include __bullet-list/__bullet-list.pug
+
 .nav
   a.logo(href="#") 
     img(src="../../assets/images/logo-colorless.svg", alt="logo")
 .main
   .main__section
     .first-column
-      include __inputs/__inputs.pug
-      +inputDefault
-      +inputHover
-      include __dropdown/__dropdown__guests.pug
-      +dropdownGuests(false)
-      +inputMaskedField
-      include __dropdown/__dropdown__date.pug
-      +createDateDropdown({1: ['Date Dropdown', 'ДД.ММ.ГГГГ'], 2: ['Date Dropdown', '19.080.2019']})
-      include __dropdown/__dropdown__filter-date.pug
-      +inputSubscriptionField
+      +inputDefault("text", "name", "Имя", "Text Field", "Default")
+      +inputHover("Text Field", "Default")
+      +dropdownGuests("Сколько гостей", false)
+      +inputMaskedField("Masked text field", "masked-field", "ДД.ММ.ГГГГ")
+      +createCalendar("date-picker-start", "date-picker-end", true, ["Date Dropdown", "Date Dropdown"])
+      +createSingleInputCalendar("Filter Date Dropdown")
+      +inputSubscriptionField("Subscription Text Field")
     .gap
     .second-column
-      include __checkbox/__checkbox.pug
       -let title = 'Checkbox Buttons'
       -let checkboxOptions = {1: ["smoke-allow", true, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", false, "Можно пригласить гостей (до 10 человек)"]}
       +createCheckboxItem(title, checkboxOptions)
-      include __radio-buttons/__radio-buttons.pug
-      include __toggle/__toggle.pug
       +toggle([true, false])
-      include __like-button/__like-button.pug
       .like-buttons
         p.like-buttons__title like button
         .like-buttons__box
           +likeButtonContent(2, 'favorite_border')
           +likeButtonContent(12, 'favorite')
-      include __rate-button/__rate-button.pug
       .rate-button
         p.rate-button__title Rate button
         .rate-button__group
@@ -41,17 +51,11 @@ link(rel="stylesheet", href="form-elements.css")
           +rateButton(5)
     .gap
     .third-column
-      include __range-slider/__range-slider.pug
-      //- .buttons 
-      //-   p.buttons__title Buttons 
-      include __buttons/__buttons.pug
       +buttons('Buttons')
-      include __pagination/__pagination.pug
       +createLinks(15, true, true)
 
   .main__section
     .first-column 
-      include __dropdown/__dropdown__beds.pug
       +dropdownBedsDefault
       +dropdownBedsExpanded         
     .gap 
@@ -64,7 +68,6 @@ link(rel="stylesheet", href="form-elements.css")
 
   .main__section
     .first-column
-      //- include __checkbox/__checkbox.pug
       -let expandableTitle = 'Expandable Checkbox List'
       -let expandableCheckboxOptions = {1: ["breakfast", true, "Завтрак"], 2: ["desk", true, "Письменный стол"], 3: ["feeding-chair", false, "Стул для кормления"], 4: ["tv", false, "Телевизор"], 5: ["shampoo", false, "Шампунь"], 6: ["tv", false, "Телевизор"], 7: ["shampoo", false, "Шампунь"]}
       +createCheckboxExpandable(expandableTitle, expandableCheckboxOptions, false)
@@ -74,24 +77,21 @@ link(rel="stylesheet", href="form-elements.css")
     .second-column 
       .rich-checkbox
         p.rich-checkbox__header Rich сheckbox buttons
-        include __rich-checkbox/__rich-checkbox.pug
     .gap 
     .third-column
       .bullet-list 
         p.bullet-list__header Bullet list
-        include __bullet-list/__bullet-list.pug
         +createBulletList
   .main__section
     .first-column
-      include __description/__description.pug
     .gap 
     .second-column
-      include __comment/__comment.pug
       -let comment = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
       +createCommentSection("../../assets/images/profile.jpg", "Мурад Сарафанов", "5", 12, 'favorite', comment)
 
 script(src="https://code.jquery.com/jquery-3.6.1.js", integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=", crossorigin="anonymous")
 script(src="../../assets/libs/noUISlider.js")
-script(src="../../assets/libs/cleave.min.js")
+script(src="../../assets/libs/masked-field.js")
 script(src="../../assets/libs/pagination.js")
+script(src="./__datepicker/__datepicker.js")
 script(src="form-elements.js")

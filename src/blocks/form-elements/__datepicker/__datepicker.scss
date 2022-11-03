@@ -10,12 +10,14 @@
 
   &__active {
     display: block;
+    max-width: 20rem;
+    width: 100%;
   }
 }
 
 .calendar {
-  margin: 10px;
-  border: 1px solid #bbb;
+  // margin: 10px;
+  border: 0.0625rem solid $darkShade25;
   max-width: 320px;
 
   &__header {

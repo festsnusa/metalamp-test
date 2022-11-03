@@ -194,6 +194,24 @@
     color: $darkShade75;
   }
 
+  &__button {
+
+    position: absolute;
+    top: calc(2.625rem - 25%);
+    right: 0.625rem;
+    color: $darkShade50;
+    font-size: 1.5rem;
+    border: none;
+    appearance: none;
+    user-select: none;
+    background: transparent;
+    cursor: pointer;
+
+    &-icon {
+      display: inline-block;
+      line-height: 1;
+    }
+  }
 }
 
 .filter-date-dropdown {

@@ -264,11 +264,21 @@ class DatePicker {
 
     // let startInput = this.element.querySelector(".date-picker-start");
     let startInput = this.element.parentElement.querySelector(".date-picker-start")
-    startInput.value = this.dateToString(this.startDate);
+    // startInput.value = this.dateToString(this.startDate);
+
+    if (this.startDate != undefined)
+      startInput.value = this.dateToString(this.startDate);
+
     // let endInput = this.element.querySelector(".date-picker-end");
     let endInput = this.element.parentElement.querySelector(".date-picker-end");
-    endInput.value = this.dateToString(this.endDate);
 
+    if (this.endDate != undefined && endInput != null)
+      endInput.value = this.dateToString(this.endDate);
+
+    if (endInput == null) {
+      startInput.value += ` — ${this.dateToString(this.endDate)}`
+    }
+      
     const datePickers = document.querySelectorAll('.date-picker')
 
     datePickers.forEach(e => {
@@ -296,3 +306,28 @@ document.addEventListener("DOMContentLoaded", () => {
     datepicker.render();
   });
 });
+
+const inputsFrom = document.querySelectorAll('.date-picker-start')
+const inputsTo = document.querySelectorAll('.date-picker-end')
+
+inputsFrom.forEach((input, index) => {
+  input.addEventListener('click', showCalendar.bind(null, index))
+})
+
+inputsTo.forEach((input, index) => {
+  input.addEventListener('click', showCalendar.bind(null, index))
+})
+
+function showCalendar(i) {
+  const datePicker = document.querySelectorAll('.date-picker')[i]
+  datePicker.classList.toggle('date-picker__active')
+}
+
+function hideCalendar() {
+  const datePickers = document.querySelectorAll('.date-picker')
+
+  datePickers.forEach(datePicker => {
+    datePicker.classList.remove('date-picker__active')
+  })
+ 
+}
