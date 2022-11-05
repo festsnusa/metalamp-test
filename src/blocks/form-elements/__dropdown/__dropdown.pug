@@ -1,16 +1,17 @@
-mixin dropdownGuests(title, expanded, arr = [0, 0, 0])
-	-let listClass = (expanded) ? 'expanded' : 'shrinked'
-	.dropdown 
-		.dropdown__title= title
+mixin dropdownGuests(data, arr = [0, 0, 0])
+	-let listClass = ("expanded" in data) ? 'expanded' : 'shrinked'
+	.dropdown
+		if ("title" in data)
+			.dropdown__title= title
 		.dropdown__box.js-dropdown__box--guest-amount
-			input.dropdown__input(name="guest-amount" placeholder="Сколько гостей" readonly="readonly")
+			input.dropdown__input(class="js-dropdown__input" name="guest-amount" placeholder="Сколько гостей" readonly="readonly")
 			button.dropdown__button(type="button")
 				span.dropdown__icon.material-symbols-outlined expand_more
 			ul.dropdown__list(class=`dropdown__list-${listClass}`)
 				-let categories = {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'}
 				-let index = 0
 					each key, value in categories
-						li.dropdown__list-item(class=`dropdown__list-item-${key}`)
+						li.dropdown__list-item(class=`dropdown__list-item-${data[listClass]}`)
 							p.dropdown__list-item__caption= value
 							.dropdown__list-item__counter-box
 								button.dropdown__list-item__counter-button-minus(class=`js-dropdown__list-item__counter-button-minus-${key}`) -

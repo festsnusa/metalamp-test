@@ -12,19 +12,19 @@ mixin createProceedButton(text)
 			p.button__text.button__text_white= text
 			span.material-symbols-outlined arrow_forward
 
-mixin buttons(title = '')
+mixin createButtons(title = '')
 	.buttons 
 		if (title != '')
 			p.buttons__title= title
 		.buttons__box 
 			.buttons__first-box
-				+createButton('purple', 'white', false)
-				+createButton('purple', 'white', true)
+				+createButton('click me', 'purple', 'white', false)
+				+createButton('click me', 'purple', 'white', true)
 			.buttons__second-box 
-				+createButton('white', 'purple', false)
-				+createButton('white', 'purple', true)
+				+createButton('click me', 'white', 'purple', false)
+				+createButton('click me', 'white', 'purple', true)
 			.buttons__third-box 
-				+createButton('transparent ', 'purple', false)
-				+createButton('transparent ', '', false)
+				+createButton('click me ', 'transparent', 'purple', false)
+				+createButton('click me ', 'transparent', '', true)
 			.buttons__fourth-box
 				+createProceedButton('Перейти к оплате')

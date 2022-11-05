@@ -1,35 +1,17 @@
-mixin inputDefault(inputType, name, placeholder, title='', subtitle='')
-  .input-default
-    .input
-      if (title !='' || subtitle !='')
-        .input__header
-          p.input__title= title
-          p.input__subtitle= subtitle
-      input.input__box(type= inputType name= name placeholder= placeholder)
-
-mixin inputHover(title='', subtitle='')
-  .input-hover
+mixin createInput(data)
+  div(class=`input-${data["class"]}`)
     .input
       .input__header
-        if (title!='' || subtitle!='')
-          p.input__title= title
-          p.input__subtitle= subtitle
-      input.input__box(name="This is pretty awesome" placeholder="This is pretty awesome")
+        if ("title" in data)
+          p.input__title= data["title"]
+        if ("subtitle" in data)
+          p.input__subtitle= data["subtitle"]
+      input.input__box(class= data["inputClass"] type= data["inputType"] name= data["name"] placeholder= data["placeholder"])
 
-mixin inputMaskedField(title, name, placeholder)
-  .input-masked-field
-    .input
-      .input__header
-        if (title !='')
-          p.input__title= title
-      input.input__box.js-input__box--masked-field(name= name placeholder= placeholder)
-
-mixin inputSubscriptionField(title='')
+mixin createSubscriptionField(title='')
   .subscription-field
     if (title !='')
-      p.subscription-field__title Subscription text field
+      p.subscription-field__title= title
     .subscription-field__input-box
       input.subscription-field__input(type="email" name="subscription-text" placeholder="Email")
       button.subscription-field__input-button.material-symbols-outlined(type="submit") arrow_forward
-
-//- script(src="../../../assets/libs/masked-field.js")

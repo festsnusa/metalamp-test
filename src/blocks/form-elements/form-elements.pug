@@ -3,9 +3,8 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+I
 link(rel="stylesheet", href="../../assets/libs/noUISlider.css")
 link(rel="stylesheet", href="form-elements.css")
 include __inputs/__inputs.pug
-include __dropdown/__dropdown__guests.pug
+include __dropdown/__dropdown.pug
 include __datepicker/__datepicker.pug
-include __dropdown/__dropdown__filter-date.pug
 include __checkbox/__checkbox.pug
 include __radio-buttons/__radio-buttons.pug
 include __toggle/__toggle.pug
@@ -26,19 +25,20 @@ include __bullet-list/__bullet-list.pug
 .main
   .main__section
     .first-column
-      +inputDefault("text", "name", "Имя", "Text Field", "Default")
-      +inputHover("Text Field", "Default")
-      +dropdownGuests("Сколько гостей", false)
-      +inputMaskedField("Masked text field", "masked-field", "ДД.ММ.ГГГГ")
+      +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email", title: "Text Field", subtitle: "Default"})
+      +createInput({class: "hover", inputType: "text", name: "This is pretty awesome", placeholder: "This is pretty awesome", title: "Text Field", subtitle: "Default"})
+      +dropdownGuests({title: "Сколько гостей", listClass: "shrinked"})
+      //- +createInput({class: "field", inputType: "text", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Masked text field})
+      +createInput({class: "field", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Masked text field", inputClass: "js-input__box--masked-field"})
+      //- +inputMaskedField("Masked text field", "masked-field", "ДД.ММ.ГГГГ")
       +createCalendar("date-picker-start", "date-picker-end", true, ["Date Dropdown", "Date Dropdown"])
       +createSingleInputCalendar("Filter Date Dropdown")
-      +inputSubscriptionField("Subscription Text Field")
+      +createSubscriptionField("Subscription Text Field")
     .gap
     .second-column
-      -let title = 'Checkbox Buttons'
-      -let checkboxOptions = {1: ["smoke-allow", true, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", false, "Можно пригласить гостей (до 10 человек)"]}
-      +createCheckboxItem(title, checkboxOptions)
-      +toggle([true, false])
+      +createCheckboxItem('Checkbox Buttons', {1: ["smoke-allow", true, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", false, "Можно пригласить гостей (до 10 человек)"]})
+      +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, title='Radio Buttons')
+      +toggle({1: [true, "Получать спецпредложения"], 2: [false, "Получать спецпредложения"]})
       .like-buttons
         p.like-buttons__title like button
         .like-buttons__box
@@ -51,20 +51,21 @@ include __bullet-list/__bullet-list.pug
           +rateButton(5)
     .gap
     .third-column
-      +buttons('Buttons')
+      +createRangeSlider('Range slider')
+      +createButtons('Buttons')
       +createLinks(15, true, true)
 
   .main__section
-    .first-column 
-      +dropdownBedsDefault
-      +dropdownBedsExpanded         
+    .first-column
+      +createDropdownBeds({placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Default'})
+      +createDropdownBeds({placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Expanded', expanded}, {'Спальни': 2, 'Кровати': 2, 'Ванные комнаты': 0})      
     .gap 
     .second-column 
-      +dropdownGuests(true)
+      +dropdownGuests({title: "Dropdown", listClass: "shrinked"})
 
     .gap 
     .third-column
-      +dropdownGuests(true, [2, 1, 0])
+      +dropdownGuests({title: "Dropdown", listClass: "expanded"}, [2, 1, 0])
 
   .main__section
     .first-column
@@ -77,6 +78,7 @@ include __bullet-list/__bullet-list.pug
     .second-column 
       .rich-checkbox
         p.rich-checkbox__header Rich сheckbox buttons
+        +createRichCheckboxList
     .gap 
     .third-column
       .bullet-list 
@@ -84,6 +86,7 @@ include __bullet-list/__bullet-list.pug
         +createBulletList
   .main__section
     .first-column
+      +createDescription
     .gap 
     .second-column
       -let comment = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
@@ -94,4 +97,7 @@ script(src="../../assets/libs/noUISlider.js")
 script(src="../../assets/libs/masked-field.js")
 script(src="../../assets/libs/pagination.js")
 script(src="./__datepicker/__datepicker.js")
-script(src="form-elements.js")
+script(src="./__dropdown/__dropdown__guests.js")
+script(src="./__like-button/__like-button.js")
+script(src="./__checkbox/__checkbox.js")
+script(src="./form-elements.js")

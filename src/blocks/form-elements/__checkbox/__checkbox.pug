@@ -7,13 +7,12 @@ mixin createCheckboxItem(title, array)
         span.checkbox__span= value[2]
 
 mixin createCheckboxExpandable(title, array, expanded)
-  //- -let options = ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь', 'Телевизор', 'Шампунь']
-  -let className = (expanded) ? 'expandable-checkbox-expanded' : ''
+  -let className = (expanded) ? 'expandable-checkbox_expanded' : ''
   .expandable-checkbox(class= className)
     .expandable-checkbox__header 
       p.expandable-checkbox__title= title
       button.expandable-checkbox__button(type="button")
-        span.material-symbols-outlined expand_more
+        span.expandable-checkbox__icon.material-symbols-outlined
     ul.expandable-checkbox__list
       each value in array
         .checkbox
