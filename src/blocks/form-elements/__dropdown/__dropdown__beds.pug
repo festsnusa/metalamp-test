@@ -7,7 +7,7 @@ mixin createDropdownBeds(data, list)
 		.dropdown__box 
 			input.dropdown__input(name="room-picker" placeholder= data["placeholder"] readonly="readonly")
 			button.dropdown__button(type="button")
-				span.dropdown__icon.material-symbols-outlined expand_more
+				span.dropdown__icon.material-symbols-outlined
 			if ("expanded" in data)
 				ul.dropdown__list.dropdown__list-expanded
 					each key, item in list
@@ -17,31 +17,3 @@ mixin createDropdownBeds(data, list)
 								button.dropdown__list-item__counter-button-minus -
 								p.dropdown__list-item__counter= key
 								button.dropdown__list-item__counter-button-plus +
-
-//- mixin dropdownBedsExpanded
-//- 	.dropdown.dropdown-expanded
-//- 		.dropdown__title Dropdown
-//- 		.dropdown__subtitle Expanded
-//- 		.dropdown__box 
-//- 			input.dropdown__input(name="room-picker" placeholder="2 спальни, 2 кровати" readonly="readonly")
-//- 			button.dropdown__button(type="button")
-//- 				span.dropdown__icon.material-symbols-outlined expand_more
-//- 			ul.dropdown__list.dropdown__list-expanded
-//- 				li.dropdown__list-item.dropdown__list-item-bedroom 
-//- 					p.dropdown__list-item__caption Спальни
-//- 					.dropdown__list-item__counter-box 
-//- 						button.dropdown__list-item__counter-button-minus -
-//- 						p.dropdown__list-item__counter 2
-//- 						button.dropdown__list-item__counter-button-plus +
-//- 				li.dropdown__list-item.dropdown__list-item-bed 
-//- 					p.dropdown__list-item__caption Кровати
-//- 					.dropdown__list-item__counter-box 
-//- 						button.dropdown__list-item__counter-button-minus -
-//- 						p.dropdown__list-item__counter 2
-//- 						button.dropdown__list-item__counter-button-plus +
-//- 				li.dropdown__list-item.dropdown__list-item-bathroom
-//- 					p.dropdown__list-item__caption Ванные комнаты
-//- 					.dropdown__list-item__counter-box 
-//- 						button.dropdown__list-item__counter-button-minus -
-//- 						p.dropdown__list-item__counter 0
-//- 						button.dropdown__list-item__counter-button-plus +

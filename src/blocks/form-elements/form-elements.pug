@@ -27,17 +27,15 @@ include __bullet-list/__bullet-list.pug
     .first-column
       +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email", title: "Text Field", subtitle: "Default"})
       +createInput({class: "hover", inputType: "text", name: "This is pretty awesome", placeholder: "This is pretty awesome", title: "Text Field", subtitle: "Default"})
-      +dropdownGuests({title: "Сколько гостей", listClass: "shrinked"})
-      //- +createInput({class: "field", inputType: "text", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Masked text field})
+      +dropdownGuests({title: "Dropdown", listClass: "shrinked"})
       +createInput({class: "field", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Masked text field", inputClass: "js-input__box--masked-field"})
-      //- +inputMaskedField("Masked text field", "masked-field", "ДД.ММ.ГГГГ")
       +createCalendar("date-picker-start", "date-picker-end", true, ["Date Dropdown", "Date Dropdown"])
       +createSingleInputCalendar("Filter Date Dropdown")
       +createSubscriptionField("Subscription Text Field")
     .gap
     .second-column
       +createCheckboxItem('Checkbox Buttons', {1: ["smoke-allow", true, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", false, "Можно пригласить гостей (до 10 человек)"]})
-      +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, title='Radio Buttons')
+      +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, 'Radio Buttons')
       +toggle({1: [true, "Получать спецпредложения"], 2: [false, "Получать спецпредложения"]})
       .like-buttons
         p.like-buttons__title like button
@@ -65,7 +63,7 @@ include __bullet-list/__bullet-list.pug
 
     .gap 
     .third-column
-      +dropdownGuests({title: "Dropdown", listClass: "expanded"}, [2, 1, 0])
+      +dropdownGuests({title: "Dropdown", listClass: "expanded"})
 
   .main__section
     .first-column
