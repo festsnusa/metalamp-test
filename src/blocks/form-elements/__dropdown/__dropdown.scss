@@ -100,7 +100,7 @@
 
       &__caption {
         font-size: .75rem;
-        font-weight: 700;
+        @extend .bold;
         text-transform: uppercase;
         color: $darkShade100;
       }
@@ -126,7 +126,7 @@
 
       &__counter {
         font-size: .75rem;
-        font-weight: 700;
+        @extend .bold;
         color: $darkShade100;
       }
     }
@@ -149,7 +149,7 @@
     border: none;
     cursor: pointer;
     font-size: .75rem;
-    font-weight: 700;
+    @extend .bold;
     font-family: Montserrat, Arial, sans-serif;
     text-transform: uppercase;
     margin-top: 0.6rem;
@@ -164,7 +164,6 @@
 .date-dropdown {
   max-width: 20rem;
   display: grid;
-  // visibility: hidden;
   grid-template-columns: 1fr 1fr;
   column-gap: 1.25rem;
   row-gap: 0.6rem;
@@ -176,9 +175,8 @@
 
   &__title {
     font-size: 0.75rem;
-    font-weight: 700;
+    @extend .bold;
     text-transform: uppercase;
-    // margin-bottom: 0.34rem;
   }
 
   &__box {
@@ -213,10 +211,20 @@
     user-select: none;
     background: transparent;
     cursor: pointer;
+  }
 
-    &-icon {
+  &__icon {
+    position: relative;
+    cursor: pointer;
+    color: $darkShade50;
+
+    &:before {
+      content: 'expand_more';
       display: inline-block;
-      line-height: 1;
+    }
+
+    &_rotated {
+      transform: rotate(180deg);
     }
   }
 }
@@ -227,7 +235,7 @@
 
   &__title {
     font-size: 0.75rem;
-    font-weight: 700;
+    @extend .bold;
     text-transform: uppercase;
     margin-bottom: 0.31rem;
   }
@@ -241,11 +249,20 @@
     cursor: pointer;
   }
 
-  &__input-icon {
+  &__icon {
     position: relative;
     bottom: 2rem;
     left: 14.5rem;
     cursor: pointer;
     color: $darkShade50;
+
+    &:before {
+      content: 'expand_more';
+      display: inline-block;
+    }
+
+    &_rotated {
+      transform: rotate(180deg);
+    }
   }
 }

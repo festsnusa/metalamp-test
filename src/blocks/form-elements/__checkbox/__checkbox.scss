@@ -9,7 +9,7 @@
   &__title {
     text-transform: uppercase;
     font-size: 0.75rem;
-    font-weight: 700;
+    @extend .bold;
     padding-bottom: 0.85rem;
   }
 

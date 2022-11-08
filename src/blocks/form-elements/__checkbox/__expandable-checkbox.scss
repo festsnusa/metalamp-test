@@ -19,7 +19,7 @@ $root: '.expandable-checkbox';
 
   &__title {
     font-size: .75rem;
-    font-weight: 700;
+    @extend .bold;
     text-transform: uppercase;
   }
 

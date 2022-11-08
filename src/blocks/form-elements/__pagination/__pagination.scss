@@ -8,7 +8,7 @@
   
   &__title {
     font-size: .75rem;
-    font-weight: 700;
+    @extend .bold;
     text-transform: uppercase;
     margin-bottom: 1.05rem;
   }
@@ -54,14 +54,12 @@
     line-height: 38px;
     padding: 0;
     color: $darkShade50;
-    // font-weight: 700;
     letter-spacing: .03em;
     display: none;
     text-align: center;
 
     &:first-child,
     &:last-child {
-      // padding: 0 16px;
       margin: 0 12px 6px;
     }
 

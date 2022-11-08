@@ -1,25 +1,27 @@
-mixin dropdownGuests(data, arr = [0, 0, 0])
+mixin createDropdown(data, categories, arr = [0, 0, 0])
 	-let listClass = ("expanded" in data) ? 'expanded' : 'shrinked'
 	.dropdown
 		if ("title" in data)
 			.dropdown__title= data["title"]
-		.dropdown__box.js-dropdown__box--guest-amount
-			input.dropdown__input(class="js-dropdown__input" name="guest-amount" placeholder="Сколько гостей" readonly="readonly")
+		if ("subtitle" in data)
+			.dropdown__subtitle= data["subtitle"]
+		.dropdown__box
+			input.dropdown__input(class="js-dropdown__input" name="guest-amount" placeholder= data["placeholder"] readonly="readonly")
 			button.dropdown__button(type="button")
 				span.dropdown__icon.material-symbols-outlined
 			ul.dropdown__list(class=`dropdown__list-${listClass}`)
-				-let categories = {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'}
 				-let index = 0
 					each key, value in categories
-						li.dropdown__list-item(class=`dropdown__list-item-${data[listClass]}`)
+						li.dropdown__list-item(class=`dropdown__list-item-${listClass}`)
 							p.dropdown__list-item__caption= value
 							.dropdown__list-item__counter-box
 								button.dropdown__list-item__counter-button-minus(class=`js-dropdown__list-item__counter-button-minus-${key}`) -
 								p.dropdown__list-item__counter(class=`js-dropdown__list-item__counter-${key}`)= arr[index]
 								button.dropdown__list-item__counter-button-plus(class=`js-dropdown__list-item__counter-button-plus-${key}`) +
 								- index++
-					li.dropdown__footer-section 
-						button.dropdown__clear-button.dropdown__clear-button-invisible(type="button")
-							span.dropdown__clear-button__caption Очистить
-						button.dropdown__submit-button(type="button")
-							span.dropdown__submit-button__caption Применить
+					if ("footer" in data)
+						li.dropdown__footer-section 
+							button.dropdown__clear-button.dropdown__clear-button-invisible(type="button")
+								span.dropdown__clear-button__caption Очистить
+							button.dropdown__submit-button(type="button")
+								span.dropdown__submit-button__caption Применить

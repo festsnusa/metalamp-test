@@ -82,8 +82,7 @@
 
   &__text {
     font-size: .75rem;
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: 700;
+    @extend .bold;
     text-transform: uppercase;
     color: $darkShade50;
 

@@ -99,7 +99,7 @@ body {
     text-decoration: none;
 
     &--bold {
-      font-weight: 700;
+      @extend .bold;
     }
   }
 

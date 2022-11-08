@@ -27,7 +27,7 @@ include __bullet-list/__bullet-list.pug
     .first-column
       +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email", title: "Text Field", subtitle: "Default"})
       +createInput({class: "hover", inputType: "text", name: "This is pretty awesome", placeholder: "This is pretty awesome", title: "Text Field", subtitle: "Default"})
-      +dropdownGuests({title: "Dropdown", listClass: "shrinked"})
+      +createDropdown({title: "Dropdown", listClass: "shrinked", placeholder: "Сколько гостей", footer}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
       +createInput({class: "field", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Masked text field", inputClass: "js-input__box--masked-field"})
       +createCalendar("date-picker-start", "date-picker-end", true, ["Date Dropdown", "Date Dropdown"])
       +createSingleInputCalendar("Filter Date Dropdown")
@@ -36,7 +36,7 @@ include __bullet-list/__bullet-list.pug
     .second-column
       +createCheckboxItem('Checkbox Buttons', {1: ["smoke-allow", true, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", false, "Можно пригласить гостей (до 10 человек)"]})
       +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, 'Radio Buttons')
-      +toggle({1: [true, "Получать спецпредложения"], 2: [false, "Получать спецпредложения"]})
+      +toggle({1: [true, "Получать спецпредложения"], 2: [false, "Получать спецпредложения"]}, "Toggle")
       .like-buttons
         p.like-buttons__title like button
         .like-buttons__box
@@ -55,15 +55,15 @@ include __bullet-list/__bullet-list.pug
 
   .main__section
     .first-column
-      +createDropdownBeds({placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Default'})
-      +createDropdownBeds({placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Expanded', expanded}, {'Спальни': 2, 'Кровати': 2, 'Ванные комнаты': 0})      
+      +createDropdown({placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Default',}, {'Спальни': 'bedrooms', 'Кровати': 'beds', 'Ванные комнаты': 'bathrooms'}, [2, 2, 0])
+      +createDropdown({placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Expanded', expanded}, {'Спальни': 'bedrooms', 'Кровати': 'beds', 'Ванные комнаты': 'bathrooms'}, [2, 2, 0])      
     .gap 
     .second-column 
-      +dropdownGuests({title: "Dropdown", listClass: "shrinked"})
+      +createDropdown({title: "Dropdown", listClass: "shrinked", placeholder: "Сколько гостей", footer}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
 
     .gap 
     .third-column
-      +dropdownGuests({title: "Dropdown", listClass: "expanded"})
+      +createDropdown({title: "Dropdown", listClass: "expanded", placeholder: "Сколько гостей", footer}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
 
   .main__section
     .first-column
@@ -95,7 +95,7 @@ script(src="../../assets/libs/noUISlider.js")
 script(src="../../assets/libs/masked-field.js")
 script(src="../../assets/libs/pagination.js")
 script(src="./__datepicker/__datepicker.js")
-script(src="./__dropdown/__dropdown__guests.js")
+script(src="./__dropdown/__dropdown.js")
 script(src="./__like-button/__like-button.js")
 script(src="./__checkbox/__checkbox.js")
 script(src="./form-elements.js")

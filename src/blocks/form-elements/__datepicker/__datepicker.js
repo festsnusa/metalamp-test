@@ -310,6 +310,12 @@ document.addEventListener("DOMContentLoaded", () => {
 const inputsFrom = document.querySelectorAll('.date-picker-start')
 const inputsTo = document.querySelectorAll('.date-picker-end')
 
+const dateDropdownIcons = document.querySelectorAll('.date-dropdown__icon')
+
+dateDropdownIcons.forEach((icon) => {
+  icon.addEventListener('click', showCalendar.bind(null, 0))
+})
+
 inputsFrom.forEach((input, index) => {
   input.addEventListener('click', showCalendar.bind(null, index))
 })

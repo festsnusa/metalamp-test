@@ -57,7 +57,7 @@ body {
   }
 
   &__title {
-    font-weight: 700;
+    @extend .bold;
     font-size: 1.5rem;
     line-height: 1.829rem;
   }
@@ -81,14 +81,10 @@ body {
 .registration-form {
 
   &__title {
-    font-weight: 700;
+    @extend .bold;
     font-size: 1.5rem;
     margin-bottom: 0.9rem;
   }
-
-  // &__name {
-  //   // margin-bottom: 0.01rem;
-  // }
 
   &__box {
     display: flex;
@@ -110,7 +106,7 @@ body {
     display: flex;
 
     &--span {
-      font-weight: 700;
+      @extend .bold;
     }
 
     &--number {
@@ -120,8 +116,8 @@ body {
     }
 
     &--luxe {
+      @extend .bold;
       font-size: .75rem;
-      font-weight: 700;
       text-transform: uppercase;
       color: $purple;
     }
@@ -139,7 +135,7 @@ body {
     &--price {
       font-size: .875rem;
       margin-right: 0.25rem;
-      font-weight: 700;
+      @extend .bold;
     }
 
     &--per-day {
@@ -187,7 +183,7 @@ body {
       &--info {
         width: 0.25rem;
         height: 0.875rem;
-        font-weight: 700;
+        @extend .bold;
         font-size: 0.75rem;
         line-height: 0.875rem;
       }
@@ -225,7 +221,7 @@ body {
     &--title,
     &--result {
       font-size: 1.188rem;
-      font-weight: 700;
+      @extend .bold;
     }
 
     &--title {
@@ -283,7 +279,7 @@ body {
   &__room-symbol,
   &__room-value,
   &__room-luxe {
-    font-weight: 700;
+    @extend .bold;
   }
 
   &__room-symbol {
@@ -306,7 +302,7 @@ body {
     margin-top: 0.3rem;
   }
 
-  &__amount, 
+  &__amount,
   &__per-day {
     color: $darkShade50;
   }
@@ -314,7 +310,7 @@ body {
   &__amount {
     font-size: .875rem;
     margin-right: 0.25rem;
-    font-weight: 700;
+    @extend .bold;
   }
 
   &__per-day {
@@ -332,13 +328,14 @@ body {
     display: flex;
     padding-top: 0.125rem;
 
-    &-number, &-text {
+    &-number,
+    &-text {
       font-size: .875rem;
       color: $darkShade50;
     }
 
     &-number {
-      font-weight: 700;
+      @extend .bold;
       margin-right: 0.35rem;
     }
 

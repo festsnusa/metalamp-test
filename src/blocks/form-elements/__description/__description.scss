@@ -16,7 +16,6 @@
       -webkit-background-clip: text;
       background-clip: text;
       font-size: 3rem;
-      // font-weight: 700;
     }
 
     &__title,
@@ -28,7 +27,7 @@
 
     &__title {
       grid-area: title;
-      font-weight: 700;
+      @extend .bold;
     }
 
     &__subtitle {
