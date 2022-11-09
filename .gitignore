@@ -1,2 +1,8 @@
 node_modules
 .gitignore
+src/blocks/cards/__image-slider/__image-slider.html
+*.css
+*.map
+*.html
+*.css
+*.css
