@@ -1,16 +1,24 @@
 .checkbox {
 
   $root: &;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.7rem;
   width: 100%;
   max-width: 13.875rem;
-  min-height: 1.25rem;
+  // min-height: 1.25rem;
 
   &__title {
     text-transform: uppercase;
     font-size: 0.75rem;
     @extend .bold;
     padding-bottom: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+
+  &__item {
+    font-size: .875rem;
+    padding-bottom: 0.6rem;
+    line-height: 1.125rem;
+    color: $darkShade50;
   }
 
   &__span {

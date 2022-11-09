@@ -6,5 +6,5 @@ mixin createCommentSection(image, name, daysString, likes, liked, comment)
 		.comment__author 
 			p.comment__author--name= name
 			p.comment__author--date= `${daysString} дней назад`
-		+likeButtonContent(likes, liked)
+		+createlikeButton({1: [likes, liked]})
 		p.comment__text= comment

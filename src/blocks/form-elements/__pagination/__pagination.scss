@@ -1,10 +1,11 @@
 .pagination {
   position: relative;
   // text-align: center;
-  padding: 20px 0;
+  // padding: 20px 0;
   // font-size: 0;
   z-index: 6;
-  margin: 50px 0;
+  min-width: 23rem;
+  // margin: 50px 0;
   
   &__title {
     font-size: .75rem;
@@ -16,6 +17,8 @@
   &__caption {
     font-size: 0.875rem;
     color: $darkShade75;
+    margin-left: 0.4rem;
+    // letter-spacing: 0.001rem;
   }
 
   &__box {
@@ -41,13 +44,14 @@
 
   &__pages {
     display: flex;
+    margin-bottom: 0.7rem;
   }
 
   &__page {
     font-size: .75rem;
     text-decoration: none;
     display: inline-block;
-    margin: 0 3px 6px;
+    // margin: 0 3px 6px;
     height: 38px;
     min-width: 38px;
     border-radius: 50%;
@@ -60,7 +64,7 @@
 
     &:first-child,
     &:last-child {
-      margin: 0 12px 6px;
+      // margin: 0 12px 6px;
     }
 
     &:last-child,

@@ -19,6 +19,7 @@
       font-size: .875rem;
       line-height: 1.5rem;
       padding-bottom: 0.6rem;
+      color: $darkShade75;
     }
 
     &__label {
@@ -28,6 +29,7 @@
     &__input {
       position: absolute;
       appearance: none;
+      margin-top: 0.15rem;
       background: transparent;
       height: 1.25rem;
       width: 2.5rem;

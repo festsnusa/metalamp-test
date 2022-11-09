@@ -1,12 +1,12 @@
 mixin createDropdown(data, categories, arr = [0, 0, 0])
-	-let listClass = ("expanded" in data) ? 'expanded' : 'shrinked'
+	-let listClass = ("expanded" in data) ? `expanded--${data["type"]}` : `shrinked--${data["type"]}`
 	.dropdown
 		if ("title" in data)
 			.dropdown__title= data["title"]
 		if ("subtitle" in data)
 			.dropdown__subtitle= data["subtitle"]
 		.dropdown__box
-			input.dropdown__input(class="js-dropdown__input" name="guest-amount" placeholder= data["placeholder"] readonly="readonly")
+			input.dropdown__input(class=`js-dropdown__input--${data["type"]}` placeholder= data["placeholder"] readonly="readonly")
 			button.dropdown__button(type="button")
 				span.dropdown__icon.material-symbols-outlined
 			ul.dropdown__list(class=`dropdown__list-${listClass}`)
@@ -19,9 +19,8 @@ mixin createDropdown(data, categories, arr = [0, 0, 0])
 								p.dropdown__list-item__counter(class=`js-dropdown__list-item__counter-${key}`)= arr[index]
 								button.dropdown__list-item__counter-button-plus(class=`js-dropdown__list-item__counter-button-plus-${key}`) +
 								- index++
-					if ("footer" in data)
-						li.dropdown__footer-section 
-							button.dropdown__clear-button.dropdown__clear-button-invisible(type="button")
-								span.dropdown__clear-button__caption Очистить
-							button.dropdown__submit-button(type="button")
-								span.dropdown__submit-button__caption Применить
+					li(class = `dropdown__footer-section${data["footer"]}`)
+						button.dropdown__clear-button.dropdown__clear-button-invisible(type="button")
+							span(class= `dropdown__clear-button__caption${data["footer"]}`) Очистить
+						button.dropdown__submit-button(type="button")
+							span.dropdown__submit-button__caption Применить

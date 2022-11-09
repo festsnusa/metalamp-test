@@ -5,7 +5,7 @@
 }
 
 &:nth-child(2) {
-    grid-template-columns: 22.93% 4.9% 27.59% 0% 27.59%;
+    grid-template-columns: 16.5% 11.25% 27.59% 0.5% 20.59%;
     // grid-template-columns: repeat(auto-fit, 280px);
     margin-bottom: 8.5rem;
 }
@@ -13,6 +13,7 @@
 &:nth-child(3) {
     grid-template-columns: 23.02% 4.8% 22.83% 1.7% 25.17%;
     margin-bottom: 0.4rem;
+    margin-top: 8.9rem;
 }
 
 &:nth-child(4) {

@@ -5,7 +5,7 @@ $root: '.expandable-checkbox';
   position: relative;
   width: 100%;
   max-width: 15.8rem;
-  margin-bottom: 2.7rem;
+  margin-bottom: 2.5rem;
 }
 
 .expandable-checkbox {
@@ -33,7 +33,7 @@ $root: '.expandable-checkbox';
   &__icon:before {
     content: 'expand_more';
     display: inline-block;
-    // transform: rotate(90deg);
+    transition: transform .2s ease-in-out;
   }
 
   &__list {

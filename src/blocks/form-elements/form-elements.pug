@@ -26,8 +26,8 @@ include __bullet-list/__bullet-list.pug
   .main__section
     .first-column
       +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email", title: "Text Field", subtitle: "Default"})
-      +createInput({class: "hover", inputType: "text", name: "This is pretty awesome", placeholder: "This is pretty awesome", title: "Text Field", subtitle: "Default"})
-      +createDropdown({title: "Dropdown", listClass: "shrinked", placeholder: "Сколько гостей", footer}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
+      +createInput({class: "hover", inputType: "text", name: "This is pretty awesome", placeholder: "This is pretty awesome", title: "Text Field", subtitle: "Hover/Focus"})
+      +createDropdown({"footer": "_visible", type: "guests", title: "Dropdown", listClass: "shrinked", placeholder: "Сколько гостей", inputCount: "first"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
       +createInput({class: "field", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Masked text field", inputClass: "js-input__box--masked-field"})
       +createCalendar("date-picker-start", "date-picker-end", true, ["Date Dropdown", "Date Dropdown"])
       +createSingleInputCalendar("Filter Date Dropdown")
@@ -35,13 +35,9 @@ include __bullet-list/__bullet-list.pug
     .gap
     .second-column
       +createCheckboxItem('Checkbox Buttons', {1: ["smoke-allow", true, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", false, "Можно пригласить гостей (до 10 человек)"]})
-      +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, 'Radio Buttons')
+      +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женщина"]}, 'Radio Buttons')
       +toggle({1: [true, "Получать спецпредложения"], 2: [false, "Получать спецпредложения"]}, "Toggle")
-      .like-buttons
-        p.like-buttons__title like button
-        .like-buttons__box
-          +likeButtonContent(2, 'favorite_border')
-          +likeButtonContent(12, 'favorite')
+      +createlikeButton({1: [2, 'favorite_border'], 2: [12, 'favorite']}, title = 'like button')
       .rate-button
         p.rate-button__title Rate button
         .rate-button__group
@@ -55,20 +51,20 @@ include __bullet-list/__bullet-list.pug
 
   .main__section
     .first-column
-      +createDropdown({placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Default',}, {'Спальни': 'bedrooms', 'Кровати': 'beds', 'Ванные комнаты': 'bathrooms'}, [2, 2, 0])
-      +createDropdown({placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Expanded', expanded}, {'Спальни': 'bedrooms', 'Кровати': 'beds', 'Ванные комнаты': 'bathrooms'}, [2, 2, 0])      
+      +createDropdown({"footer": "_invisible", type: "rooms", placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Default'}, {'Спальни': 'bedrooms', 'Кровати': 'beds', 'Ванные комнаты': 'bathrooms'}, [2, 2, 0])
+      +createDropdown({"footer": "_invisible", type: "rooms", placeholder: '2 спальни, 2 кровати', title: 'Dropdown', subtitle: 'Expanded', expanded}, {'Спальни': 'bedrooms', 'Кровати': 'beds', 'Ванные комнаты': 'bathrooms'}, [2, 2, 0])
     .gap 
     .second-column 
-      +createDropdown({title: "Dropdown", listClass: "shrinked", placeholder: "Сколько гостей", footer}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
+      +createDropdown({"footer": "_visible", type: "guests", title: "Dropdown", listClass: "shrinked", placeholder: "Сколько гостей", expanded}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
 
     .gap 
     .third-column
-      +createDropdown({title: "Dropdown", listClass: "expanded", placeholder: "Сколько гостей", footer}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
+      +createDropdown({"footer": "_visible", type: "guests", title: "Dropdown", listClass: "expanded", placeholder: "Сколько гостей", expanded}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
 
   .main__section
     .first-column
       -let expandableTitle = 'Expandable Checkbox List'
-      -let expandableCheckboxOptions = {1: ["breakfast", true, "Завтрак"], 2: ["desk", true, "Письменный стол"], 3: ["feeding-chair", false, "Стул для кормления"], 4: ["tv", false, "Телевизор"], 5: ["shampoo", false, "Шампунь"], 6: ["tv", false, "Телевизор"], 7: ["shampoo", false, "Шампунь"]}
+      -let expandableCheckboxOptions = {1: ["breakfast", false, "Завтрак"], 2: ["desk", true, "Письменный стол"], 3: ["feeding-chair", true, "Стул для кормления"], 4: ["bed", true, "Кроватка"], 5: ["tv", false, "Телевизор"], 6: ["shampoo", false, "Шампунь"]}
       +createCheckboxExpandable(expandableTitle, expandableCheckboxOptions, false)
       +createCheckboxExpandable(expandableTitle, expandableCheckboxOptions, true)
 
@@ -93,7 +89,7 @@ include __bullet-list/__bullet-list.pug
 script(src="https://code.jquery.com/jquery-3.6.1.js", integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=", crossorigin="anonymous")
 script(src="../../assets/libs/noUISlider.js")
 script(src="../../assets/libs/masked-field.js")
-script(src="../../assets/libs/pagination.js")
+script(src="./__pagination/__pagination.js")
 script(src="./__datepicker/__datepicker.js")
 script(src="./__dropdown/__dropdown.js")
 script(src="./__like-button/__like-button.js")

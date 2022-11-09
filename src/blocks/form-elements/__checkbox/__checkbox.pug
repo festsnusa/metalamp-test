@@ -1,10 +1,12 @@
 mixin createCheckboxItem(title, array)
-  p.checkbox__title= title
-  each value in array
-    .checkbox
-      label.checkbox__label
-        input.checkbox__input(type="checkbox" name= value[0] checked= value[1])
-        span.checkbox__span= value[2]
+  .checkbox
+    if (title != '')
+      p.checkbox__title= title
+    each value in array
+      .checkbox__item
+        label.checkbox__label
+          input.checkbox__input(type="checkbox" name= value[0] checked= value[1])
+          span.checkbox__span= value[2]
 
 mixin createCheckboxExpandable(title, array, expanded)
   -let className = (expanded) ? 'expandable-checkbox_expanded' : ''

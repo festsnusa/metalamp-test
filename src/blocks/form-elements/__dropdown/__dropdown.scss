@@ -71,6 +71,10 @@
     background: transparent;
     cursor: pointer;
     color: $darkShade50;
+
+    &_invisible {
+      display: none;
+    }
   }
 
   &__list {
@@ -78,7 +82,8 @@
     z-index: 10;
     background: #fff;
 
-    &-shrinked {
+    &-shrinked--guests,
+    &-shrinked--rooms {
       visibility: hidden;
     }
 
@@ -133,15 +138,36 @@
   }
 
   &__footer-section {
-    display: flex;
-    list-style: none;
-    line-height: 2.5rem;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+
+    &_visible {
+      display: flex;
+      list-style: none;
+      line-height: 2.5rem;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    &_invisible {
+      display: none;
+    }
   }
 
-  &__clear-button-invisible {
-    visibility: hidden;
+  &__clear-button{
+    
+    &__caption {
+      &_invisible {
+        // display: none;
+      }
+
+      &_visible {
+        display: block;
+        color: $purple;
+      }
+    }
+    
+    &-invisible {
+      visibility: hidden;
+    }
   }
 
   &__clear-button,
