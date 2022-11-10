@@ -2,14 +2,13 @@ link(rel="stylesheet" href="cards.css")
 link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
 link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 include ../form-elements/__buttons/__buttons.pug
-include ../form-elements/__dropdown/__dropdown__date.pug
-include ../form-elements/__dropdown/__dropdown__guests.pug
+include ../form-elements/__datepicker/__datepicker.pug
+include ../form-elements/__dropdown/__dropdown.pug
 include ../form-elements/__inputs/__inputs.pug
 include ../form-elements/__radio-buttons/__radio-buttons.pug
 include ../form-elements/__rate-button/__rate-button.pug
 include ../form-elements/__toggle/__toggle.pug
 include __image-slider/__image-slider.pug
-include __datepicker/__datepicker.pug
 
 -let images = {1: ["../../assets/images/room-1-slider.jpg", "Фото 1"], 2: ["../../assets/images/room-1-slider.jpg", "Фото 2"], 3: ["../../assets/images/room-1-slider.jpg", "Фото 3"], 4: ["../../assets/images/room-1-slider.jpg", "Фото 4"]}
 
@@ -23,21 +22,20 @@ include __datepicker/__datepicker.pug
         .room-search__header
           p.room-search__title Найдём номера под ваши пожелания
         .room-search__calendar
-          //- +createDateDropdown({1: ["field-date-from", "Прибытие", "ДД.ММ.ГГГГ"], 2: ["field-date-to", "Выезд", "19.08.2019"]})
           +createCalendar("date-picker-start", "date-picker-end")
-          +dropdownGuests("Гости", false)
+          +createDropdown({"footer": "_visible", type: "guests", title: "Сколько гостей", listClass: "shrinked", placeholder: "Сколько гостей"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
         .room-search__submit-button 
           +createProceedButton("Подобрать номер")
 
     .main__card 
       .registration-form 
         p.registration-form__title Регистрация аккаунта
-        +inputDefault("text", "name", "Имя")
-        +inputDefault("text", "surname", "Фамилия")
+        +createInput({class: "default", inputType: "text", name: "first-name", placeholder: "Имя"})
+        +createInput({class: "default", inputType: "text", name: "last-name", placeholder: "Фамилия"})
         +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, title='')
-        +inputMaskedField('Дата рождения', 'masked-field', "ДД.ММ.ГГГГ")
-        +inputDefault("email", "email", "Email", "Данные для входа в сервис")
-        +inputDefault("password", "password", "Пароль")
+        +createInput({class: "field", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Дата рождения", inputClass: "js-input__box--masked-field"})
+        +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email", title: "Данные для входа в сервис"})
+        +createInput({class: "default", inputType: "text", name: "password", placeholder: "Пароль"})
         +toggle({1: [false, "Получать спецпредложения"]})
         +createProceedButton("Перейти к оплате")
         .registration-form__box 
@@ -55,10 +53,9 @@ include __datepicker/__datepicker.pug
             p.booking-form__price--price 9 990₽
             p.booking-form__price--per-day в сутки
         .booking-form__arrival
-          //- +createDateDropdown({1: ["date-picker-start", "Прибытие", "ДД.ММ.ГГГГ"], 2: ["date-picker-end", "Выезд", "19.08.2019"]})
           +createCalendar("date-picker-start", "date-picker-end")
         .booking-form__dropdown
-          +dropdownGuests("Гости", false)
+          +createDropdown({"footer": "_visible", type: "guests", title: "Гости", listClass: "shrinked", placeholder: "Сколько гостей"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
         .booking-form__calculations 
           .booking-form__total-per-days
             p.booking-form__total-per-days--multiplied 9 990₽ х 4 суток
@@ -83,23 +80,16 @@ include __datepicker/__datepicker.pug
     .main__card 
       .login-form 
         p.login-form__header Войти
-        +inputDefault("email", "email", "Email")
-        +inputDefault("password", "password", "Пароль")
-        //- .login-form__email 
-        //-   input.input__box(type="email" name="email" placeholder="Email")
-        //- .login-form__password 
-        //-   input.input__box(name="password" placeholder="Пароль")
-        .login-form__button
-          +createProceedButton("Забронировать")
+        +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email"})
+        +createInput({class: "default", inputType: "text", name: "password", placeholder: "Пароль"})
+        +createProceedButton("Забронировать")
         .login-form__box
           p.login-form__caption Нет аккаунта на Toxin?
           +createButton("Создать", "white", "purple", false)
 
   .main__thirdColumn 
-    .main__card 
-      .date-dropdown 
-        .date-dropdown__calendar 
-          +createCalendar("date-picker-start", "date-picker-end", false)
+    .main__card
+      +createCalendar("date-picker-start", "date-picker-end", false)
 
     .main__card 
       .room-preview
@@ -142,8 +132,8 @@ include __datepicker/__datepicker.pug
               .room-preview__feedbacks-text Отзывов
 
 script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
-//- script(src="../../assets/libs/airpdatepicker/airdatepicker.js")
-script(src="./__datepicker/__datepicker.js")
+script(src="../../assets/libs/masked-field.js")
+script(src="../form-elements/__datepicker/__datepicker.js")
+script(src="../form-elements/__dropdown/__dropdown.js")
 script(src="./__image-slider/__image-slider.js")
 script(src="cards.js")
-script(src="../../assets/libs/masked-field.js")

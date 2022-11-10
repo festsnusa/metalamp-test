@@ -1,24 +1,24 @@
-const inputsFrom = document.querySelectorAll('.date-picker-start')
-const inputsTo = document.querySelectorAll('.date-picker-end')
+// const inputsFrom = document.querySelectorAll('.date-picker-start')
+// const inputsTo = document.querySelectorAll('.date-picker-end')
 
-inputsFrom.forEach((input, index) => {
-  input.addEventListener('click', showCalendar.bind(null, index))
-})
+// inputsFrom.forEach((input, index) => {
+//   input.addEventListener('click', showCalendar.bind(null, index))
+// })
 
-inputsTo.forEach((input, index) => {
-  input.addEventListener('click', showCalendar.bind(null, index))
-})
+// inputsTo.forEach((input, index) => {
+//   input.addEventListener('click', showCalendar.bind(null, index))
+// })
 
-function showCalendar(i) {
-  const datePicker = document.querySelectorAll('.date-picker')[i]
-  datePicker.classList.toggle('date-picker__active')
-}
+// function showCalendar(i) {
+//   const datePicker = document.querySelectorAll('.date-picker')[i]
+//   datePicker.classList.toggle('date-picker__active')
+// }
 
-function hideCalendar() {
-  const datePickers = document.querySelectorAll('.date-picker')
+// function hideCalendar() {
+//   const datePickers = document.querySelectorAll('.date-picker')
 
-  datePickers.forEach(datePicker => {
-    datePicker.classList.remove('date-picker__active')
-  })
+//   datePickers.forEach(datePicker => {
+//     datePicker.classList.remove('date-picker__active')
+//   })
  
-}
+// }

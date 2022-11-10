@@ -6,6 +6,7 @@
 @import '../form-elements/__radio-buttons/_radio-buttons';
 @import '../form-elements/__toggle/_toggle';
 @import '../form-elements/__rate-button/_rate-button';
+@import '../form-elements/__datepicker/_datepicker';
 @import '__image-slider/_image-slider';
 // @import '__datepicker/_datepicker';
 
@@ -248,6 +249,15 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.calendar {
+    // margin-bottom: 12.45rem;
+    // background: #fff;
+    // border: 1px solid $darkShade25;
+    // box-shadow: 0 0 1.5rem $darkShade25;
+    // border-radius: 0.25rem;
+    // padding: 2.4rem 1.85rem 10.85rem 1.8rem;
 }
 
 .room-preview {
