@@ -4,14 +4,15 @@
   position: absolute;
   z-index: 5;
   background: #fff;
-  &-start {}
-
-  &-end {}
 
   &__active {
     display: block;
     max-width: 20rem;
     width: 100%;
+
+    &_relative {
+      position: relative;
+    }
   }
 }
 
