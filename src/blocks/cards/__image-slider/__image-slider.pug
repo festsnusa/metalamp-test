@@ -10,5 +10,5 @@ mixin createSlideshowContainer(images)
     .slideshow-container__dots
       -index= 1
       each value in images
-        .span.dot(onclick=`currentSlide(${index})`)
+        .span.dot
         -index++
