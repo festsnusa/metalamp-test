@@ -1,23 +1,21 @@
-mixin createCheckboxItem(title, array)
-  .checkbox
-    if (title != '')
-      p.checkbox__title= title
-    each value in array
-      .checkbox__item
-        label.checkbox__label
-          input.checkbox__input(type="checkbox" name= value[0] checked= value[1])
-          span.checkbox__span= value[2]
+mixin createCheckboxItems(array, expandable = false, expanded = false, title = '')
 
-mixin createCheckboxExpandable(title, array, expanded)
-  -let className = (expanded) ? 'expandable-checkbox_expanded' : ''
-  .expandable-checkbox(class= className)
-    .expandable-checkbox__header 
-      p.expandable-checkbox__title= title
-      button.expandable-checkbox__button(type="button")
-        span.expandable-checkbox__icon.material-symbols-outlined
-    ul.expandable-checkbox__list
+  -let transformClass = (expanded) ? 'checkbox__button_transform' : ''
+  -let headerClass = (expandable) ? 'checkbox__header_expandable': '' 
+  -let listClass = (expandable) ? 'checkbox__list_expandable' : ''
+  if (expanded)
+    -listClass= listClass + ' checkbox__list_expandable-expanded'
+
+  .checkbox
+    .checkbox__header(class= headerClass)
+      p.checkbox__title= title
+      if (expandable)
+        button.checkbox__button(type="button" class= transformClass)
+          span.checkbox__icon.material-symbols-outlined
+    ul.checkbox__list(class= listClass)
       each value in array
-        .checkbox
-        label.checkbox__label
-          input.checkbox__input(type="checkbox" name= value[0] checked= value[1])
-          span.checkbox__span= value[2]
+        li.checkbox__item
+          label.checkbox__label
+            input.checkbox__input(type="checkbox" name= value[0] checked= value[1])
+            span.checkbox__checkbox
+            span.checkbox__caption= value[2]

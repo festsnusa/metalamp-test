@@ -26,7 +26,7 @@ include __bullet-list/__bullet-list.pug
   .main__section
     .first-column
       +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email", title: "Text Field", subtitle: "Default"})
-      +createInput({class: "hover", inputType: "text", name: "This is pretty awesome", placeholder: "This is pretty awesome", title: "Text Field", subtitle: "Hover/Focus"})
+      +createInput({class: "hover", inputType: "text", name: "This is pretty awesome", placeholder: "This is pretty awesome", title: "Text Field", subtitle: "Hover / Focus"})
       +createDropdown({"footer": "_visible", type: "guests", title: "Dropdown", listClass: "shrinked", placeholder: "Сколько гостей", inputCount: "first"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
       +createInput({class: "field", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Masked text field", inputClass: "js-input__box--masked-field"})
       +createCalendar("date-picker-start", "date-picker-end", true, ["Date Dropdown", "Date Dropdown"])
@@ -34,7 +34,7 @@ include __bullet-list/__bullet-list.pug
       +createSubscriptionField("Subscription Text Field")
     .gap
     .second-column
-      +createCheckboxItem('Checkbox Buttons', {1: ["smoke-allow", true, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", false, "Можно пригласить гостей (до 10 человек)"]})
+      +createCheckboxItems({1: ["smoke-allow", false, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", true, "Можно пригласить гостей (до 10 человек)"]}, false, false, 'Checkbox Buttons')
       +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женщина"]}, 'Radio Buttons')
       +toggle({1: [true, "Получать спецпредложения"], 2: [false, "Получать спецпредложения"]}, "Toggle")
       +createlikeButton({1: [2, 'favorite_border'], 2: [12, 'favorite']}, title = 'like button')
@@ -65,8 +65,8 @@ include __bullet-list/__bullet-list.pug
     .first-column
       -let expandableTitle = 'Expandable Checkbox List'
       -let expandableCheckboxOptions = {1: ["breakfast", false, "Завтрак"], 2: ["desk", true, "Письменный стол"], 3: ["feeding-chair", true, "Стул для кормления"], 4: ["bed", true, "Кроватка"], 5: ["tv", false, "Телевизор"], 6: ["shampoo", false, "Шампунь"]}
-      +createCheckboxExpandable(expandableTitle, expandableCheckboxOptions, false)
-      +createCheckboxExpandable(expandableTitle, expandableCheckboxOptions, true)
+      +createCheckboxItems(expandableCheckboxOptions, true, false, 'Expandable Checkbox List')
+      +createCheckboxItems(expandableCheckboxOptions, true, true, 'Expandable Checkbox List')
 
     .gap 
     .second-column 

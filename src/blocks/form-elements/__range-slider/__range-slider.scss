@@ -1,53 +1,60 @@
+@import '../../../assets/libs/_vars';
+
 .range-slider {
-    width: 100%;
-    max-width: 16.625rem;
-    margin-bottom: 4.3rem;
-    margin-top: 0.2rem;
 
-    &__header {
-      display: inline-flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 1.4rem;
-      flex-wrap: wrap;
-      gap: 60px;
-    }
+  width: 100%;
+  max-width: 16.625rem;
+  margin-bottom: 4.3rem;
+  margin-top: 0.2rem;
 
-    &__title {
-      font-size: .75rem;
-      @extend .bold;
-      text-transform: uppercase;
-    }
-
-    &__count {
-      display: inline-flex;
-      align-items: flex-start;
-      margin-top: 0.1rem;
-    }
-
-    &__input-min,
-    &__input-max {
-      font-size: .75rem;
-      color: $darkShade50;
-      border: none;
-      line-height: .9375rem;
-    }
-
-    &__input-min {
-      width: 3.3rem;
-      text-align: end;
-      // outline: 0;
-    }
-
-    &__input-max {
-      width: 3rem;
-      // outline: none;
-    }
-
-    &__separator {
-      font-size: .75rem;
-      vertical-align: text-top;
-      margin: 0 0.25rem 0 0.16rem;
-      line-height: .9375rem;
-    }
+  &__header {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.4rem;
+    flex-wrap: wrap;
+    gap: 54px;
   }
+
+  &__title {
+    font-size: .75rem;
+    @extend .bold;
+    text-transform: uppercase;
+  }
+
+  &__count {
+    display: inline-flex;
+    align-items: flex-start;
+    margin-top: 0.1rem;
+  }
+
+  &__input-min,
+  &__input-max,
+  &__separator {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: .75rem;
+    color: $darkShade50;
+    border: none;
+    line-height: .9375rem;
+  }
+
+  &__input-min,
+  &__input-max {
+    width: 3.3rem;
+    text-align: end;
+    // outline: 0;
+  }
+
+  &__input-max {
+    // width: 3rem;
+    // outline: none;
+    margin-left: auto;
+  }
+
+  &__separator {
+    font-size: .75rem;
+    vertical-align: text-top;
+    margin: 0 0.25rem 0 0.16rem;
+    line-height: .9375rem;
+  }
+}

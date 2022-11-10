@@ -20,7 +20,8 @@ mixin createDropdown(data, categories, arr = [0, 0, 0])
 								button.dropdown__list-item__counter-button-plus(class=`js-dropdown__list-item__counter-button-plus-${key}`) +
 								- index++
 					li(class = `dropdown__footer-section${data["footer"]}`)
+						-let submitClass = (data["footer"] == "_visible") ? 'dropdown__submit-button_visible' : 'dropdown__submit-button_invisible'
 						button.dropdown__clear-button.dropdown__clear-button-invisible(type="button")
 							span(class= `dropdown__clear-button__caption${data["footer"]}`) Очистить
-						button.dropdown__submit-button(type="button")
+						button.dropdown__submit-button(type="button" class= submitClass)
 							span.dropdown__submit-button__caption Применить
