@@ -1,6 +1,8 @@
-mixin createCalendar(inputFrom, inputTo, inputsVisible = true, caption = ["Прибытие", "Выезд"])
+mixin createCalendar(inputFrom, inputTo, inputsVisible = true, calendarRelative = false, caption = ["Прибытие", "Выезд"])
   -let visibilityClass = (inputsVisible) ? 'date-dropdown__box_active' : ''
   -let datePickerClass = (!inputsVisible) ? 'date-picker__active' : ''
+  if (calendarRelative) 
+    -datePickerClass= `${datePickerClass} date-picker__active_relative`
   -let data = {1: [visibilityClass, `date-picker-start`, caption[0], "ДД.ММ.ГГГГ"], 2: [visibilityClass, `date-picker-end`, caption[1], "ДД.ММ.ГГГГ"]}
   .datepicker-box
     .input-date-dropdown
