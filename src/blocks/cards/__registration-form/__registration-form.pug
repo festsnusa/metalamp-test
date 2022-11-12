@@ -1,0 +1,14 @@
+mixin createRegistrationFormCard
+	.registration-form 
+		p.registration-form__title Регистрация аккаунта
+		+createInput({class: "default", inputType: "text", name: "first-name", placeholder: "Имя"})
+		+createInput({class: "default", inputType: "text", name: "last-name", placeholder: "Фамилия"})
+		+createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, title='')
+		+createInput({class: "field", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Дата рождения", inputClass: "js-input__box--masked-field"})
+		+createInput({class: "default", inputType: "text", name: "email", placeholder: "Email", title: "Данные для входа в сервис"})
+		+createInput({class: "default", inputType: "text", name: "password", placeholder: "Пароль"})
+		+toggle({1: [false, "Получать спецпредложения"]})
+		+createProceedButton("Перейти к оплате")
+		.registration-form__box 
+			p.registration-form__caption Уже есть аккаунт на Toxin 
+			+createButton("Войти", "white", "purple", false)

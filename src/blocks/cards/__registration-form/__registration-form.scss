@@ -1,0 +1,14 @@
+.registration-form {
+
+  &__title {
+    @extend .bold;
+    font-size: 1.5rem;
+    margin-bottom: 0.9rem;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

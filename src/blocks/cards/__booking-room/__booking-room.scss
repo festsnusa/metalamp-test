@@ -1,0 +1,56 @@
+.booking-room {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__price-section {
+    display: flex;
+    align-items: baseline;
+  }
+
+}
+
+.room-section {
+  
+  display: flex;
+
+  &__span {
+    @extend .bold;
+  }
+
+  &__number {
+    font-size: 1.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.45rem;
+  }
+
+  &__luxe {
+    @extend .bold;
+    font-size: .75rem;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+}
+
+.price-section {
+
+  display: flex;
+  align-items: baseline;
+
+  &__price,
+  &__per-day {
+    color: $darkShade50;
+  }
+
+  &__price {
+    font-size: .875rem;
+    margin-right: 0.25rem;
+    @extend .bold;
+  }
+
+  &__per-day {
+    font-size: 0.75rem;
+  }
+}
