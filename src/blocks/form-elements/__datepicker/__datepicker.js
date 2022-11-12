@@ -1,4 +1,6 @@
-let daysOfTheWeek = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
+import { calculateCost } from '../../cards/__booking-form/__booking-form.js'
+
+let daysOfTheWeek = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
 
 let months = [
   "Январь",
@@ -278,6 +280,8 @@ class DatePicker {
     if (endInput == null) {
       startInput.value += ` — ${this.dateToString(this.endDate)}`
     }
+
+    calculateCost()
       
     const datePickers = document.querySelectorAll('.date-picker')
 
