@@ -8,6 +8,10 @@ include ../form-elements/__inputs/__inputs.pug
 include ../form-elements/__radio-buttons/__radio-buttons.pug
 include ../form-elements/__rate-button/__rate-button.pug
 include ../form-elements/__toggle/__toggle.pug
+include __room-search/__room-search.pug
+include __registration-form/__registration-form.pug
+include __booking-form/__booking-form.pug
+include __booking-room/__booking-room.pug
 include __image-slider/__image-slider.pug
 
 -let images = {1: ["../../assets/images/room-1-slider.jpg", "Фото 1"], 2: ["../../assets/images/room-1-slider.jpg", "Фото 2"], 3: ["../../assets/images/room-1-slider.jpg", "Фото 3"], 4: ["../../assets/images/room-1-slider.jpg", "Фото 4"]}
@@ -17,65 +21,13 @@ include __image-slider/__image-slider.pug
     img(src="../../assets/images/logo-colorless.svg" alt="#")
 .main   
   .main__firstColumn 
+    .main__card
+      +createRoomSearchCard("Найдём номера под ваши пожелания")
     .main__card 
-      .room-search 
-        .room-search__header
-          p.room-search__title Найдём номера под ваши пожелания
-        .room-search__calendar
-          +createCalendar("date-picker-start", "date-picker-end")
-          +createDropdown({"footer": "_visible", type: "guests", title: "Сколько гостей", listClass: "shrinked", placeholder: "Сколько гостей"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
-        .room-search__submit-button 
-          +createProceedButton("Подобрать номер")
-
-    .main__card 
-      .registration-form 
-        p.registration-form__title Регистрация аккаунта
-        +createInput({class: "default", inputType: "text", name: "first-name", placeholder: "Имя"})
-        +createInput({class: "default", inputType: "text", name: "last-name", placeholder: "Фамилия"})
-        +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женшина"]}, title='')
-        +createInput({class: "field", name: "masked-field", placeholder: "ДД.ММ.ГГГГ", title: "Дата рождения", inputClass: "js-input__box--masked-field"})
-        +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email", title: "Данные для входа в сервис"})
-        +createInput({class: "default", inputType: "text", name: "password", placeholder: "Пароль"})
-        +toggle({1: [false, "Получать спецпредложения"]})
-        +createProceedButton("Перейти к оплате")
-        .registration-form__box 
-          p.registration-form__caption Уже есть аккаунт на Toxin 
-          +createButton("Войти", "white", "purple", false)
+      +createRegistrationFormCard
   .main__secondColumn 
-    .main__card 
-      .booking-form
-        .booking-form__header 
-          .booking-form__room 
-            span.booking-form__room--span №
-            p.booking-form__room--number 888
-            p.booking-form__room--luxe люкс
-          .booking-form__price 
-            p.booking-form__price--price 9 990₽
-            p.booking-form__price--per-day в сутки
-        .booking-form__arrival
-          +createCalendar("date-picker-start", "date-picker-end")
-        .booking-form__dropdown
-          +createDropdown({"footer": "_visible", type: "guests", title: "Гости", listClass: "shrinked", placeholder: "Сколько гостей"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
-        .booking-form__calculations 
-          .booking-form__total-per-days
-            p.booking-form__total-per-days--multiplied 9 990₽ х 4 суток
-            p.booking-form__total-per-days--result 39 960₽
-          .booking-form__discounts 
-            p.booking-form__service--name Сбор за услуги: скидка 2 179₽
-            span.booking-form__service--ellipse
-              span.booking-form__service--ellipse--info i
-            p.booking-form__service--amount 0₽
-          .booking-form__additional-services 
-            p.booking-form__service--name Сбор за дополнительные услуги
-            span.booking-form__service--ellipse
-              span.booking-form__service--ellipse--info i
-            p.booking-form__service--amount 300₽
-          .booking-form__total
-            p.booking-form__total--title Итого
-            p.booking-form__total--dots
-            p.booking-form__total--result 38 081₽
-        .booking-form__submit-button
-          +createProceedButton("Забронировать")
+    .main__card
+      +createBookingFormCard("888", "9990", true)
 
     .main__card 
       .login-form 
@@ -133,7 +85,9 @@ include __image-slider/__image-slider.pug
 
 script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
 script(src="../../assets/libs/masked-field.js")
-script(src="../form-elements/__datepicker/__datepicker.js")
+script(type="module" src="../../assets/libs/moment.js")
+script(type="module" src="../form-elements/__datepicker/__datepicker.js")
 script(src="../form-elements/__dropdown/__dropdown.js")
+script(type="module" src="./__booking-form/__booking-form.js")
 script(src="./__image-slider/__image-slider.js")
 script(src="cards.js")
