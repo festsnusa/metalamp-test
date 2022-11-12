@@ -223,6 +223,10 @@
     cursor: pointer;
     margin-top: 0.3125rem;
     color: $darkShade75;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   &__button {
