@@ -1,4 +1,4 @@
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $darkShade75;
     opacity: 1; /* Firefox */
   }
@@ -12,20 +12,20 @@
   }
 
 .input-default {
-    margin-top: 0.3125rem;
-    margin-bottom: 1rem;
+    // margin-top: 0.3125rem;
+    // margin-bottom: 1rem;
 }
 
 .input-hover {
-    margin-bottom: 0.8rem;
+    // margin-bottom: 0.8rem;
 }
 
 .input-masked-field {
-    margin-bottom: 2.15rem;
+    // margin-bottom: 2.15rem;
 }
 
 .input-date-dropdown {
-    margin-bottom: 2.65rem;
+    // margin-bottom: 1.4rem;
 }
 
 .input {
@@ -42,6 +42,7 @@
         font-size: 0.75rem;
         line-height: 0.7375rem;
         text-transform: uppercase;
+        margin-bottom: 0.4rem;
     }
 
     &__subtitle {
@@ -52,7 +53,7 @@
     }
 
     &__box {
-        margin: 0.3rem auto 0.5rem;
+        margin: 0 auto;
         font-size: 0.875rem;
         width: 100%;
         line-height: 2.625rem;
@@ -64,7 +65,7 @@
 }
 
 .input-field {
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
 }
 
 .subscription-field {

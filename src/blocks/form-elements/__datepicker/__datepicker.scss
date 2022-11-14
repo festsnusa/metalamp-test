@@ -26,6 +26,8 @@
     font-size: 1.188rem;
     display: flex;
     justify-content: space-between;
+    margin-top: 1.3rem;
+    margin-bottom: 2.6rem;
 
     &_back,
     &_fwd {
@@ -33,6 +35,14 @@
       background: transparent;
       cursor: pointer;
       color: $purple;
+    }
+
+    &_back {
+      margin-left: 1.2rem;
+    }
+
+    &_fwd {
+      margin-right: 1.2rem;
     }
     
     &_back {
@@ -49,6 +59,7 @@
     &__header {
       display: flex;
       justify-content: center;
+      margin-bottom: 0.8rem;
 
       &__daysOfTheWeek {
         min-width: 40px;
@@ -56,12 +67,12 @@
         color: $purple;
         font-size: .75rem;
         font-family: 'Montserrat Bold';
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
     }
 
     &__dates {
-      margin-top: 10px;
+      margin-bottom: 1.25rem;
     }
 
     &__week {
@@ -158,12 +169,13 @@
     }
 
     &__footer {
+
       display: flex;
       justify-content: space-between;
       border: none;
-      margin-bottom: 0.35rem;
-      padding-top: 0.5rem;
-
+      margin-left: 0.6rem;
+      margin-right: 0.6rem;
+      margin-bottom: 1.1rem;
 
       &__clear, &__apply {
         display: inline-flex;
