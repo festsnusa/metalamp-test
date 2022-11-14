@@ -1,5 +1,26 @@
 .login-form {
 
+  &__header {
+    margin-bottom: 1.4rem;
+  }
+
+  &__title {
+    @extend .bold;
+    font-size: 1.5rem;
+  }
+
+  &__email {
+    margin-bottom: 0.75rem;
+  }
+
+  &__password {
+    margin-bottom: 1.1rem;
+  }
+
+  &__button {
+    margin-bottom: 1.9rem;
+  }
+
   &__box {
     display: flex;
     justify-content: space-between;
