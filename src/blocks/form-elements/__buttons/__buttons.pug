@@ -1,8 +1,6 @@
 mixin createButton(caption, colorButton, colorText, blocked)
 	- let blockedClass = (blocked) ? `button_blocked` : ``
 	- let classes = [`button_${colorButton}`, blockedClass]
-	//- if (blocked)
-	//- 	classes.push(button_blocked)
 	button.button(class= classes)
 		p.button__text(class= `button__text_${colorText}`)= caption
 

@@ -35,8 +35,8 @@
 .button {
   border: none;
   cursor: pointer;
-  height: 2.75rem;
-  width: 6.1875rem;
+  min-height: 2.75rem;
+  min-width: 6.1875rem;
   border-radius: 1.375rem;
 
   &_purple {
