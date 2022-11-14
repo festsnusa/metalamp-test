@@ -13,7 +13,7 @@
 @import '__booking-room/_booking-room';
 @import '__login-form/_login-form';
 @import '__image-slider/_image-slider';
-// @import '__room-preview/_room-preview';
+@import '__room-preview/_room-preview';
 
 body {
   background: #e5e5e5;
@@ -53,7 +53,7 @@ body {
     max-width: 23.75rem;
 
     & #{$root}__card:nth-child(2) {
-      max-width: 16.875rem;
+      max-width: 17rem;
       margin-bottom: 2.4rem;
       padding: 0;
     }
