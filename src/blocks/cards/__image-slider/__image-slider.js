@@ -47,7 +47,7 @@ slideshowContainer.forEach((container, i) => {
   }
   
   function currentSlide(n) {
-    showSlides(slideIndex[i] = n, i)
+    showSlides(slideIndex[i] = n, n)
   }
 
 })
