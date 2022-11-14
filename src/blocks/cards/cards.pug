@@ -36,10 +36,10 @@ include __image-slider/__image-slider.pug
 
     .main__card
       -let imagesFirst = [{src: "../../assets/images/room-1-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-3-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-4-slider.jpg", alt: "Фото 4"}]
-      +createRoomPreview(imagesFirst)
+      +createRoomPreview(imagesFirst, "888", 5, 145)
     .main__card
       -let imagesSecond = [{src: "../../assets/images/room-2-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-4-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-3-slider.jpg", alt: "Фото 4"}]
-      +createRoomPreview(imagesSecond)
+      +createRoomPreview(imagesSecond, 840, 4, 65)
 
 script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
 script(src="../../assets/libs/masked-field.js")
