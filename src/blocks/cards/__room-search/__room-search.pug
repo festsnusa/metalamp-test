@@ -4,6 +4,7 @@ mixin createRoomSearchCard(title)
       p.room-search__title= title
     .room-search__calendar
       +createCalendar("date-picker-start", "date-picker-end")
-      +createDropdown({"footer": "_visible", type: "guests", title: "Сколько гостей", listClass: "shrinked", placeholder: "Сколько гостей"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
+    .room-search__dropdown
+      +createDropdown({"footer": "_visible", type: "guests", title: "Гости", listClass: "shrinked", placeholder: "Сколько гостей"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
     .room-search__submit-button 
       +createProceedButton("Подобрать номер")
