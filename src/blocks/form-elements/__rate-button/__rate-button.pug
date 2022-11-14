@@ -4,11 +4,12 @@ mixin buttonColored
 mixin buttonColorless
 	span.rate-button__icon.material-icons star_border
 
-mixin rateButton(i, j = 0)
+mixin rateButton(i)
+	-let colorlessNum= 5-i
 	.rate-button__box 
 		while i > 0
 			+buttonColored
 			- i--
-		while j > 0
+		while colorlessNum > 0
 			+buttonColorless
-			- j--
+			- colorlessNum--
