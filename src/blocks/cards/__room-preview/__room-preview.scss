@@ -1,0 +1,40 @@
+.room-preview {
+
+  &__description {
+    padding: 0 1.0625rem 0 1.25rem;
+  }
+
+  &__header {
+    border-bottom: 1px solid rgba(31,32,65,.101961);
+    margin-bottom: 0.5rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    padding-bottom: 1rem;
+  }
+
+  &__feedbacks {
+    display: flex;
+    padding-top: 0.125rem;
+
+    &_number, &_text {
+      font-size: .875rem;
+      color: $darkShade50;
+    }
+
+    &_number {
+      @extend .bold;
+      margin-right: 0.35rem;
+    }
+
+    &_text {
+      margin-right: 0.1rem;
+    }
+  }
+
+  
+}
