@@ -2,17 +2,20 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
+  margin-bottom: 1.2rem;
+  border-radius: 0.25rem;
 
   &__dots {
     display: flex;
     justify-content: center;
     position: absolute;
     bottom: 0.9375rem;
-    right: 0.6rem;
+    right: 0.68rem;
   }
 
   &__image {
     width: 100%;
+    border-radius: 0.25rem 0.25rem 0 0;
   }
 
   /* Next & previous buttons */
@@ -35,8 +38,8 @@
 
   &__icon {
     position: absolute;
-    left: 6px;
-    top: 40%;
+    left: 0.625rem;
+    top: 42%;
     color: #fff;
     transform: rotate(90deg);
     transition: opacity .3s ease;
@@ -63,18 +66,20 @@
   /* The dots/bullets/indicators */
   &__dot {
     cursor: pointer;
-    height: 0.469rem;
-    width: 0.469rem;
-    margin: 0 2px;
-    background-color: #bbb;
+    width: 0.45rem;
+    height: 0.45rem;
     border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+    margin-right: 0.25rem;
+    border: 0.0625rem solid #fff;
+    // margin: 0 2px;
+    // background-color: #bbb;
+    // display: inline-block;
+    // transition: background-color 0.6s ease;
 
     &_active {
-      // background-color: #fff;
+      background-color: #fff;
       // box-shadow: 0 0.25rem 0.25rem rgb(0 0 0 / 25%);
-      // filter: none;
+      filter: none;
     }
   }
 }
