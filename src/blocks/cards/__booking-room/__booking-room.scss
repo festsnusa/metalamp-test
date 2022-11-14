@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.3rem;
 
   &__price-section {
     display: flex;
@@ -12,21 +13,19 @@
 }
 
 .room-section {
-  
-  display: flex;
 
-  &__span {
-    @extend .bold;
-  }
+  display: flex;
+  align-items: baseline;
+
+  @extend .bold;
 
   &__number {
     font-size: 1.5rem;
-    margin-left: 0.25rem;
+    margin-left: 0.2rem;
     margin-right: 0.45rem;
   }
 
   &__luxe {
-    @extend .bold;
     font-size: .75rem;
     text-transform: uppercase;
     color: $purple;
@@ -38,6 +37,7 @@
 
   display: flex;
   align-items: baseline;
+  margin-top: 0.5rem;
 
   &__price,
   &__per-day {
