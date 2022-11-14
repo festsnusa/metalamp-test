@@ -16,8 +16,8 @@ export function calculateCost() {
   let total = document.querySelector('.booking-form__result')
 
   if (inputFrom.value == '' || inputTo.value == '') {
-    multipliedPrice.textContent = `${price}₽ x 0 суток`
-    multipliedResult.textContent = `${price}₽`
+    multipliedPrice.textContent = `${price.toLocaleString('ru-RU')}₽ x 0 суток`
+    multipliedResult.textContent = `0₽`
     total.textContent = calculateTotalSection(0)
     return
   }
@@ -28,8 +28,8 @@ export function calculateCost() {
 
   let nightsWord = (diffDays == 1) ? 'сутка' : 'суток'
 
-  multipliedPrice.textContent = `${price}₽ x ${diffDays} ${nightsWord}`
-  multipliedResult.textContent = `${price*diffDays}₽`
+  multipliedPrice.textContent = `${price.toLocaleString('ru-RU')}₽ x ${diffDays} ${nightsWord}`
+  multipliedResult.textContent = `${price*diffDays.toLocaleString('ru-RU')}₽`
 
   console.log(multipliedPrice.value)
 
@@ -49,7 +49,7 @@ function calculateTotalSection(multipliedResult) {
     result += +e.textContent.match(/\d/g).join('')
   })
 
-  return `${result}₽`
+  return `${result.toLocaleString('ru-RU')}₽`
 
 }
 

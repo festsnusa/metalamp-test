@@ -4,6 +4,14 @@
 
   max-width: 23.75rem;
 
+  &__arrival {
+    margin-bottom: 1.25rem;
+  }
+
+  &__dropdown {
+    margin-bottom: 1.3rem;
+  }
+
   &__total-per-days,
   &__discounts,
   &__additional-services {
@@ -13,16 +21,16 @@
   }
 
   &__total-per-days {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   &__discounts {
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.9rem;
   }
 
   &__additional-services {
-    margin-bottom: 2rem;
+    margin-bottom: 1.85rem;
   }
 
   &__multiplied {
