@@ -14,6 +14,7 @@ include __booking-form/__booking-form.pug
 include __booking-room/__booking-room.pug
 include __login-form/__login-form.pug
 include __room-preview/__room-preview.pug
+include __image-slider/__image-slider.pug
 
 .nav
   a.logo(href="#") 
@@ -34,10 +35,10 @@ include __room-preview/__room-preview.pug
       +createCalendar("date-picker-start", "date-picker-end", false, true)
 
     .main__card
-      -let imagesFirst = [{src: "../../assets/images/room-1-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 4"}]
+      -let imagesFirst = [{src: "../../assets/images/room-1-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-3-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-4-slider.jpg", alt: "Фото 4"}]
       +createRoomPreview(imagesFirst)
     .main__card
-      -let imagesSecond = [{src: "../../assets/images/room-2-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 4"}]
+      -let imagesSecond = [{src: "../../assets/images/room-2-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-4-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-3-slider.jpg", alt: "Фото 4"}]
       +createRoomPreview(imagesSecond)
 
 script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")

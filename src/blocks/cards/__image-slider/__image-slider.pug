@@ -3,12 +3,15 @@ mixin createSlideshowContainer(images)
   .slideshow-container
     each value in images
       .mySlides.fade
-        img.slideshow-container__image(src= value[0] alt= value[1])
+        img.slideshow-container__image(src= value["src"] alt= value["alt"])
         -index++
-    a.slideshow-container__prev.material-symbols-outlined expand_more
-    a.slideshow-container__next.material-symbols-outlined expand_more
+    .slideshow-container__button.slideshow-container__prev
+      a.slideshow-container__icon.material-symbols-outlined expand_more
+    //- a.slideshow-container__prev.material-symbols-outlined expand_more
+    .slideshow-container__button.slideshow-container__next
+      a.slideshow-container__icon.material-symbols-outlined expand_more
     .slideshow-container__dots
       -index= 1
       each value in images
-        .span.dot
+        .slideshow-container__dot
         -index++

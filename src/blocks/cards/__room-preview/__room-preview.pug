@@ -1,0 +1,12 @@
+mixin createRoomPreview(images)
+  .room-preview 
+    +createSlideshowContainer(images)
+    .room-preview__description
+      .room-preview__header 
+        +createBookingRoomDescription("888", "9 990", true)
+      .room-preview__footer 
+        .room-preview__rating
+          +rateButton(5)
+        .room-preview__feedbacks 
+          .room-preview__feedbacks-number 145
+          .room-preview__feedbacks-text Отзывов

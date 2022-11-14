@@ -4,7 +4,11 @@
   margin: auto;
 
   &__dots {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0.9375rem;
+    right: 0.6rem;
   }
 
   &__image {
@@ -12,59 +16,73 @@
   }
 
   /* Next & previous buttons */
-  &__prev,
-  &__next {
-    cursor: pointer;
+  &__button {
+    color: #fff;
     position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    top: 0;
+    height: 100%;
+    width: 2.625rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .5), transparent 99.99%, hsla(0, 0%, 100%, 0));
+    transition: opacity .3s ease;
+    z-index: 3;
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 6px;
+    top: 40%;
+    color: #fff;
+    transform: rotate(90deg);
+    transition: opacity .3s ease;
+    font-size: 1.5rem;
   }
 
   &__prev {
-    transform: rotate(90deg);
+    left: 0;
   }
 
-  &__next {
-    transform: rotate(-90deg);
-  }
-
-  /* Position the "next button" to the right */
+  // /* Position the "next button" to the right */
   &__next {
     right: 0;
     border-radius: 3px 0 0 3px;
+    transform: rotate(180deg);
   }
 
-  /* On hover, add a black background color with a little bit see-through */
-  &__prev:hover,
-  &__next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+  // /* On hover, add a black background color with a little bit see-through */
+  // &__prev:hover,
+  // &__next:hover {
+  //   background-color: rgba(0, 0, 0, 0.8);
+  // }
+
+  /* The dots/bullets/indicators */
+  &__dot {
+    cursor: pointer;
+    height: 0.469rem;
+    width: 0.469rem;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+
+    &_active {
+      // background-color: #fff;
+      // box-shadow: 0 0.25rem 0.25rem rgb(0 0 0 / 25%);
+      // filter: none;
+    }
   }
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 0.469rem;
-  width: 0.469rem;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-  background-color: #717171;
-}
+// .active,
+// .dot:hover {
+//   background-color: #717171;
+// }
 
 /* Fading animation */
 .fade {
@@ -83,36 +101,36 @@
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
+// @media only screen and (max-width: 300px) {
 
 
-  .slideshow-container {
-    &__prev,
-    &__next {
-      font-size: 11px
-    }
-  }
-  
-}
+//   .slideshow-container {
+//     &__prev,
+//     &__next {
+//       font-size: 11px
+//     }
+//   }
 
-.image-slider {
+// }
 
-  opacity: 0;
+// .image-slider {
 
-  &--active {
-    opacity: 1;
-  }
+//   opacity: 0;
 
-  &__dots-box {
-    display: flex;
-    justify-content: center;
-  }
+//   &--active {
+//     opacity: 1;
+//   }
 
-  &__dot {
-    width: 0.469rem;
-    height: 0.468rem;
-    border-radius: 50%;
-    border: 0.0625rem solid #fff;
-    color: #fff;
-  }
-}
+//   &__dots-box {
+//     display: flex;
+//     justify-content: center;
+//   }
+
+//   &__dot {
+//     width: 0.469rem;
+//     height: 0.468rem;
+//     border-radius: 50%;
+//     border: 0.0625rem solid #fff;
+//     color: #fff;
+//   }
+// }
