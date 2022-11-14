@@ -12,9 +12,8 @@ include __room-search/__room-search.pug
 include __registration-form/__registration-form.pug
 include __booking-form/__booking-form.pug
 include __booking-room/__booking-room.pug
-include __image-slider/__image-slider.pug
-
--let images = {1: ["../../assets/images/room-1-slider.jpg", "Фото 1"], 2: ["../../assets/images/room-1-slider.jpg", "Фото 2"], 3: ["../../assets/images/room-1-slider.jpg", "Фото 3"], 4: ["../../assets/images/room-1-slider.jpg", "Фото 4"]}
+include __login-form/__login-form.pug
+include __room-preview/__room-preview.pug
 
 .nav
   a.logo(href="#") 
@@ -27,61 +26,19 @@ include __image-slider/__image-slider.pug
       +createRegistrationFormCard
   .main__secondColumn 
     .main__card
-      +createBookingFormCard("888", "9990", true)
-
-    .main__card 
-      .login-form 
-        p.login-form__header Войти
-        +createInput({class: "default", inputType: "text", name: "email", placeholder: "Email"})
-        +createInput({class: "default", inputType: "text", name: "password", placeholder: "Пароль"})
-        +createProceedButton("Забронировать")
-        .login-form__box
-          p.login-form__caption Нет аккаунта на Toxin?
-          +createButton("Создать", "white", "purple", false)
-
-  .main__thirdColumn 
-    //- .main__card
-    +createCalendar("date-picker-start", "date-picker-end", false, true)
-
-    .main__card 
-      .room-preview
-        .room-preview__slider
-          +createSlideshowContainer(images)
-        .room-preview__description
-          .room-preview__header
-            .room-preview__room-number 
-              p.room-preview__room-symbol №
-              p.room-preview__room-value 888
-              p.room-preview__room-luxe люкс
-            .room-preview__room-cost
-              span.room-preview__amount 9 990₽
-              span.room-preview__per-day в сутки
-          .room-preview__footer
-            .room-preview__rating
-              +rateButton(5)
-            .room-preview__feedbacks 
-              .room-preview__feedbacks-number 145
-              .room-preview__feedbacks-text Отзывов
+      +createBookingFormCard("888", "9 990", true)
     .main__card
-      .room-preview
-        .room-preview__slider
-          -let images2 = {1: ["../../assets/images/room-2-slider.jpg", "Фото 1"], 2: ["../../assets/images/room-2-slider.jpg", "Фото 2"], 3: ["../../assets/images/room-2-slider.jpg", "Фото 3"], 4: ["../../assets/images/room-2-slider.jpg", "Фото 4"]}
-          +createSlideshowContainer(images2)
-        .room-preview__description
-          .room-preview__header
-            .room-preview__room-number 
-              p.room-preview__room-symbol №
-              p.room-preview__room-value 888
-              p.room-preview__room-luxe люкс
-            .room-preview__room-cost
-              span.room-preview__amount 9 990₽
-              span.room-preview__per-day в сутки
-          .room-preview__footer
-            .room-preview__rating
-              +rateButton(4, 1)
-            .room-preview__feedbacks 
-              .room-preview__feedbacks-number 65
-              .room-preview__feedbacks-text Отзывов
+      +createLoginFormCard
+  .main__thirdColumn
+    .main__calendarCard
+      +createCalendar("date-picker-start", "date-picker-end", false, true)
+
+    .main__card
+      -let imagesFirst = [{src: "../../assets/images/room-1-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 4"}]
+      +createRoomPreview(imagesFirst)
+    .main__card
+      -let imagesSecond = [{src: "../../assets/images/room-2-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 4"}]
+      +createRoomPreview(imagesSecond)
 
 script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
 script(src="../../assets/libs/masked-field.js")

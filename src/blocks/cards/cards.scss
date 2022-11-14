@@ -13,6 +13,8 @@
 @import '__booking-room/_booking-room';
 @import '__login-form/_login-form';
 @import '__image-slider/_image-slider';
+@import '__room-preview/_room-preview';
+
 
 body {
   background: #e5e5e5;
@@ -20,13 +22,12 @@ body {
 
 .main {
 
+  $root: &;
+
   display: grid;
   grid-template-columns: 1.02fr 1.08fr 1fr;
   max-width: 80%;
-  // margin: 0 auto;
-  // margin-right: 30rem;
-  padding: 0.2rem 8.7rem;
-  // column-gap: 3.5rem;
+  padding: 1rem 8.7rem;
 
   &__card {
     margin-bottom: 2.45rem;
@@ -35,6 +36,10 @@ body {
     box-shadow: 0 0 1.5rem $darkShade25;
     border-radius: 0.25rem;
     padding: 2.4rem 1.85rem 1.85rem 1.8rem;
+  }
+
+  &__calendarCard {
+    margin-bottom: 2.6rem;
   }
 
   &__firstColumn {
@@ -47,103 +52,24 @@ body {
 
   &__thirdColumn {
     max-width: 23.75rem;
+
+    & #{$root}__card:nth-child(2) {
+      max-width: 16.875rem;
+      margin-bottom: 2.4rem;
+      padding: 0;
+    }
+
+    & #{$root}__card:nth-child(3) {
+      max-width: 16.875rem;
+      margin-bottom: 2.4rem;
+      padding: 0;
+    }
   }
 
 }
 
-.room-preview {
-
-  &__slider {
-    max-height: 9.4375rem;
-    border-radius: 0.25rem;
-  }
-
-  &__description {
-    padding: 1.1rem 1.0625rem 0.89rem 1.25rem;
-  }
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 0.7rem;
-    border-bottom: 0.063rem solid rgba(31, 32, 65, 0.1);
-    margin-top: 0.063rem;
-    column-gap: 0.625rem;
-  }
-
-  &__room-number {
-    display: flex;
-    align-items: baseline;
-  }
-
-  &__room-symbol,
-  &__room-value,
-  &__room-luxe {
-    @extend .bold;
-  }
-
-  &__room-symbol {
-    font-size: .875rem;
-  }
-
-  &__room-value {
-    font-size: 1.1875rem;
-    margin-left: 0.25rem;
-    margin-right: 0.6rem;
-  }
-
-  &__room-luxe {
-    font-size: .75rem;
-    color: $purple;
-    text-transform: uppercase;
-  }
-
-  &__room-cost {
-    margin-top: 0.3rem;
-  }
-
-  &__amount,
-  &__per-day {
-    color: $darkShade50;
-  }
-
-  &__amount {
-    font-size: .875rem;
-    margin-right: 0.25rem;
-    @extend .bold;
-  }
-
-  &__per-day {
-    font-size: .75rem;
-  }
-
-  &__footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.475rem;
-    column-gap: 0.625rem;
-  }
-
-  &__feedbacks {
-    display: flex;
-    padding-top: 0.125rem;
-
-    &-number,
-    &-text {
-      font-size: .875rem;
-      color: $darkShade50;
-    }
-
-    &-number {
-      @extend .bold;
-      margin-right: 0.35rem;
-    }
-
-    &-text {
-      margin-right: 0.1rem;
-    }
-  }
-
-
+.nav {
+  margin: 1.8rem auto 3.5rem;
+  max-width: 99%;
+  padding: 0 1.3rem;
 }
