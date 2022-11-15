@@ -1,6 +1,7 @@
 include ../../form-elements/__buttons/__buttons.pug
 
-mixin createHeader
+mixin createHeaderSection(logged)
+  -let loggedClass = (logged) ? `_logged` : ``
   .header__section
     .header__logo
       a.logo(href="#")
@@ -13,26 +14,39 @@ mixin createHeader
         li.header__link
           .header__sub-menu
             a.header__link(href="#") Услуги
-          .header__dropdown
-            a.header__link.header__sub-link(href="#") Завтрак
-            a.header__link.header__sub-link(href="#") Обед
-            a.header__link.header__sub-link(href="#") Ужин
-          span.material-icons expand_more
+            .header__dropdown
+              a.header__link.header__sub-link(href="#") Завтрак
+              a.header__link.header__sub-link(href="#") Обед
+              a.header__link.header__sub-link(href="#") Ужин
+            span.header__icon.material-icons expand_more
         li.header__link
-          a.header__link.header_bold(href="#") Вакансии
+          a.header__link(href="#") Вакансии
         li.header__link
-          a.header__link.header_bold(href="#") Новости
+          a.header__link(href="#") Новости
         li.header__link
           .header__sub-menu
             a.header__link(href="#") Соглашения
-          .header__dropdown
-            a.header__link.header__sub-link(href="#") Соглашение 1
-            a.header__link.header__sub-link(href="#") Соглашение 2
-            a.header__link.header__sub-link(href="#") Соглашение 3
-          span.material-icons expand_more
-      .header__login-menu
-        a.login__link(href="#")
-          +createButton("Войти", "white", "purple", false)
-        a.login__link(href="#")
-          +createButton("Зарегистрироваться", "purple", "white", false)
-  .header__section_logged
+            .header__dropdown
+              a.header__link.header__sub-link(href="#") Соглашение 1
+              a.header__link.header__sub-link(href="#") Соглашение 2
+              a.header__link.header__sub-link(href="#") Соглашение 3
+            span.header__icon.material-icons expand_more
+      if (!logged)
+        +createLoginSection
+      else
+        +createLoggedSection
+
+mixin createLoginSection
+  .header__login-menu
+    a.header__login-link(href="#")
+      +createButton("Войти", "log-in-button", "purple", false)
+    a.header__login-link(href="#")
+      +createButton("Зарегистрироваться", "registration-button", "white", false)
+
+mixin createLoggedSection
+  .header__login-menu_authorized
+    a.header__user-name(href="#") Юлий Цезарь
+
+mixin createHeader
+  +createHeaderSection(false)
+  +createHeaderSection(true)

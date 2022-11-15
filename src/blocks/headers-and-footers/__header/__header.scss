@@ -2,14 +2,12 @@
 
   &__section {
     margin-bottom: 2.55rem;
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    grid-template-areas: "logo menus";
-  }
-
-  &__logo {
-    grid-area: logo;
+    // grid-template-areas: "logo menus";
+    background: #fff;
+    padding: 1rem 8.5rem 0.8rem 8.75rem;
   }
 
   &__burger {
@@ -25,7 +23,68 @@
     user-select: none;
   }
 
-  &__menus {
-    grid-area: menus;
+  &__dropdown {
+    display: none;
   }
+
+  &__menus {
+    display: flex;
+    // grid-area: menus;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    padding-right: 1.2rem;
+    column-gap: 1.3rem
+  }
+
+  &__sub-menu {
+    position: relative;
+    display: flex;
+    // grid-template-columns: max-content min-content;
+    align-items: center;
+  }
+
+  &__link {
+    list-style: none;
+    text-decoration: none;
+    font-size: .875rem;
+    color: $darkShade50;
+    line-height: 1.0625rem;
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__login-menu {
+    display: flex;
+    column-gap: 1.25rem;
+
+    &_authorized {
+      border-left: 1px solid $darkShade10;
+      padding-left: 1.25rem;
+    }
+  }
+
+  &__login-link {
+    text-decoration: none;
+  }
+
+  &__user-name {
+    text-decoration: none;
+    color: $darkShade50;
+    line-height: 2.0625rem;
+    font-size: .875rem;
+  }
+
+  &_bold {
+    @extend .bold;
+  }
+}
+
+.button__registration-button {
+    height: 34px;
+    width: 196px;
 }

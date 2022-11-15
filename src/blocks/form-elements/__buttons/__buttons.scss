@@ -35,8 +35,8 @@
 .button {
   border: none;
   cursor: pointer;
-  min-height: 2.75rem;
-  min-width: 6.1875rem;
+  height: 2.75rem;
+  width: 6.1875rem;
   border-radius: 1.375rem;
 
   &_purple {
@@ -58,6 +58,19 @@
   &_blocked {
     opacity: 0.5;
     cursor: default;
+  }
+
+  &_log-in-button {
+    height: 34px;
+    width: 87px;
+    background: transparent;
+    border: 0.125rem solid $purple;
+  }
+
+  &_registration-button {
+    height: 34px;
+    width: 196px;
+    background: $linearGradientPurple;
   }
 
   &_forward {
