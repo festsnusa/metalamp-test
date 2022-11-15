@@ -11,25 +11,8 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $darkShade75;
   }
 
-.input-default {
-    // margin-top: 0.3125rem;
-    // margin-bottom: 1rem;
-}
-
-.input-hover {
-    // margin-bottom: 0.8rem;
-}
-
-.input-masked-field {
-    // margin-bottom: 2.15rem;
-}
-
-.input-date-dropdown {
-    // margin-bottom: 1.4rem;
-}
-
 .input {
-    max-width: 20rem;
+    max-width: inherit;
     width: 100%;
 
     &__header {
@@ -64,13 +47,9 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     }
 }
 
-.input-field {
-    // margin-bottom: 2rem;
-}
-
 .subscription-field {
     
-    max-width: 16.5rem;
+    max-width: inherit;
     width: 100%;
 
     &__title {
