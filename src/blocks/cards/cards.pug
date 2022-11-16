@@ -21,8 +21,8 @@ include __image-slider/__image-slider.pug
     img(src="../../assets/images/logo-colorless.svg" alt="#")
 .main   
   .main__firstColumn 
-    .main__card
-      +createRoomSearchCard("Найдём номера под ваши пожелания")
+    //- .main__card
+    +createRoomSearchCard("Найдём номера под ваши пожелания")
     .main__card 
       +createRegistrationFormCard
   .main__secondColumn 
@@ -48,4 +48,3 @@ script(type="module" src="../form-elements/__datepicker/__datepicker.js")
 script(src="../form-elements/__dropdown/__dropdown.js")
 script(type="module" src="./__booking-form/__booking-form.js")
 script(src="./__image-slider/__image-slider.js")
-script(src="cards.js")

@@ -6,6 +6,10 @@ export function calculateCost() {
 
   let bookingForm = document.querySelector('.booking-form')
 
+  if (bookingForm == null) {
+    return
+  }
+
   let inputFrom = bookingForm.getElementsByClassName('date-picker-start')[0]
   let inputTo = bookingForm.getElementsByClassName('date-picker-end')[0]
   let multipliedPrice = document.querySelector('.booking-form__multiplied')

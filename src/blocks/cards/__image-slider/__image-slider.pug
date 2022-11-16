@@ -6,10 +6,9 @@ mixin createSlideshowContainer(images)
         img.slideshow-container__image(src= value["src"] alt= value["alt"])
         -index++
     .slideshow-container__button.slideshow-container__prev
-      a.slideshow-container__icon.material-symbols-outlined expand_more
-    //- a.slideshow-container__prev.material-symbols-outlined expand_more
+      a.slideshow-container__icon.material-symbols-outlined
     .slideshow-container__button.slideshow-container__next
-      a.slideshow-container__icon.material-symbols-outlined expand_more
+      a.slideshow-container__icon.material-symbols-outlined
     .slideshow-container__dots
       -index= 1
       each value in images

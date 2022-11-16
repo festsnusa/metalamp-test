@@ -48,5 +48,7 @@ mixin createLoggedSection
     a.header__user-name(href="#") Юлий Цезарь
 
 mixin createHeader
-  +createHeaderSection(false)
-  +createHeaderSection(true)
+  .header__margin-bottom
+    +createHeaderSection(false)
+  .header__margin-bottom
+    +createHeaderSection(true)

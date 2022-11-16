@@ -1,7 +1,11 @@
 .header {
 
-  &__section {
+  &__margin-bottom {
     margin-bottom: 2.55rem;
+  }
+
+  &__section {
+    // margin-bottom: 2.55rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -104,38 +104,3 @@
     opacity: 1
   }
 }
-
-/* On smaller screens, decrease text size */
-// @media only screen and (max-width: 300px) {
-
-
-//   .slideshow-container {
-//     &__prev,
-//     &__next {
-//       font-size: 11px
-//     }
-//   }
-
-// }
-
-// .image-slider {
-
-//   opacity: 0;
-
-//   &--active {
-//     opacity: 1;
-//   }
-
-//   &__dots-box {
-//     display: flex;
-//     justify-content: center;
-//   }
-
-//   &__dot {
-//     width: 0.469rem;
-//     height: 0.468rem;
-//     border-radius: 50%;
-//     border: 0.0625rem solid #fff;
-//     color: #fff;
-//   }
-// }

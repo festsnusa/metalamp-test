@@ -281,7 +281,13 @@ class DatePicker {
       startInput.value += ` — ${this.dateToString(this.endDate)}`
     }
 
-    calculateCost()
+    let bookingForm = document.querySelector('.booking-form')
+
+    if (bookingForm != null) {
+      calculateCost()
+    }
+
+    // calculateCost()
       
     const datePickers = document.querySelectorAll('.date-picker')
 
