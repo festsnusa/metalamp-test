@@ -69,14 +69,10 @@ include __bullet-list/__bullet-list.pug
 
     .gap 
     .second-column 
-      .rich-checkbox
-        p.rich-checkbox__header Rich сheckbox buttons
-        +createRichCheckboxList
+      +createRichCheckboxList('Rich сheckbox buttons')
     .gap 
     .third-column
-      .bullet-list 
-        p.bullet-list__header Bullet list
-        +createBulletList
+      +createBulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'], 'Bullet list')
   .main__section
     .first-column
       +createDescription
