@@ -1,8 +1,15 @@
 include ../../blocks/headers-and-footers/__header/__header.pug
 include ../../blocks/headers-and-footers/__footer/__footer.pug
+include ../../blocks/form-elements/__datepicker/__datepicker.pug
+include ../../blocks/form-elements/__dropdown/__dropdown.pug
+include ../../blocks/form-elements/__range-slider/__range-slider.pug
+include ../../blocks/form-elements/__checkbox/__checkbox.pug
+include ../../blocks/form-elements/__rich-checkbox/__rich-checkbox.pug
+include ../../blocks/cards/__room-preview/__room-preview.pug
 include __room-preview/__room-preview.pug
 
 link(rel="stylesheet" href="search-room.css")
+link(rel="stylesheet", href="../../assets/libs/noUISlider.css")
 link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
 link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 
@@ -14,16 +21,32 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+I
       .search-room__container 
         .search-room__settings
           .search-room__date-dropdown
+            +createSingleInputCalendar("Даты пребывания в отеле")
           .search-room__guests-dropdown
-          .search-room__range-slider 
+            +createDropdown({"footer": "_visible", type: "guests", title: "Гости", listClass: "shrinked", placeholder: "Сколько гостей"}, {Взрослые: 'adults', Дети: 'children', Младенцы: 'babies'})
+          .search-room__range-slider
+            +createRangeSlider("Диапазон цены")
           .search-room__checkbox 
+            +createCheckboxItems({1: ["smoke-allow", false, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", true, "Можно пригласить гостей (до 10 человек)"]}, false, false, 'Правила дома')
           .search-room__rich-checkbox
+            +createRichCheckboxList("Доступность")
           .search-room__room-dropdown
+            +createDropdown({"footer": "_invisible", type: "rooms", placeholder: 'Сколько комнат', title: 'Dropdown', subtitle: 'Default'}, {'Спальни': 'bedrooms', 'Кровати': 'beds', 'Ванные комнаты': 'bathrooms'})
           .search-room__expandable-checkbox
+           -let expandableCheckboxOptions = [{"name": "breakfast", "checked": false, "caption": "Завтрак"}, {"name": "desk", "checked": true, "caption": "Письменный стол"}, {"name": "feeding-chair", "checked": true, "caption": "Стул для кормления"}, {"name": "bed", "checked": true, "caption": "Кроватка"}, {"name": "tv", "checked": false, "caption": "Телевизор"}, {"name": "shampoo", "checked": false, "caption": "Шампунь"}]
+           +createCheckboxItems(expandableCheckboxOptions, true, true, 'Дополнительные удобства')
 
         .search-room__results 
           p.search-room__title Номера, которые мы для вас подобрали
-          +createRoomPreviewSection([{src: "../../assets/images/room-1-slider.jpg", alt: "Фото 1"}], "888", 5, 145)
+          +createRoomPreviewSection(12)
+          
 
   .pages__footer 
     +createFooterContent(false)
+
+script(src="../../assets/libs/noUISlider.js")
+script(type="module" src="../../assets/libs/moment.js")
+script(type="module" src="../../blocks/form-elements/__datepicker/__datepicker.js")
+script(src="../../blocks/form-elements/__dropdown/__dropdown.js")
+script(src="../../blocks/cards/__image-slider/__image-slider.js")
+script(src="../../blocks/form-elements/__pagination/__pagination.js")
