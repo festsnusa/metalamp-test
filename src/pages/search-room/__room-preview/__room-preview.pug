@@ -1,0 +1,7 @@
+include ../../../blocks/cards/__room-preview/__room-preview.pug
+
+mixin createRoomPreviewSection(data)
+  .search-room__room-preview-block
+    each value in data
+      .search-room__room-preview
+        +createRoomPreview(value["images"], value["roomNumber"], value["numRating"], value["numFeedbacks"])

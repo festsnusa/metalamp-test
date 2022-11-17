@@ -1,5 +1,6 @@
 include ../../blocks/headers-and-footers/__header/__header.pug
 include ../../blocks/headers-and-footers/__footer/__footer.pug
+include __room-preview/__room-preview.pug
 
 link(rel="stylesheet" href="search-room.css")
 link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
@@ -22,6 +23,7 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+I
 
         .search-room__results 
           p.search-room__title Номера, которые мы для вас подобрали
-          
+          +createRoomPreviewSection([{src: "../../assets/images/room-1-slider.jpg", alt: "Фото 1"}], "888", 5, 145)
+
   .pages__footer 
     +createFooterContent(false)
