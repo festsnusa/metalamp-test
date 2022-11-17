@@ -1,19 +1,8 @@
-mixin createBulletList
-  -let options = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
-  ul.bullet-list__list
-    each option in options
-      li.bullet-list__item
-        .bullet-list__ellipse
-        .bullet-list__caption= option
-      
-
-//- ul.bullet-list__list 
-//-           li.bullet-list__item
-//-             .bullet-list__ellipse
-//-             .bullet-list__caption Нельзя с питомцами
-//-           li.bullet-list__item
-//-             .bullet-list__ellipse
-//-             .bullet-list__caption Без вечеринок и мероприятий
-//-           li.bullet-list__item
-//-             .bullet-list__ellipse
-//-             .bullet-list__caption Время прибытия — после 13:00, а выезд до 12:00
+mixin createBulletList(options, title)
+  .bullet-list
+    p.bullet-list__header= title
+    ul.bullet-list__list
+      each option in options
+        li.bullet-list__item
+          .bullet-list__ellipse
+          .bullet-list__caption= option
