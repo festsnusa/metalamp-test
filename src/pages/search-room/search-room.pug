@@ -27,7 +27,7 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+I
           .search-room__range-slider
             +createRangeSlider("Диапазон цены")
           .search-room__checkbox 
-            +createCheckboxItems({1: ["smoke-allow", false, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", true, "Можно пригласить гостей (до 10 человек)"]}, false, false, 'Правила дома')
+            +createCheckboxItems([{"name": "smoke-allow", "checked": false, "caption": "Можно курить"}, {"name": "pet-allow", "checked": true, "caption": "Можно с питомцами"}, {"name": "guests-allow", "checked": true, "caption": "Можно пригласить гостей (до 10 человек)"}], false, false, 'Правила дома')
           .search-room__rich-checkbox
             +createRichCheckboxList("Доступность")
           .search-room__room-dropdown
@@ -44,9 +44,11 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+I
   .pages__footer 
     +createFooterContent(false)
 
-script(src="../../assets/libs/noUISlider.js")
-script(type="module" src="../../assets/libs/moment.js")
+script(src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous")
+script(src="../../blocks/form-elements/__range-slider/__range-slider.js")
 script(type="module" src="../../blocks/form-elements/__datepicker/__datepicker.js")
 script(src="../../blocks/form-elements/__dropdown/__dropdown.js")
+script(src="../../blocks/form-elements/__checkbox/__checkbox.js")
 script(src="../../blocks/cards/__image-slider/__image-slider.js")
 script(src="../../blocks/form-elements/__pagination/__pagination.js")
+//- script(type="module" src="../../assets/libs/moment.js")
