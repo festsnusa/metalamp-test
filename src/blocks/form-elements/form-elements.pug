@@ -2,21 +2,21 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+S
 link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 link(rel="stylesheet", href="../../assets/libs/noUISlider.css")
 link(rel="stylesheet", href="form-elements.css")
-include __inputs/__inputs.pug
-include __dropdown/__dropdown.pug
-include __datepicker/__datepicker.pug
-include __checkbox/__checkbox.pug
-include __radio-buttons/__radio-buttons.pug
-include __toggle/__toggle.pug
-include __like-button/__like-button.pug
-include __rate-button/__rate-button.pug
-include __range-slider/__range-slider.pug
-include __buttons/__buttons.pug
-include __pagination/__pagination.pug
-include __rich-checkbox/__rich-checkbox.pug
-include __description/__description.pug
-include __comment/__comment.pug
-include __bullet-list/__bullet-list.pug
+include __inputs/__inputs
+include __dropdown/__dropdown
+include __datepicker/__datepicker
+include __checkbox/__checkbox
+include __radio-buttons/__radio-buttons
+include __toggle/__toggle
+include __like-button/__like-button
+include __rate-button/__rate-button
+include __range-slider/__range-slider
+include __buttons/__buttons
+include __pagination/__pagination
+include __rich-checkbox/__rich-checkbox
+include __description/__description
+include __feedback/__feedback
+include __bullet-list/__bullet-list
 
 .nav
   a.logo(href="#") 
@@ -75,11 +75,12 @@ include __bullet-list/__bullet-list.pug
       +createBulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'], 'Bullet list')
   .main__section
     .first-column
-      +createDescription
+      +createDescription([{"icon": "insert_emoticon", "title": "Комфорт", "subtitle": "Шумопоглощающие стены"}, {"icon": "location_city", "title": "Удобство", "subtitle": "Окно в каждой из спален"}])
     .gap 
     .second-column
       -let comment = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
-      +createCommentSection("../../assets/images/profile.jpg", "Мурад Сарафанов", "5", 12, 'favorite', comment)
+      +createFeedbacksSection([{"src": "../../assets/images/profile.jpg", "alt": "Фото 1", "author": "Мурад Сарафанов", "days": "5", "likes": "12", "liked": 'favorite', "comment": comment}])
+      //- +createCommentSection("../../assets/images/profile.jpg", "Мурад Сарафанов", "5", 12, 'favorite', comment)
 
 script(src="https://code.jquery.com/jquery-3.6.1.js", integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=", crossorigin="anonymous")
 script(src="../form-elements/__range-slider/__range-slider.js")
