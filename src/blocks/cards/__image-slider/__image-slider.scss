@@ -39,11 +39,16 @@
   &__icon {
     position: absolute;
     left: 0.625rem;
-    top: 42%;
+    top: 44.5%;
     color: #fff;
     transform: rotate(90deg);
     transition: opacity .3s ease;
     font-size: 1.5rem;
+
+    &:before {
+      content: 'expand_more';
+      // display: inline-block;
+    }
   }
 
   &__prev {
