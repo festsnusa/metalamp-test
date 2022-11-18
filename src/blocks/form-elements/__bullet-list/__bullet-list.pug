@@ -1,6 +1,7 @@
-mixin createBulletList(options, title)
+mixin createBulletList(options, title = '')
   .bullet-list
-    p.bullet-list__header= title
+    if (title != '')
+      p.bullet-list__header= title
     ul.bullet-list__list
       each option in options
         li.bullet-list__item
