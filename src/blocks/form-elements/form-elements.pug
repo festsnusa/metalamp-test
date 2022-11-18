@@ -33,7 +33,7 @@ include __bullet-list/__bullet-list.pug
       +createSubscriptionField("Subscription Text Field")
     .gap
     .second-column
-      +createCheckboxItems({1: ["smoke-allow", false, "Можно курить"], 2: ["pet-allow", true, "Можно с питомцами"], 3: ["guests-allow", true, "Можно пригласить гостей (до 10 человек)"]}, false, false, 'Checkbox Buttons')
+      +createCheckboxItems([{"name": "smoke-allow", "checked": false, "caption": "Можно курить"}, {"name": "pet-allow", "checked": true, "caption": "Можно с питомцами"}, {"name": "guests-allow", "checked": true, "caption": "Можно пригласить гостей (до 10 человек)"}], false, false, 'Checkbox Buttons')
       +createRadioButton({1: ["gender", true, "Мужчина"], 2: ["gender", false, "Женщина"]}, 'Radio Buttons')
       +toggle({1: [true, "Получать спецпредложения"], 2: [false, "Получать спецпредложения"]}, "Toggle")
       +createlikeButton({1: [2, 'favorite_border'], 2: [12, 'favorite']}, title = 'like button')
@@ -46,7 +46,7 @@ include __bullet-list/__bullet-list.pug
     .third-column
       +createRangeSlider('Range slider')
       +createButtons('Buttons')
-      +createLinks(15, true, true)
+      +createPagination(15, true, true)
 
   .main__section
     .first-column
@@ -63,7 +63,7 @@ include __bullet-list/__bullet-list.pug
   .main__section
     .first-column
       -let expandableTitle = 'Expandable Checkbox List'
-      -let expandableCheckboxOptions = {1: ["breakfast", false, "Завтрак"], 2: ["desk", true, "Письменный стол"], 3: ["feeding-chair", true, "Стул для кормления"], 4: ["bed", true, "Кроватка"], 5: ["tv", false, "Телевизор"], 6: ["shampoo", false, "Шампунь"]}
+      -let expandableCheckboxOptions = [{"name": "breakfast", "checked": false, "caption": "Завтрак"}, {"name": "desk", "checked": true, "caption": "Письменный стол"}, {"name": "feeding-chair", "checked": true, "caption": "Стул для кормления"}, {"name": "bed", "checked": true, "caption": "Кроватка"}, {"name": "tv", "checked": false, "caption": "Телевизор"}, {"name": "shampoo", "checked": false, "caption": "Шампунь"}]
       +createCheckboxItems(expandableCheckboxOptions, true, false, 'Expandable Checkbox List')
       +createCheckboxItems(expandableCheckboxOptions, true, true, 'Expandable Checkbox List')
 
@@ -82,7 +82,7 @@ include __bullet-list/__bullet-list.pug
       +createCommentSection("../../assets/images/profile.jpg", "Мурад Сарафанов", "5", 12, 'favorite', comment)
 
 script(src="https://code.jquery.com/jquery-3.6.1.js", integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=", crossorigin="anonymous")
-script(src="../../assets/libs/noUISlider.js")
+script(src="../form-elements/__range-slider/__range-slider.js")
 script(src="../../assets/libs/masked-field.js")
 script(src="./__pagination/__pagination.js")
 script(type="module" src="./__datepicker/__datepicker.js")
