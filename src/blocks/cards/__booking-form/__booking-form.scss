@@ -2,6 +2,13 @@
 
   $root: &;
 
+  background: #fff;
+  border: 0.0625rem solid $darkShade25;
+  // box-shadow: 0 0 1.5625rem rgb(0 0 0 / 20%);
+  padding: 2.4rem 1.85rem 1.85rem 1.8rem;
+  border-radius: 0.25rem;
+  max-width: 23.75rem;
+
   max-width: 23.75rem;
 
   &__arrival {
@@ -113,7 +120,4 @@
     margin-right: 0.5rem;
   }
 
-  &__result {
-    // min-width: 4.813rem;
-  }
 }
