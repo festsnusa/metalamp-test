@@ -1,4 +1,4 @@
-mixin createLinks(totalPages, titleNeeded = false, captionNeeded = false)
+mixin createPagination(totalPages, titleNeeded = false, captionNeeded = false)
 
   -let i = 1
   -let arr = []
@@ -12,10 +12,10 @@ mixin createLinks(totalPages, titleNeeded = false, captionNeeded = false)
       p.pagination__title Pagination
     .pagination__box
       .pagination__pages
-        a(href="#!-1" class="pagination__page").pagination__arrow-previous.material-symbols-outlined arrow_back
+        a(href="#!-1" class="pagination__page").pagination__arrow-previous.material-symbols-outlined
           each value in arr
             a(href=`#!${value}` class='pagination__page')= value
-        a(href="#!+1" class="pagination__page").pagination__arrow-forward.material-symbols-outlined arrow_forward
+        a(href="#!+1" class="pagination__page").pagination__arrow-forward.material-symbols-outlined
       if captionNeeded
         p.pagination__caption
           span.pagination__from 1
