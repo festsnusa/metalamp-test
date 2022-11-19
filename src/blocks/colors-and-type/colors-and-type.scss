@@ -10,8 +10,9 @@ $boxSize: 4.3rem;
 }
 
 .main {
-    margin: 0 auto;
+
     display: grid;
+    margin: 0 auto;
     max-width: 97%;
     grid-template-columns: 16.875rem 28rem;
     grid-column-gap: 29.2%;
@@ -45,16 +46,15 @@ $boxSize: 4.3rem;
         border-radius: 0.375rem;
     }
 
-    &__title, &__subtitle {
-        // display: flex;
+    &__title,
+    &__subtitle {
         font-size: 1.1875rem;
         line-height: 1.1875rem;
     }
 
     &__title {
         grid-area: title;
-        font-family: 'Montserrat Bold', Arial, sans-serif;
-        // align-self: flex-end;
+        @extend .bold;
         width: max-content;
     }
 
@@ -63,32 +63,14 @@ $boxSize: 4.3rem;
         align-self: flex-start;
     }
 
-    &_1 &__box {
-        background: $darkShade100;
-    }
+    $map: ('darkShade100': $darkShade100, 'darkShade75': $darkShade75, 'darkShade50': $darkShade50, 'darkShade25': $darkShade25, 'darkShade5': $darkShade5, 'purple': $purple, 'green': $green);
 
-    &_2 &__box {
-        background: $darkShade75;
-    }
+    @each $key, $value in $map {
 
-    &_3 &__box {
-        background: $darkShade50;
-    }
+        &_#{$key} &__box {
+            background: #{$value};
+        }
 
-    &_4 &__box {
-        background: $darkShade25;
-    }
-
-    &_5 &__box {
-        background: $darkShade5;
-    }
-
-    &_purple &__box {
-        background: $purple;
-    }
-
-    &_green &__box {
-        background: $green;
     }
 }
 
@@ -107,7 +89,7 @@ $boxSize: 4.3rem;
     }
 
     &__subtitle {
-        font-family: "Montserrat Bold";
+        @extend .bold;
     }
 
     &_h1 {
@@ -118,31 +100,31 @@ $boxSize: 4.3rem;
         #{$root}__title {
             font-size: 1.5rem;
             line-height: 1.8125rem;
-           
+
         }
 
         #{$root}__subtitle {
-            font-family: 'Montserrat Bold';
+            @extend .bold;
         }
 
     }
 
     &_h2 {
         margin-bottom: 0.0625rem;
-    
+
         #{$root}__subtitle,
         #{$root}__title {
             font-size: 1.188rem;
             line-height: 1.5rem;
         }
-    
+
     }
 
     &_h3 {
         font-size: .75rem;
         text-transform: uppercase;
         line-height: .9375rem;
-    
+
         #{$root}__title {
             color: $darkShade25;
         }
@@ -151,12 +133,12 @@ $boxSize: 4.3rem;
     &_body {
         max-width: 23.75rem;
         color: $darkShade50;
-    
+
         #{$root}__title,
         #{$root}__subtitle {
             font-size: 0.875rem;
         }
-           
+
         #{$root}__title {
             text-transform: capitalize;
         }
@@ -168,6 +150,3 @@ $boxSize: 4.3rem;
     }
 
 }
-
-
-

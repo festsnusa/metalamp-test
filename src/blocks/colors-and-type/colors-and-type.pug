@@ -1,18 +1,21 @@
-- let colors = {1: ['Dark Shade 100%', '#1F2041'], 2: ['Dark Shade 75%', '#1F2041'], 3: ['Dark Shade 50%', '#1F2041'], 4: ['Dark Shade 25%', '#1F2041'], 5: ['Dark Shade 5%', '#1F2041'], Purple: ['Purple', '#BC9CFF'], Green: ['Green', '#6FCF97']}
-- let tags = {h1: "This one is the sub-section or widget title", h2: 'Next one is the item title inside widgets', h3: 'This is a label or CTA text', body: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'}
+-let firstColor = '#1F2041'
+-let secondColor = '#BC9CFF'
+-let thirdColor = '#6FCF97'
+-let colors = [{"class": "darkShade100", "title": 'Dark Shade 100%', "color": firstColor}, {"class": "darkShade75", "title": 'Dark Shade 75%', "color": firstColor}, {"class": "darkShade50", "title": 'Dark Shade 50%', "color": firstColor}, {"class": "darkShade25", "title": 'Dark Shade 25%', "color": firstColor}, {"class": "darkShade5", "title": 'Dark Shade 5%', "color": firstColor}, {"class": "purple", "title": 'Purple', "color": secondColor}, {"class": "green", "title": 'Green', "color": thirdColor}]
+-let tags = [{"title": "h1", "subtitle": "This one is the sub-section or widget title"}, {"title": "h2", "subtitle": "Next one is the item title inside widgets"}, {"title": "h3", "subtitle": "This is a label or CTA text"}, {"title": "body", "subtitle": "This is the body text which is used for most of the design, like paragraphs, lists, etc."}]
 
 mixin fonts
-  each key, value in colors
-    .color(class=`color_${value}`)
+  each value in colors
+    .color(class=`color_${value["class"]}`)
       .color__box 
-      p.color__title #{key[0]}
-      p.color__subtitle #{key[1]}
+      p.color__title= value["title"]
+      p.color__subtitle= value["color"]
 
 mixin tagsSection 
-  each key, value in tags 
-    .tag-example(class=`tag-example_${value}`)
-      p.tag-example__title #{value}
-      p.tag-example__subtitle #{key}
+  each value in tags 
+    .tag-example(class=`tag-example_${value["title"]}`)
+      p.tag-example__title= value["title"]
+      p.tag-example__subtitle= value["subtitle"]
 
 
 link(rel="stylesheet", href="colors-and-type.css")
