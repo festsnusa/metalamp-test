@@ -14,6 +14,7 @@ mixin createFeedbacksSection(data, titleNeeded = false)
 				.feedback__author 
 					p.feedback__author--name= value["author"]
 					p.feedback__author--date= `${value["days"]} дней назад`
-				+createlikeButton({1: [value["likes"], value["liked"]]})
+				.feedback__likes
+					+createlikeButton({1: [value["likes"], value["liked"]]})
 				p.feedback__text= value["comment"]
 

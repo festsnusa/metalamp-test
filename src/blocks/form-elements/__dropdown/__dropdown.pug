@@ -8,7 +8,7 @@ mixin createDropdown(data, categories, arr = [0, 0, 0])
 		.dropdown__box
 			input.dropdown__input(class=`js-dropdown__input--${data["type"]}` placeholder= data["placeholder"] readonly="readonly")
 			button.dropdown__button(type="button")
-				span.dropdown__icon.material-symbols-outlined
+				span.dropdown__icon.material-icons
 			ul.dropdown__list(class=`dropdown__list-${listClass}`)
 				-let index = 0
 					each key, value in categories

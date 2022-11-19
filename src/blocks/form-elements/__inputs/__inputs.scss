@@ -88,5 +88,9 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         -moz-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        &:before {
+            content: 'arrow_forward';
+        }
     }
 }

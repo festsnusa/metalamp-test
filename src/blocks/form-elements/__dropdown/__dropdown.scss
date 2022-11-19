@@ -1,6 +1,6 @@
 .dropdown {
 
-  max-width: 20rem;
+  // max-width: 20rem;
   width: 100%;
 
   &-default,
@@ -15,7 +15,7 @@
   }
 
   &__title {
-    font-family: 'Montserrat Bold';
+    @extend .bold;
     display: inline;
   }
 
@@ -33,7 +33,7 @@
   &__box {
     position: relative;
     margin-top: 0.3125rem;
-    margin-bottom: 0.9rem;
+    // margin-bottom: 0.9rem;
   }
 
   &__input {
@@ -144,7 +144,7 @@
       list-style: none;
       line-height: 2.5rem;
       justify-content: space-between;
-      margin-bottom: 1rem;
+      // margin-bottom: 1rem;
     }
 
     &_invisible {
@@ -155,9 +155,9 @@
   &__clear-button{
     
     &__caption {
-      &_invisible {
-        // display: none;
-      }
+      // &_invisible {
+      //   // display: none;
+      // }
 
       &_visible {
         display: block;
@@ -260,7 +260,7 @@
 }
 
 .filter-date-dropdown {
-  margin-bottom: 1.1rem;
+
   max-width: 16.625rem;
 
   &__title {
