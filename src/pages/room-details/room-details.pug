@@ -1,14 +1,14 @@
-include ../../blocks/headers-and-footers/__header/__header
-include ../../blocks/headers-and-footers/__footer/__footer
-include ../../blocks/form-elements/__description/__description
-include ../../blocks/form-elements/__feedback/__feedback
-include ../../blocks/form-elements/__bullet-list/__bullet-list
-include ../../blocks/form-elements/__datepicker/__datepicker
-include ../../blocks/form-elements/__dropdown/__dropdown
-include ../../blocks/cards/__booking-form/__booking-form
-include ../../blocks/cards/__booking-room/__booking-room
-include ./__image-section/__image-section
-include ./__pie-chart/__pie-chart
+include ../../components/__header/__header
+include ../../components/__footer/__footer
+include ../../components/__description/__description
+include ../../components/__feedback/__feedback
+include ../../components/__bullet-list/__bullet-list
+include ../../components/__datepicker/__datepicker
+include ../../components/__dropdown/__dropdown
+include ../../components/__booking-form/__booking-form
+//- include ../../components/__booking-room/__booking-room
+include ../../components/__image-section/__image-section
+include ../../components/__chart/__chart
 
 link(rel="stylesheet" href="./room-details.css")
 link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
@@ -44,3 +44,7 @@ link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+I
           +createBookingFormCard("888", "9 990", true)
   .pages__footer 
     +createFooterContent(false)
+
+script(type="module" src="../../components/__chart/__chart.js")
+script(type="module" src="../../components/__dropdown/__dropdown.js")
+script(type="module" src="../../components/__datepicker/__datepicker.js")

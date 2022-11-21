@@ -2,13 +2,13 @@
 @import '../../assets/libs/_vars';
 @import '../../assets/libs/_fonts';
 
-@import '../../blocks/headers-and-footers/__header/_header';
-@import '../../blocks/headers-and-footers/__footer/_footer';
-@import '../../blocks/form-elements/__buttons/_buttons';
+@import '../../components/__header/_header';
+@import '../../components/__footer/_footer';
+@import '../../components/__buttons/_buttons';
 
-@import '../../blocks/cards/__registration-form/_registration-form';
-@import '../../blocks/form-elements/__radio-buttons/_radio-buttons';
-@import '../../blocks/form-elements/__toggle/_toggle';
+@import '.../../components/__registration-form/_registration-form';
+@import '.../../components/__radio-buttons/_radio-buttons';
+@import '../../components/__toggle/_toggle';
 
 .registration {
 
@@ -17,8 +17,9 @@
   background-repeat: no-repeat;
   background-position: center center;
 
+  padding: 1.15rem 0 0 0.375rem;
+
   &__form-section {
-    padding: 1.15rem 0 1.0625rem 0.375rem;
     margin: 0 auto;
     max-width: 24.15rem;
   }

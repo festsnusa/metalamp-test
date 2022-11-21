@@ -2,16 +2,18 @@
 @import '../../assets/libs/_vars';
 @import '../../assets/libs/_fonts';
 
-@import '../../blocks/headers-and-footers/__header/_header';
-@import '../../blocks/headers-and-footers/__footer/_footer';
-@import '../../blocks/form-elements/__buttons/_buttons';
-@import '../../blocks/cards/__room-search/_room-search';
-@import '../../blocks/form-elements/__dropdown/_dropdown';
-@import '../../blocks/form-elements/__datepicker/_datepicker';
+@import '../../components/';
+
+@import '../../components/__header/_header';
+@import '../../components/__footer/_footer';
+@import '../../components/__buttons/_buttons';
+@import '../../components/__room-search/_room-search';
+@import '../../components/__dropdown/_dropdown';
+@import '../../components/__datepicker/_datepicker';
 
 .landing-page {
 
-  padding-bottom: 1.4rem;
+  padding-bottom: 1.3rem;
   background-image: url('../../assets/images/room-1.jpg');
   background-size: cover;
   background-repeat: no-repeat;

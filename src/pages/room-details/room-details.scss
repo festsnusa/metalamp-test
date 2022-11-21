@@ -2,21 +2,20 @@
 @import '../../assets/libs/_vars';
 @import '../../assets/libs/_fonts';
 
-@import '../../blocks/headers-and-footers/__header/_header';
-@import '../../blocks/headers-and-footers/__footer/_footer';
+@import '../../components/__header/_header';
+@import '../../components/__footer/_footer';
 
-@import '../../blocks/form-elements/__buttons/_buttons';
-@import '../../blocks/form-elements/__description/_description';
-@import '../../blocks/form-elements/__feedback/_feedback';
-@import '../../blocks/form-elements/__like-button/_like-button';
-@import '../../blocks/form-elements/__bullet-list/_bullet-list';
-@import '../../blocks/form-elements/__datepicker/_datepicker';
-@import '../../blocks/form-elements/__dropdown/_dropdown';
-@import '../../blocks/cards/__booking-form/_booking-form';
-@import '../../blocks/cards/__booking-room/_booking-room';
+@import '../../components/__buttons/_buttons';
+@import '../../components/__description/_description';
+@import '../../components/__feedback/_feedback';
+@import '../../components/__like-button/_like-button';
+@import '../../components/__bullet-list/_bullet-list';
+@import '../../components/__datepicker/_datepicker';
+@import '../../components/__dropdown/_dropdown';
+@import '../../components/__booking-form/_booking-form';
 
-@import './__image-section/_image-section';
-@import './__pie-chart/_pie-chart';
+@import '../../components/__image-section/_image-section';
+@import '../../components/__chart/_chart';
 
 .room-details {
   

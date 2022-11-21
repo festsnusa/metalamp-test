@@ -1,12 +1,12 @@
-@import '../__pages/_pages';
+@import '../../components/__pages/_pages';
 @import '../../assets/libs/_vars';
 @import '../../assets/libs/_fonts';
 
-@import '../../blocks/headers-and-footers/__header/_header';
-@import '../../blocks/headers-and-footers/__footer/_footer';
-@import '../../blocks/form-elements/__buttons/_buttons';
+@import '../../components/__header/_header';
+@import '../../components/__footer/_footer';
+@import '../../components/__buttons/_buttons';
 
-@import '../../blocks/cards/__login-form/_login-form';
+@import '../../components/__login-form/_login-form';
 
 .sign-in {
 

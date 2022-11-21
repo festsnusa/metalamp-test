@@ -1,20 +1,19 @@
-@import '../__pages/_pages';
+@import '../../components/__pages/_pages';
 @import '../../assets/libs/_vars';
 @import '../../assets/libs/_fonts';
 
-@import '../../blocks/headers-and-footers/__header/_header';
-@import '../../blocks/headers-and-footers/__footer/_footer';
-@import '../../blocks/form-elements/__datepicker/_datepicker';
-@import '../../blocks/form-elements/__dropdown/_dropdown';
-@import '../../blocks/form-elements/__buttons/_buttons';
-@import '../../blocks/form-elements/__rate-button/_rate-button';
-@import '../../blocks/form-elements/__range-slider/_range-slider';
-@import '../../blocks/form-elements/__checkbox/_checkbox';
-@import '../../blocks/form-elements/__rich-checkbox/_rich-checkbox';
-@import '../../blocks/form-elements/__pagination/_pagination';
-@import '../../blocks/cards/__room-preview/_room-preview';
-@import '../../blocks/cards/__booking-room/_booking-room';
-@import '../../blocks/cards/__image-slider/_image-slider';
+@import '../../components/__header/_header';
+@import '../../components/__footer/_footer';
+@import '../../components/__datepicker/_datepicker';
+@import '../../components/__dropdown/_dropdown';
+@import '../../components/__buttons/_buttons';
+@import '../../components/__rate-button/_rate-button';
+@import '../../components/__range-slider/_range-slider';
+@import '../../components/__checkbox/_checkbox';
+@import '../../components/__rich-checkbox/_rich-checkbox';
+@import '../../components/__pagination/_pagination';
+@import '../../components/__room-preview/_room-preview';
+@import '../../components/__image-slider/_image-slider';
 
 .search-room {
   overflow: hidden;
