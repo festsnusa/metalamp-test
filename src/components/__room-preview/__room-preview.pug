@@ -1,13 +1,20 @@
 include ../__image-slider/__image-slider
-//- include ../__booking-room/__booking-room
 include ../__rate-button/__rate-button
 
-mixin createRoomPreview(images, roomNumber, numRating, numFeedbacks)
+mixin createRoomPreview(images, roomNumber, numRating, numFeedbacks, luxe = false)
   .room-preview 
     +createSlideshowContainer(images)
     .room-preview__description
       .room-preview__header 
-        //- +createBookingRoomDescription(roomNumber, "9 990", true)
+        .room-preview__room
+          .room-preview__room-section
+            span.room-preview__room-section__number №
+            p.room-preview__room-section__number_booking= roomNumber
+            if (luxe)
+              p.room-preview__room-section__luxe люкс
+          .room-preview__price-section
+            p.room-preview__price= `9 990₽`
+            p.room-preview__per-day в сутки
       .room-preview__footer 
         .room-preview__rating
           +rateButton(numRating)

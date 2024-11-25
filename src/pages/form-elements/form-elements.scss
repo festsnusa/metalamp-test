@@ -38,7 +38,8 @@
       margin-bottom: 1.83rem;
     }
 
-    @import '__grid-templates/_grid-templates';
+    // @import '__grid-templates/_grid-templates';
+    @import '../../components/__grid-templates/_grid-templates';
   }
 
   &__input {

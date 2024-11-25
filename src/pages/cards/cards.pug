@@ -36,7 +36,7 @@ include ../../components/__image-slider/__image-slider
       +createCalendar("date-picker-start", "date-picker-end", false, true)
     .cards__room-preview
       -let imagesFirst = [{src: "../../assets/images/room-1-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-2-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-3-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-4-slider.jpg", alt: "Фото 4"}]
-      +createRoomPreview(imagesFirst, "888", 5, 145)
+      +createRoomPreview(imagesFirst, "888", 5, 145, true)
     .cards__room-preview
       -let imagesSecond = [{src: "../../assets/images/room-2-slider.jpg", alt: "Фото 1"}, {src: "../../assets/images/room-4-slider.jpg", alt: "Фото 2"}, {src: "../../assets/images/room-1-slider.jpg", alt: "Фото 3"}, {src: "../../assets/images/room-3-slider.jpg", alt: "Фото 4"}]
       +createRoomPreview(imagesSecond, 840, 4, 65)
@@ -48,3 +48,4 @@ script(type="module" src="../../assets/libs/moment.js")
 script(type="module" src="../../components/__datepicker/__datepicker.js")
 script(src="../../components/__dropdown/__dropdown.js")
 script(src="../../components/__image-slider/__image-slider.js")
+script(src="./cards.js")

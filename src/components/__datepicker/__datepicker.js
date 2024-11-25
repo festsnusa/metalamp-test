@@ -288,8 +288,6 @@ class DatePicker {
       calculateCost()
     }
 
-    // calculateCost()
-
     const datePickers = document.querySelectorAll('.date-picker')
 
     datePickers.forEach(e => {
@@ -361,7 +359,7 @@ function calculateCost() {
   let inputTo = bookingForm.getElementsByClassName('date-picker-end')[0]
   let multipliedPrice = document.querySelector('.booking-form__multiplied')
 
-  let price = convertToNumber(document.querySelector('.price-section__price').innerText)
+  let price = convertToNumber(document.querySelector('.booking-form__price').innerText)
   let multipliedResult = document.querySelector('.booking-form__multiplied-result')
 
   let total = document.querySelector('.booking-form__result')

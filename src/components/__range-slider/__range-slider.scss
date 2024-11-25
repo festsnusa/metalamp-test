@@ -1,9 +1,3 @@
-@import '../../assets/libs/_vars';
-
-/* Functional styling;
- * These styles are required for noUiSlider to function.
- * You don't need to change these rules to apply your design.
- */
  .noUi-target,
  .noUi-target * {
    -webkit-touch-callout: none;
@@ -140,17 +134,17 @@
  }
  /* Handle stripes;
   */
- .noUi-handle:before,
- .noUi-handle:after {
-   /* content: "";
-   display: block;
-   position: absolute;
-   height: 14px;
-   width: 1px;
-   background: #E8E7E6;
-   left: 14px;
-   top: 6px; */
- }
+//  .noUi-handle:before,
+//  .noUi-handle:after {
+//    /* content: "";
+//    display: block;
+//    position: absolute;
+//    height: 14px;
+//    width: 1px;
+//    background: #E8E7E6;
+//    left: 14px;
+//    top: 6px; */
+//  }
  .noUi-handle:after {
    left: 17px;
  }

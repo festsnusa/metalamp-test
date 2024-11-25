@@ -30,9 +30,9 @@
     @extend .bold;
   
     &__number {
-      font-size: 1.2rem;
-      margin-left: 0.2rem;
-      margin-right: 0.45rem;
+      font-size: .875rem;
+      // margin-left: 0.2rem;
+      // margin-right: 0.45rem;
   
       &_booking {
         font-size: 1.5rem;
@@ -55,21 +55,21 @@
     display: flex;
     align-items: baseline;
     margin-top: 0.5rem;
-  
-    &-price,
-    &-per-day {
-      color: $darkShade50;
-    }
-  
-    &-price {
-      font-size: .875rem;
-      margin-right: 0.25rem;
-      @extend .bold;
-    }
-  
-    &-per-day {
-      font-size: 0.75rem;
-    }
+  }
+
+  &__price,
+  &__per-day {
+    color: $darkShade50;
+  }
+
+  &__price {
+    font-size: .875rem;
+    margin-right: 0.25rem;
+    @extend .bold;
+  }
+
+  &__per-day {
+    font-size: 0.75rem;
   }
 
   
